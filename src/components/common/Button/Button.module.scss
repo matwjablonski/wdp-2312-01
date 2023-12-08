@@ -44,3 +44,11 @@
   background-color: #2a2a2a;
   color: #ffffff;
 }
+
+
+.noBackground {
+  background: none;
+  color: black;
+  border: solid 1px black;
+  text-decoration: line-through;
+}

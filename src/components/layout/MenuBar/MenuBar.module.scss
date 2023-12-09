@@ -8,19 +8,45 @@
     height: 84px;
   }
 
+  .navIcon {
+    display: none;
+    width: 50px; 
+    height: 50px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+  }
+
+
+  .icon {
+    display: none;
+
+    @media (max-width: 414px) {
+      display: block;
+    }
+  }
+
   .menu {
     display: flex;
     align-self: stretch;
+    @media (max-width: 414px) {
+      padding-left: 0; 
+      padding-right: 0;
+      width: 100%;
+    }
 
     ul {
       margin: 0;
       padding: 0;
       display: flex;
-
+      
       li {
         list-style: none;
         display: flex;
         align-items: stretch;
+        margin: 0;
       }
     }
 
@@ -45,6 +71,38 @@
 
       &.active {
         border-color: $text-color;
+      }
+    }
+
+    @media screen and (max-width: 414px) {
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+      }
+      
+      ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 15px;
+        z-index: 3;
+
+        &.active {
+          display: block;
+        }
+
+      }
+      
+      li {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .searchbar {
+        padding-left: 0;
       }
     }
   }

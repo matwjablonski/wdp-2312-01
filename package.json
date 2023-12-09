@@ -69,6 +69,7 @@
     "sass": "^1.54.3"
   },
   "devDependencies": {
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.0",
     "onchange": "^6.1.0",

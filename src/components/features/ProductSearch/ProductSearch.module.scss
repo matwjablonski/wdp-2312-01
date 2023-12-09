@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    font-size: 14px;
 
     .icon:first-child {
       color: $primary;
@@ -32,6 +33,7 @@
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+      outline: none;
     }
   }
 
@@ -58,3 +60,4 @@
     }
   }
 }
+

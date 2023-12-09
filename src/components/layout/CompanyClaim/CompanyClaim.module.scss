@@ -47,7 +47,11 @@
       }
 
       .cartCounter {
-        width: 28px;
+        min-width: 28px;
+        width: fit-content;
+        max-width: 5ch;
+        overflow: hidden;
+        white-space: nowrap;
         height: 27px;
         border-radius: 14px;
         background-color: $header-bg;

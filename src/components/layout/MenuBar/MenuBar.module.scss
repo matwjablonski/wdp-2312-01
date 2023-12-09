@@ -20,7 +20,7 @@
   }
 
 
-  .icon {
+  .navIcon {
     display: none;
 
     @media (max-width: 414px) {
@@ -88,6 +88,7 @@
         width: 100%;
         padding-left: 15px;
         z-index: 3;
+        background-color: #ffffff;
 
         &.active {
           display: block;
@@ -107,3 +108,4 @@
     }
   }
 }
+

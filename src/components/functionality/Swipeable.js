@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 const Swipeable = ({ leftAction, rightAction, children }) => {
   const [startX, setStartX] = useState(null);
@@ -31,6 +32,12 @@ const Swipeable = ({ leftAction, rightAction, children }) => {
       {children}
     </div>
   );
+};
+
+Swipeable.propTypes = {
+  leftAction: PropTypes.func,
+  rightAction: PropTypes.func,
+  children: PropTypes.node.isRequired,
 };
 
 export default Swipeable;

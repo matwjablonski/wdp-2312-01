@@ -24,16 +24,14 @@ const StickyBar = () => {
       <div className={styles.compareWrapper}>
         {compareProducts.map(product => (
           <div
+            onClick={e => removehandler(e, product)}
             className={styles.compareImage}
             key={product.id}
             style={{
               backgroundImage: `url("${process.env.PUBLIC_URL}/images/products//${product.id}.jpg")`,
             }}
           >
-            <Button
-              onClick={e => removehandler(e, product)}
-              className={styles.removeButton}
-            >
+            <Button className={styles.removeButton}>
               <FontAwesomeIcon icon={faTimes} />
             </Button>
           </div>

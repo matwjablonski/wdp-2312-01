@@ -8,6 +8,9 @@ export const getNew = ({ products }) =>
 export const getCompareProducts = ({ products }) =>
   products.filter(product => product.compare === true);
 
+export const getPromotedProducts = ({ products }) =>
+  products.filter(product => product.promoted === true);
+
 // actions
 const createActionName = actionName => `app/product/${actionName}`;
 const TOGGLE_PRODUCT_FAVORITE = createActionName('TOGGLE_PRODUCT_FAVORITE');

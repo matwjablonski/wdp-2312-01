@@ -12,12 +12,33 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
+import { addToCompare } from '../../../redux/productsRedux';
+import { getCompareProducts } from '../../../redux/productsRedux';
+import { useSelector } from 'react-redux';
 
-const ProductBox = ({ id, name, price, promo, stars, isFavorite }) => {
+const ProductBox = ({ id, name, price, promo, stars, isFavorite, compare }) => {
   const dispatch = useDispatch();
+  const compareProducts = useSelector(state => getCompareProducts(state));
   const handleAddToFavorite = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
+  };
+
+  const isProductAlreadyCompared = compareProducts.some(product => product.id === id);
+
+  const handleAddToCompare = e => {
+    e.preventDefault();
+
+    if (!isProductAlreadyCompared) {
+      if (compareProducts.length < 4) {
+        dispatch(addToCompare(id));
+      } else {
+        alert('You can add max four products to compare');
+      }
+    } else {
+      alert('This product is already added to compare');
+      return;
+    }
   };
 
   return (
@@ -60,7 +81,11 @@ const ProductBox = ({ id, name, price, promo, stars, isFavorite }) => {
           >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button
+            variant='outline'
+            className={compare ? styles.active : undefined}
+            onClick={handleAddToCompare}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -82,6 +107,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   id: PropTypes.string,
   isFavorite: PropTypes.bool,
+  compare: PropTypes.bool,
 };
 
 export default ProductBox;

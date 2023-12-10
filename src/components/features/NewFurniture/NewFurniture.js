@@ -60,7 +60,7 @@ const NewFurniture = ({ categories, products }) => {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={item.id === activeCategory ? styles.active : ''}
                         onClick={() => handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -102,6 +102,7 @@ NewFurniture.propTypes = {
       price: PropTypes.number,
       stars: PropTypes.number,
       promo: PropTypes.string,
+      newFurniture: PropTypes.bool,
     })
   ),
 };

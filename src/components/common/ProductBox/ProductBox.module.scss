@@ -5,6 +5,21 @@
   border: 1px solid $productBox-border;
   margin-bottom: 2rem;
 
+  &:hover {
+    .photo {
+      .buttons {
+        visibility: visible;
+      }
+    }
+    .actions {
+      .price {
+        .priceButton {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
@@ -13,6 +28,7 @@
       size: contain;
       position: center;
       repeat: no-repeat;
+      size: cover;
     }
     overflow: hidden;
     align-items: flex-end;
@@ -29,6 +45,7 @@
     }
 
     .buttons {
+      visibility: hidden;
       display: flex;
       justify-content: space-between;
     }

@@ -16,7 +16,7 @@ import { addToCompare } from '../../../redux/productsRedux';
 import { getCompareProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 
-const ProductBox = ({ id, name, price, promo, stars, isFavorite, compare }) => {
+const ProductBox = ({ id, favorite, comparison, name, price, promo, stars }) => {
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
   const handleAddToFavorite = e => {
@@ -75,7 +75,7 @@ const ProductBox = ({ id, name, price, promo, stars, isFavorite, compare }) => {
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            className={isFavorite ? styles.active : undefined}
+            className={favorite ? styles.active : undefined}
             variant='outline'
             onClick={handleAddToFavorite}
           >
@@ -83,7 +83,7 @@ const ProductBox = ({ id, name, price, promo, stars, isFavorite, compare }) => {
           </Button>
           <Button
             variant='outline'
-            className={compare ? styles.active : undefined}
+            className={comparison ? styles.active : undefined}
             onClick={handleAddToCompare}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -106,8 +106,9 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   id: PropTypes.string,
-  isFavorite: PropTypes.bool,
-  compare: PropTypes.bool,
+  favorite: PropTypes.bool,
+  comparison: PropTypes.bool,
+  favorite: PropTypes.bool,
 };
 
 export default ProductBox;

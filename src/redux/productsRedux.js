@@ -6,7 +6,7 @@ export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
 export const getCompareProducts = ({ products }) =>
-  products.filter(product => product.compare === true);
+  products.filter(product => product.comparison === true);
 
 // actions
 const createActionName = actionName => `app/product/${actionName}`;
@@ -36,16 +36,16 @@ export default function reducer(statePart = [], action = {}) {
     case TOGGLE_PRODUCT_FAVORITE:
       return statePart.map(product =>
         product.id === action.payload
-          ? { ...product, isFavorite: !product.isFavorite }
+          ? { ...product, favorite: !product.favorite }
           : product
       );
     case ADD_PRODUCT_COMPARE:
       return statePart.map(product =>
-        product.id === action.payload ? { ...product, compare: true } : product
+        product.id === action.payload ? { ...product, comparison: true } : product
       );
     case REMOVE_PRODUCT_COMPARE:
       return statePart.map(product =>
-        product.id === action.payload ? { ...product, compare: false } : product
+        product.id === action.payload ? { ...product, comparison: false } : product
       );
     default:
       return statePart;

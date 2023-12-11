@@ -36,7 +36,7 @@ const StickyBar = () => {
             </Button>
           </div>
         ))}
-        <Button>Compare</Button>
+        <Button className={styles.compareButton}>Compare</Button>
       </div>
     );
 };

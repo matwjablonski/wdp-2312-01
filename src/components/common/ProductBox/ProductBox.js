@@ -69,8 +69,6 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   comparison: PropTypes.bool,
   favorite: PropTypes.bool,
-  id: PropTypes.string,
-
 };
 
 export default ProductBox;

@@ -284,6 +284,24 @@ const initialState = {
   cart: {
     products: [],
   },
+  elements: {
+    mode: '',
+    content: '',
+  },
+  promo: {
+    titleLeft: 'Guest room',
+    subtitleLeft: 'Sofa',
+    discountLeft: '-20%', 
+    titleTopRight: 'Office chair',
+    subtitleTopRight: 'Collection',
+    priceTopRight: '$200.00',
+    titleBottomRight: 'Special collection',
+    subtitleBottomRight: 'Save up 45% of furniture',
+    bed: 'https://images.pexels.com/photos/3659683/pexels-photo-3659683.jpeg',
+    sofa: 'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    chair: 'https://images.pexels.com/photos/961188/pexels-photo-961188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+
+  },
 };
 
 export default initialState;

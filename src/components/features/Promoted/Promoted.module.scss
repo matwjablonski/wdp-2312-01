@@ -42,3 +42,83 @@
     }
   }
 }
+
+.sliderWrapper {
+  height: 100%;
+  width: 100%;
+  .photo {
+    height: 100%;
+    width: 100%;
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    }
+
+    .photoInner {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 220px;
+      background: rgba(37, 36, 36, 0.4);
+      color: #fff;
+
+      h2 {
+        font-size: 50px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      span {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+
+      .shopButton {
+        position: absolute;
+        right: 50%;
+        bottom: -25%;
+        transform: translate(50%, -50%);
+        background: #fff;
+        border: none;
+
+        &:hover {
+          background: $primary;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .arrays {
+    width: 100%;
+    display: flex;
+
+    .arrayButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 50%;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}

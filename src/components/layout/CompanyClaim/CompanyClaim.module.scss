@@ -14,16 +14,21 @@
 
   @media (max-width: 413px) {
     .phoneNumber {
-      flex: 0 0 100%;
+      // flex: 0 0 33,3333%;
       order: 2;
+      // padding-right: 0;
+      position: absolute;
+      left: 50%;
+      top: 100%;
     }
     .text-center {
-      flex: 0 0 100%;
+      // flex: 0 0 33,3333%;
       order: 0;
     }
     .text-right {
-      flex: 0 0 100%;
+      // flex: 0 0 33,3333%;
       order: 1;
+      position: relative;
     }
   }
 

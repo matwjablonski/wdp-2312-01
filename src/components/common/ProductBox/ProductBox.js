@@ -13,7 +13,16 @@ import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 
-const ProductBox = ({ id, favorite, comparison, name, price, promo, stars }) => {
+const ProductBox = ({
+  id,
+  favorite,
+  comparison,
+  name,
+  price,
+  promo,
+  stars,
+  oldPrice,
+}) => {
   const dispatch = useDispatch();
   const handleAddToFavorite = e => {
     e.preventDefault();
@@ -65,6 +74,11 @@ const ProductBox = ({ id, favorite, comparison, name, price, promo, stars }) => 
           </Button>
         </div>
         <div className={styles.price}>
+          {oldPrice && (
+            <Button noHover noBackground variant='small'>
+              $ {oldPrice}
+            </Button>
+          )}
           <Button noHover variant='small' className={styles.priceButton}>
             $ {price}
           </Button>
@@ -78,6 +92,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.bool,
   promo: PropTypes.string,
   stars: PropTypes.number,
   id: PropTypes.string,

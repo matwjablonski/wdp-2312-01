@@ -1,23 +1,16 @@
 @import "../../../styles/settings.scss";
 
 .stars {
-  a {
-    text-decoration: none;
-    color: black; // Domyślny kolor gwiazdek
-  }
-
-  .goldStar {
-    color: gold; // Kolor gwiazdek pełnych (złotych)
-  }
-
   .star {
-    color: black; // Kolor gwiazdek po najechaniu
-    &.gold {
-      color: gold; // Kolor gwiazdek po kliknięciu
-    }
+    text-decoration: none;
+    color: black;
 
     &:hover {
-      color: gold; // Kolor gwiazdek po najechaniu
+      color: gold;
+    }
+
+    &.gold {
+      color: gold;
     }
   }
 }

@@ -14,11 +14,11 @@ const initialState = {
       price: 30,
       oldPrice: 27,
       stars: 2,
+      personalStars: 3,
       promo: 'sale',
       newFurniture: true,
       favorite: true,
       comparison: false,
-
     },
     {
       id: 'aenean-ru-bristique-2',

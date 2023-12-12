@@ -35,7 +35,7 @@
 
           &.active,
           &:hover {
-            background-color: $primary;
+            background-color: $orange;
           }
         }
       }
@@ -106,7 +106,7 @@
         transition: 0.3s;
 
         &:hover {
-          background: $primary;
+          background: $orange;
           text-decoration: none;
           color: #fff;
         }
@@ -131,8 +131,8 @@
       transition: 0.3s;
 
       &:hover {
-        background-color: $primary;
-        border: 1px solid $primary;
+        background-color: $orange;
+        border: 1px solid $orange;
       }
     }
   }

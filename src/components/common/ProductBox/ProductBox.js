@@ -18,12 +18,12 @@ import { useSelector } from 'react-redux';
 
 const ProductBox = ({
   id,
+  favorite,
+  comparison,
   name,
   price,
   promo,
   stars,
-  isFavorite,
-  compare,
   promoted,
   isPromoted,
 }) => {
@@ -111,7 +111,7 @@ const ProductBox = ({
             </Button>
           )}
           <Button
-            className={isFavorite ? styles.active : undefined}
+            className={favorite ? styles.active : undefined}
             variant='outline'
             onClick={handleAddToFavorite}
           >
@@ -119,7 +119,7 @@ const ProductBox = ({
           </Button>
           <Button
             variant='outline'
-            className={compare ? styles.active : undefined}
+            className={comparison ? styles.active : undefined}
             onClick={handleAddToCompare}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
@@ -148,8 +148,8 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   id: PropTypes.string,
-  isFavorite: PropTypes.bool,
-  compare: PropTypes.bool,
+  comparison: PropTypes.bool,
+  favorite: PropTypes.bool,
   promoted: PropTypes.bool,
   isPromoted: PropTypes.bool,
 };

@@ -4,7 +4,7 @@
   border: 1px solid $form-border-color;
   display: inline-flex;
   height: 45px;
-  color: $text-color;
+  color: $form-text-color;
 
   .category {
     border-right: 1px solid $form-border-color;
@@ -14,7 +14,7 @@
     font-size: 14px;
 
     .icon:first-child {
-      color: $primary;
+      color: $productSearch-icon;
       position: absolute;
       left: 10px;
       z-index: 0;
@@ -49,7 +49,7 @@
       outline: none;
 
       &::placeholder {
-        color: $text-color;
+        color: $form-text-color;
       }
     }
 

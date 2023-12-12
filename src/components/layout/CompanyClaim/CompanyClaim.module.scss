@@ -7,6 +7,26 @@
     height: 145px;
   }
 
+  .align-items-center {
+    display: flex;
+    flex: 0 0 33.3333%;
+  }
+
+  @media (max-width: 413px) {
+    .phoneNumber {
+      flex: 0 0 100%;
+      order: 2;
+    }
+    .text-center {
+      flex: 0 0 100%;
+      order: 0;
+    }
+    .text-right {
+      flex: 0 0 100%;
+      order: 1;
+    }
+  }
+
   .phoneNumber {
     p {
       margin: 0;
@@ -14,6 +34,10 @@
       line-height: 42px;
       color: rgb(216, 216, 216);
       font-weight: 500;
+
+      @media (max-width: 413px) {
+        font-size: 14px;
+      }
 
       .icon {
         font-size: 32px;

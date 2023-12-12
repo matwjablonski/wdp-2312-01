@@ -1,6 +1,6 @@
 $base-padding: 24px;
 
-//color variables - DO NOT USE 
+//color variables - DO NOT USE
 $veryDarkGrey: #2a2a2a;
 $alsoDarkGrey: #292929;
 $darkGrey: #434343;
@@ -10,12 +10,11 @@ $lightGrey: #e2e2e2;
 $veryLightGrey: #b6b6b6;
 $veryVeryLightDark: #e1e1e1;
 $anotherLightDark: #f4f5f7;
-$alsoGrey: #D8D8D8;
-$grey: #E0E3E8;
+$alsoGrey: #d8d8d8;
+$grey: #e0e3e8;
 $greyLight: #a9a9a9;
 $black-shadow: rgba(1, 2, 2, 0.2);
 $orange: #d58e32;
-
 
 //color variables - for components
 
@@ -34,7 +33,6 @@ $footer-text: $greyLight;
 $footer-linkHover: $white;
 $footer-socialMed-hover: $orange;
 $footer-claim-bg: $veryDarkGrey;
-
 
 //MenuBar
 $menuBar-bg: $white;
@@ -74,6 +72,7 @@ $productBox-content-title: $orange;
 $productBox-stars: $veryDarkGrey;
 $product-box-line: $veryDarkGrey;
 $product-box-decorLine: $orange;
+$product-box-button-hover: $orange;
 
 //NewFurniture
 $newFurniture-panelBar-border: $lightGrey;
@@ -85,10 +84,7 @@ $newFurniture-list-background: $white;
 $newFurniture-link-background: $veryVeryLightDark;
 $newFurniture-hover-bg: $orange;
 
-
 //ProductSearch
 $form-border-color: $veryDarkGrey;
 $form-text-color: $veryDarkGrey;
 $productSearch-icon: $orange;
-
-

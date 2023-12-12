@@ -25,7 +25,6 @@
     padding: 80% 10px 0 10px;
     background: {
       color: $productBox-photo-background;
-      size: contain;
       position: center;
       repeat: no-repeat;
       size: cover;
@@ -91,5 +90,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .price {
+    display: flex;
   }
 }

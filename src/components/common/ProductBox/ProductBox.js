@@ -103,10 +103,10 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.bool,
   promo: PropTypes.string,
   stars: PropTypes.number,
   id: PropTypes.string,
-  favorite: PropTypes.bool,
   comparison: PropTypes.bool,
   favorite: PropTypes.bool,
 };

@@ -104,7 +104,7 @@ NewFurniture.propTypes = {
   elements: PropTypes.arrayOf(
     PropTypes.shape({
       mode: PropTypes.string, 
-      content: PropTypes.number,
+      content: PropTypes.string,
     })
   ),
 };

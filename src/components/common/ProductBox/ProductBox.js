@@ -16,7 +16,17 @@ import { addToCompare } from '../../../redux/productsRedux';
 import { getCompareProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 
-const ProductBox = ({ id, favorite, comparison, name, price, promo, stars }) => {
+
+const ProductBox = ({
+  id,
+  favorite,
+  comparison,
+  name,
+  price,
+  promo,
+  stars,
+  oldPrice,
+}) => {
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
   const handleAddToFavorite = e => {
@@ -90,6 +100,11 @@ const ProductBox = ({ id, favorite, comparison, name, price, promo, stars }) => 
           </Button>
         </div>
         <div className={styles.price}>
+          {oldPrice && (
+            <Button noHover noBackground variant='small'>
+              $ {oldPrice}
+            </Button>
+          )}
           <Button noHover variant='small' className={styles.priceButton}>
             $ {price}
           </Button>

@@ -21,6 +21,7 @@
             font-size: 14px;
             line-height: 30px;
             color: $footer-text;
+            @extend %hover-effect;
 
             &:hover {
               color: $footer-linkHover;
@@ -66,10 +67,12 @@
         li {
           display: inline-block;
           margin-left: 1rem;
+          
 
           a {
             color: $footer-text;
             text-decoration: none;
+            @extend %hover-effect;
 
             &:hover {
               color: $footer-socialMed-hover;

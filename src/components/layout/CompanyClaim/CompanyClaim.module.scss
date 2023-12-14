@@ -13,43 +13,27 @@
   }
 
   @media (max-width: 413px) {
-    // .align-items-center {
-    //   // display: flex;
-    //   position: relative;
-    //   height: 100%;
-    //   width:100%;
-    // }
-    // .phoneNumber {
-    //   order: 2;
-    //   // position: absolute;
-    //   top: 35%;
-    // }
-    // .logo {
-    //   order: 0;
-    // }
-    // .cart {
-    //   order: 1;
-    //   position: absolute;
-    // }
     .align-items-center {
       position: relative;
       height: 50%;
       width:100%;
+      box-sizing: border-box;
     }
     .phoneNumber {
       position: absolute;
-      left:50%;
+      left: 50%;
       top: 110%;
+      position: sticky;
+      height: 40%;
     }
     .logo {
       position: absolute;
-      left: -25%;
+      width: 50%;
     }
     .cart {
-      position: absolute;
-      top: 80%;
+      top: -10%;
+      right: 0;
     }
-
   }
 
   .phoneNumber {
@@ -62,6 +46,9 @@
 
       @media (max-width: 413px) {
         font-size: 14px;
+        line-height: 14px;
+        line-break: anywhere;
+        text-align: right;
       }
 
       .icon {
@@ -70,6 +57,7 @@
         vertical-align: middle;
         margin-top: -3px;
         margin-right: 0.8rem;
+        margin-left: 0.8rem;
       }
     }
   }
@@ -79,6 +67,7 @@
       display: inline-block;
       position: relative;
       color: $companyClaim-cartBox;
+      right: 10%;
 
       .cartIcon {
         background-color: $companyClaim-cartIcon;

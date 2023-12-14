@@ -25,38 +25,42 @@
       top: 110%;
       position: sticky;
       height: 40%;
+      padding: 3%;
+      margin-bottom: 1%;
     }
     .logo {
       position: absolute;
       width: 50%;
     }
     .cart {
-      top: -10%;
+      top: -5%;
       right: 0;
     }
   }
 
   .phoneNumber {
+    padding-top: 2%;
     p {
       margin: 0;
       font-size: 17px;
-      line-height: 42px;
+      line-height: 35px;
       color: $companyClaim-phone-text;
       font-weight: 500;
 
       @media (max-width: 413px) {
+        padding-top: 2%;
         font-size: 14px;
         line-height: 14px;
-        line-break: anywhere;
         text-align: right;
+        line-break: normal;
       }
 
       .icon {
         font-size: 32px;
         color: $companyClaim-cartIcon;
         vertical-align: middle;
-        margin-top: -3px;
-        margin-right: 0.8rem;
+        margin-top: -2px;
+        margin-right: 0.5rem;
         margin-left: 0.8rem;
       }
     }

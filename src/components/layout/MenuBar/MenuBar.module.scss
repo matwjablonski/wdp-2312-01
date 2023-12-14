@@ -79,9 +79,9 @@
 
       &:hover,
       &.active {
-        background-color: $primary;
+        background-color: $menuBar-active-border;
         color: $white;
-        border-color: $primary;
+        border-color: $menuBar-active-border;
       }
 
       &.active {

@@ -60,10 +60,12 @@
         top: 50%;
         right: 0;
         transform: translate(50%, -50%);
+        
       }
 
       &:hover {
         .cartIcon {
+          @extend %hover-effect;
           background-color: lighten($companyClaim-cartIcon, 10%);
         }
       }

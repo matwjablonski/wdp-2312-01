@@ -10,11 +10,15 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
+  @extend %hover-effect;
+  
+
 
   &:not(.noHover):hover {
     color: $button-hover !important;
     background-color: $button-hover-bg;
     text-decoration: none;
+    // transform: scale($scale-transform);
   }
 }
 
@@ -33,10 +37,12 @@
   color: $button;
   font-size: 13px;
   line-height: 22px;
+  @extend %hover-effect;
 
   &:not(.noHover):hover {
     background-color: $button;
     color: $button-hover;
+
   }
 }
 

@@ -16,7 +16,6 @@
     color: $button-hover !important;
     background-color: $button-hover-bg;
     text-decoration: none;
-    // transform: scale($scale-transform);
   }
 }
 
@@ -40,6 +39,7 @@
   &:not(.noHover):hover {
     background-color: $button;
     color: $button-hover;
+
   }
 }
 

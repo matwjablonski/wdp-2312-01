@@ -12,41 +12,45 @@ const MenuBar = ({ children }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col'>
-            <ProductSearch />
-          </div>
-          <button className={styles.navIcon} onClick={() => setShowNav(!showNav)}>
-            <a href='#'>
-              <FontAwesomeIcon icon={faBars} />
-            </a>
-          </button>
-          <div className={'col-auto ' + styles.menu}>
-            <ul className={showNav ? styles.active : styles.notvisible}>
-              <li>
-                <a href='#' className={styles.active}>
-                  Home
+        <div className={styles.fluid}>
+          <div className='innerWrapperSearch'>
+            <div className={`${styles.inputsWidth} `}>
+              <button className={styles.navIcon} onClick={() => setShowNav(!showNav)}>
+                <a href='#'>
+                  <FontAwesomeIcon icon={faBars} />
                 </a>
-              </li>
-              <li>
-                <a href='#'>Furniture</a>
-              </li>
-              <li>
-                <a href='#'>Chair</a>
-              </li>
-              <li>
-                <a href='#'>Table</a>
-              </li>
-              <li>
-                <a href='#'>Sofa</a>
-              </li>
-              <li>
-                <a href='#'>Bedroom</a>
-              </li>
-              <li>
-                <a href='#'>Blog</a>
-              </li>
-            </ul>
+              </button>
+              <ProductSearch />
+            </div>
+          </div>
+          <div className='innerWrapperMenu'>
+            <div className={'' + styles.menu}>
+              <ul className={showNav ? styles.visible : ''}>
+                <li>
+                  <a href='#' className={styles.active}>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>Furniture</a>
+                </li>
+                <li>
+                  <a href='#'>Chair</a>
+                </li>
+                <li>
+                  <a href='#'>Table</a>
+                </li>
+                <li>
+                  <a href='#'>Sofa</a>
+                </li>
+                <li>
+                  <a href='#'>Bedroom</a>
+                </li>
+                <li>
+                  <a href='#'>Blog</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

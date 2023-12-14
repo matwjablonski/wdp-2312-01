@@ -4,15 +4,15 @@
   box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
   background-color: #ffffff;
 
-  :global(.container) > :global(.row) {
+  :global(.container)> :global(.row) {
     height: 84px;
   }
 
   .navIcon {
     display: none;
-    width: 50px; 
+    width: 50px;
     height: 50px;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
@@ -20,33 +20,49 @@
   }
 
 
+  .fluid {
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 992px) {
+      flex-direction: column-reverse;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  }
+
   .navIcon {
     display: none;
 
-    @media (max-width: 414px) {
-      display: block;
+    @media (max-width: 480px) {
+      display: inline;
+      margin-right: 10px;
     }
+  }
+
+  .inputsWidth {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   .menu {
     display: flex;
     align-self: stretch;
-    @media (max-width: 414px) {
-      padding-left: 0; 
-      padding-right: 0;
-      width: 100%;
-    }
 
     ul {
       margin: 0;
       padding: 0;
       display: flex;
-      
+
       li {
         list-style: none;
         display: flex;
         align-items: stretch;
         margin: 0;
+
       }
     }
 
@@ -74,38 +90,31 @@
       }
     }
 
-    @media screen and (max-width: 414px) {
+    @media (max-width: 480px) {
       a {
         display: block;
         width: 100%;
-        text-align: center;
-        margin: 0;
       }
-      
+
       ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        padding-left: 15px;
-        z-index: 3;
-        background-color: #ffffff;
 
-        &.active {
-          display: block;
+        &.visible {
+          display: flex;
         }
-
-      }
-      
-      li {
-        width: 100%;
-        justify-content: center;
-        margin: 0;
-      }
-
-      .searchbar {
-        padding-left: 0;
       }
     }
   }
-}
 
+  .innerWrapperSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+
+
+  
+}

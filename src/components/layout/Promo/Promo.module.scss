@@ -1,6 +1,8 @@
 @import "../../../styles/settings.scss";
 
 
+
+
 .left {
   position: relative;
   color: white; 
@@ -8,7 +10,6 @@
   height: 400px;
   text-transform: uppercase;
   margin-bottom: 20px;
-
   img {
     width: 100%;
     height: 100%; 
@@ -47,6 +48,7 @@
   margin-right: 0;
   border: 3px solid;
   z-index: 1;
+  margin: 0 auto;
 }
 
 .left:before {
@@ -67,10 +69,10 @@
   width: 550px;
   height: 400px;
   padding-left: 22px; 
-
   .topPictureWrapper {
     width: 550px;
     height: 200px;
+    padding: 0;
     position: relative;
     text-transform: uppercase;
     img {
@@ -130,6 +132,36 @@
   }
   .primary span {
     font-weight: bold;
+  }
+}
+
+@media (max-width: 1200px) {
+  .flex-on {
+    display: flex;
+    justify-content: center;
+  }
+  .left,
+  .right {
+    width: 100%; 
+    padding-left: 0;
+    padding: 0; 
+    margin-bottom: 20px; 
+  }
+
+  .right {
+    .topPictureWrapper,
+    .bottomPictureWrapper {
+      justify-content: center;
+      margin: 0 auto;
+      margin-bottom: 5px; 
+    }
+  }
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .mediaContainer {
+    justify-content: center;
   }
 }
 

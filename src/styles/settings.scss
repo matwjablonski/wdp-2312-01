@@ -1,15 +1,92 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
-
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
-
-$primary: #d58e32;
-
-$text-color: #2a2a2a;
-
-$form-border-color: #292929;
-
+//color variables - DO NOT USE
+$veryDarkGrey: #2a2a2a;
+$alsoDarkGrey: #292929;
+$darkGrey: #434343;
+$nextGrey: #363636;
 $white: #ffffff;
+$lightGrey: #e2e2e2;
+$veryLightGrey: #b6b6b6;
+$veryVeryLightDark: #e1e1e1;
+$anotherLightDark: #f4f5f7;
+$alsoGrey: #d8d8d8;
+$grey: #e0e3e8;
+$greyLight: #a9a9a9;
+$black-shadow: rgba(1, 2, 2, 0.2);
+$orange: #d58e32;
+$white: #ffffff;
+
+//color variables - for components
+
+//LAYOUT
+//CompanyClaim
+$companyClaim-phone-text: $alsoGrey;
+$companyClaim-cartBox: $white;
+$companyClaim-cartIcon: $orange;
+$companyClaim-cartCounter-text: $grey;
+$companyClaim-header-bg: $nextGrey;
+
+//Footer
+$footer-bg: $nextGrey;
+$footer-menu-title: $white;
+$footer-text: $greyLight;
+$footer-linkHover: $white;
+$footer-socialMed-hover: $orange;
+$footer-claim-bg: $veryDarkGrey;
+
+//MenuBar
+$menuBar-bg: $white;
+$menuBar-box-shadow: $black-shadow;
+$menuBar-border: $white;
+$menuBar-text: $veryDarkGrey;
+$menuBar-active-bg: $orange;
+$menuBar-active-text: $white;
+$menuBar-active-border: $orange;
+$menuBar-clicked-border: $veryDarkGrey;
+
+//TopBar
+$header-topbar-bg: $darkGrey;
+$header-text: $white;
+$header-hover: $orange;
+
+//Button
+$button: $veryDarkGrey;
+$button-text: $white;
+$button-hover: $white;
+$button-hover-bg: $orange;
+
+//FeatureBox
+$featureBox-border: $veryLightGrey;
+$featureBox-text: $veryDarkGrey;
+$featureBox-background: $white;
+$featureBox-active-text: $white;
+$featureBox-active-content: $orange;
+
+//ProductBox
+$productBox-background: $white;
+$productBox-border: $veryVeryLightDark;
+$productBox-photo-background: $veryVeryLightDark;
+$productBox-sale-background: $alsoDarkGrey;
+$productBox-sale-text: $white;
+$productBox-content-title: $orange;
+$productBox-stars: $veryDarkGrey;
+$product-box-line: $veryDarkGrey;
+$product-box-decorLine: $orange;
+$product-box-button-hover: $orange;
+
+//NewFurniture
+$newFurniture-panelBar-border: $lightGrey;
+$newFurniture-title: $orange;
+$newFurniture-decorLine: $orange;
+$newFurniture-menu-text: $veryDarkGrey;
+$newFurniture-decorLine-active: $orange;
+$newFurniture-list-background: $white;
+$newFurniture-link-background: $veryVeryLightDark;
+$newFurniture-hover-bg: $orange;
+
+//ProductSearch
+$form-border-color: $veryDarkGrey;
+$form-text-color: $veryDarkGrey;
+$productSearch-icon: $orange;
+

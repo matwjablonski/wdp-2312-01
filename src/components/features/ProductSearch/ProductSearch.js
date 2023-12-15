@@ -7,8 +7,8 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 import styles from './ProductSearch.module.scss';
 
 const ProductSearch = () => (
-  <form action='' className={styles.root}>
-    <div className={styles.category}>
+  <form action='' className={`flex ${styles.root}`}>
+    <div className={`fluid ${styles.category}`}>
       <FontAwesomeIcon className={styles.icon} icon={faListUl} />
       <select name='' id=''>
         <option className={styles.option} value=''>
@@ -17,7 +17,7 @@ const ProductSearch = () => (
       </select>
       <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
     </div>
-    <div className={styles.searchField}>
+    <div className={`fluid ${styles.searchField}`}>
       <input placeholder='Search products...' type='text' />
       <button>
         <FontAwesomeIcon className={styles.icon} icon={faSearch} />

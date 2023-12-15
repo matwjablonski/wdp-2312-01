@@ -6,7 +6,7 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
+ 
 const MenuBar = ({ children }) => {
   const [showNav, setShowNav] = useState(false);
   return (

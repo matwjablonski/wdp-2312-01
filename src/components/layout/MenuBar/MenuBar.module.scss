@@ -17,11 +17,16 @@
     align-items: center;
     background-color: $white;
     border: none;
+    svg {
+      color: $orange;
+    }
   }
 
   .fluid {
     display: flex;
     flex-direction: row;
+    padding-top: 1px;
+    padding-bottom: 1px;
 
     @media (max-width: 992px) {
       flex-direction: column-reverse;
@@ -45,6 +50,7 @@
     display: flex;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-right: 5px;
   }
 
   .menu {

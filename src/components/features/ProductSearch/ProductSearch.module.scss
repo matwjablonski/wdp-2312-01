@@ -82,6 +82,10 @@
       font-size: 15px;
       outline: none;
 
+      &::placeholder {
+        color: $form-text-color;
+      }
+
       &:hover::placeholder {
         color: $orange; // Change placeholder color on hover
       }

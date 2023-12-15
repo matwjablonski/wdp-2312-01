@@ -4,7 +4,7 @@
   border: 1px solid $form-border-color;
   display: inline-flex;
   height: 45px;
-  color: $text-color;
+  color: $form-text-color;
 
   .category {
     border-right: 1px solid $form-border-color;
@@ -14,10 +14,14 @@
     font-size: 14px;
 
     .icon:first-child {
-      color: $primary;
+      color: $productSearch-icon;
       position: absolute;
       left: 10px;
       z-index: 0;
+
+      @media (max-width: 480px) {
+        padding-right: 2px;
+      }
     }
 
     .icon:last-child {
@@ -34,7 +38,37 @@
       position: relative;
       z-index: 1;
       outline: none;
+
+      option {
+        &:hover {
+          background-color: $orange;
+        }
+      }
+
+      &:hover {
+        color: $orange; // Change text color on hover
+      }
+
+      li {
+        display: none;
+        cursor: grab;
+        font-weight: 400;
+        font-size: 14px;
+
+        &:hover {
+          background-color: $orange;
+        }
+      }
+      @media (max-width: 480px) {
+        padding: 5px 30px 5px 24px;
+      } 
     }
+
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+      width: 150px;
+    } 
   }
 
   .searchField {
@@ -45,11 +79,20 @@
     input {
       border: 0;
       padding-left: 10px;
-      font-size: 14px;
+      font-size: 15px;
       outline: none;
 
       &::placeholder {
-        color: $text-color;
+        color: $form-text-color;
+      }
+
+      &:hover::placeholder {
+        color: $orange; // Change placeholder color on hover
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        width: 120px;
       }
     }
 
@@ -59,5 +102,6 @@
       outline: none;
     }
   }
+
 }
 

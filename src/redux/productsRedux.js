@@ -7,12 +7,9 @@ export const getNew = ({ products }) =>
 
 export const getCompareProducts = ({ products }) =>
   products.filter(product => product.comparison === true);
-<<<<<<< HEAD
 
 export const getPromotedProducts = ({ products }) =>
   products.filter(product => product.promoted === true);
-=======
->>>>>>> main
 
 // actions
 const createActionName = actionName => `app/product/${actionName}`;

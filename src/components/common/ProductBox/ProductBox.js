@@ -26,6 +26,7 @@ const ProductBox = ({
   stars,
   oldPrice,
   isPromoted,
+
 }) => {
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
@@ -153,6 +154,7 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   oldPrice: PropTypes.bool,
   isPromoted: PropTypes.bool,
+
 };
 
 export default ProductBox;

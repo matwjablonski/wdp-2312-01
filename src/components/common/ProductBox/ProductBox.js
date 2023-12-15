@@ -24,7 +24,7 @@ const ProductBox = ({
   price,
   promo,
   stars,
-  promoted,
+  oldPrice,
   isPromoted,
 }) => {
   const dispatch = useDispatch();
@@ -127,10 +127,20 @@ const ProductBox = ({
         </div>
 
         <div className={styles.price}>
-          {promoted && (
+          {/* {promoted && (
             <div className={styles.priceBeforePromotion}>
               <span>$ {price + 0.3 * price}</span>
             </div>
+          )} */}
+          {oldPrice && (
+            <Button
+              noHover
+              noBackground
+              variant='small'
+              className={styles.priceBeforePromotion}
+            >
+              $ {oldPrice}
+            </Button>
           )}
           <Button noHover variant='small' className={styles.priceButton}>
             $ {price}
@@ -150,7 +160,7 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   comparison: PropTypes.bool,
   favorite: PropTypes.bool,
-  promoted: PropTypes.bool,
+  oldPrice: PropTypes.bool,
   isPromoted: PropTypes.bool,
 };
 

@@ -1,7 +1,6 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  min-height: 400px;
   background-color: $productBox-background;
   border: 1px solid $productBox-border;
   margin-bottom: 2rem;
@@ -15,7 +14,7 @@
     .actions {
       .price {
         .priceButton {
-          background-color: $orange;
+          background-color: $product-box-button-hover;
         }
       }
     }
@@ -60,7 +59,6 @@
       display: flex;
       justify-content: space-between;
     }
-
     .buttonsPromoted {
       visibility: hidden;
       position: absolute;
@@ -86,8 +84,8 @@
         width: 22%;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
-        background: #3e3e3e;
-        color: #fff;
+        background: $promoted-time-counter-background;
+        color: $promoted-time-counter-text-color;
         margin-bottom: 2%;
 
         .number {
@@ -144,28 +142,12 @@
 
     .outlines {
       .active {
-        background-color: $orange;
-        color: #fff;
+        background-color: $product-box-button-active-background;
+        color: $product-box-button-active-color;
       }
     }
-    .price {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .priceBeforePromotion {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-
-      span {
-        font-size: 13px;
-        color: #bdbdbd;
-        text-decoration: line-through;
-        padding: 10px;
-      }
-    }
+  }
+  .price {
+    display: flex;
   }
 }

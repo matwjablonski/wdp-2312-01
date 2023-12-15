@@ -1,138 +1,144 @@
 @import "../../../styles/settings.scss";
 
-.hotdealsBar {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  background-color: #2a2a2a;
-  color: #fff;
+.root {
+  .hotdealsBar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: $promoted-hotdeals-background;
+    color: $promoted-hotdeals-text-color;
 
-  span {
-    padding: 0 0 0 1rem;
-    text-transform: uppercase;
-    font-size: 20px;
-  }
+    span {
+      padding: 0 0 0 1rem;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
 
-  .dots {
-    ul {
-      margin: 0;
-      list-style: none;
-      background-color: #2a2a2a;
+    .dots {
+      ul {
+        margin: 0;
+        list-style: none;
+        background-color: $promoted-hotdeals-background;
 
-      li {
-        display: inline-block;
-        margin-left: 0.5rem;
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
 
-        a {
-          display: block;
-          width: 13px;
-          height: 13px;
-          border-radius: 6px;
-          background-color: #e1e1e1;
-          font-size: 0;
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $promoted-dots-background;
+            font-size: 0;
 
-          &.active,
-          &:hover {
-            background-color: $orange;
+            &.active,
+            &:hover {
+              background-color: $button-hover-bg;
+            }
           }
         }
       }
     }
   }
-}
 
-.sliderWrapper {
-  height: 450px;
-  width: 100%;
+  .productBox {
+    height: 400px;
+  }
 
-  .photo {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+  .sliderWrapper {
+    height: 450px;
     width: 100%;
-    background: {
-      position: center;
-      repeat: no-repeat;
-      size: cover;
-    }
 
-    .photoInner {
-      position: absolute;
+    .photo {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
       width: 100%;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 50%;
-      background: rgba(37, 36, 36, 0.4);
-      color: #fff;
-
-      h2 {
-        font-size: 50px;
-        font-weight: 300;
-        text-transform: uppercase;
+      background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
       }
 
-      span {
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      p {
-        font-size: 24px;
-        text-transform: uppercase;
-      }
-
-      .shopButton {
+      .photoInner {
         position: absolute;
-        right: 50%;
-        bottom: 0%;
-        transform: translate(50%, 50%);
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 55px;
-        width: 135px;
-        background: #fff;
-        border: none;
-        border-radius: 3px;
-        text-transform: uppercase;
-        font-weight: 600;
-        transition: 0.3s;
+        height: 50%;
+        background: $promoted-slider-background;
+        color: $promoted-slider-text-color;
 
-        &:hover {
-          background: $orange;
-          text-decoration: none;
-          color: #fff;
+        h2 {
+          font-size: 50px;
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+
+        span {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-size: 24px;
+          text-transform: uppercase;
+        }
+
+        .shopButton {
+          position: absolute;
+          right: 50%;
+          bottom: 0%;
+          transform: translate(50%, 50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 55px;
+          width: 135px;
+          background: $button-hover;
+          border: none;
+          border-radius: 3px;
+          text-transform: uppercase;
+          font-weight: 600;
+          transition: 0.3s;
+
+          &:hover {
+            background: $orange;
+            text-decoration: none;
+            color: $button-hover;
+          }
         }
       }
     }
-  }
 
-  .arrays {
-    width: 100%;
-    display: flex;
-
-    .arrayButton {
+    .arrays {
+      width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 40px;
-      width: 50%;
-      background-color: #2a2a2a;
-      color: #fff;
-      font-size: 16px;
-      border: 1px solid #2a2a2a;
-      transition: 0.3s;
 
-      &:hover {
-        background-color: $orange;
-        border: 1px solid $orange;
+      .arrayButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38.1px;
+        width: 50%;
+        background-color: $promoted-arrays-background;
+        color: $button-text;
+        font-size: 16px;
+        border: 1px solid $promoted-arrays-background;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $button-hover-bg;
+          border: 1px solid $button-hover-bg;
+        }
       }
     }
   }

@@ -127,18 +127,8 @@ const ProductBox = ({
         </div>
 
         <div className={styles.price}>
-          {/* {promoted && (
-            <div className={styles.priceBeforePromotion}>
-              <span>$ {price + 0.3 * price}</span>
-            </div>
-          )} */}
           {oldPrice && (
-            <Button
-              noHover
-              noBackground
-              variant='small'
-              className={styles.priceBeforePromotion}
-            >
+            <Button noHover noBackground variant='small'>
               $ {oldPrice}
             </Button>
           )}
@@ -155,6 +145,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.bool,
   promo: PropTypes.string,
   stars: PropTypes.number,
   id: PropTypes.string,

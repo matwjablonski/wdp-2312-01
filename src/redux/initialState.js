@@ -106,7 +106,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
-      promoted: false,
+      promoted: true,
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -117,7 +117,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       favorite: false,
-      compare: false,
+      comparison: false,
       promoted: false,
     },
     {
@@ -304,7 +304,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
-      promoted: false,
+      promoted: true,
     },
   ],
   cart: {

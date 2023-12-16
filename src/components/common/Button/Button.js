@@ -9,6 +9,7 @@ const Button = ({
   children,
   variant,
   noHover,
+  noBackground,
   className: propClassName,
   ...props
 }) => {
@@ -30,6 +31,10 @@ const Button = ({
     classes.push(styles.active);
   }
 
+  if (noBackground) {
+    classes.push(styles.noBackground);
+  }
+
   if (favorite) {
     classes.push(styles.active);
   }
@@ -44,6 +49,7 @@ const Button = ({
 Button.propTypes = {
   children: PropTypes.node,
   noHover: PropTypes.bool,
+  noBackground: PropTypes.bool,
   className: PropTypes.string,
   variant: PropTypes.string,
   comparison: PropTypes.bool,

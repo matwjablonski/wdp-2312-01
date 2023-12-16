@@ -3,14 +3,14 @@
 .stars {
   .star {
     text-decoration: none;
-    color: black;
+    color: $productBox-stars;
 
     &:hover {
-      color: gold;
+      color: $productBox-button-hover;
     }
 
     &.gold {
-      color: gold;
+      color: $productBox-button-hover;
     }
   }
 }

@@ -71,8 +71,12 @@ const Promoted = () => {
   };
 
   const handleDotClick = index => {
-    setLeftActiveProductNumber(index);
-    pauseAutoPlay();
+    setLeftFade(false);
+    setTimeout(() => {
+      setLeftActiveProductNumber(index);
+      setLeftFade(true);
+      pauseAutoPlay();
+    }, 500);
   };
 
   const dots = [];

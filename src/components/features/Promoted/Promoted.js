@@ -6,11 +6,38 @@ import { useSelector } from 'react-redux';
 import Button from '../../common/Button/Button';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getAll } from '../../../redux/productsRedux';
+import { useState } from 'react';
 
 const Promoted = () => {
   const promotedCount = 3; //currently for the visual layout of the page only
   const promotedProducts = useSelector(getPromotedProducts); //currently for the visual layout of the page only
+  const allProducts = useSelector(getAll);
+  console.log('allProducts', allProducts);
   const id = 'aenean-ru-bristique-2'; //currently for the visual layout of the page only
+
+  const [rightActiveProductNumber, setRightActiveProductNumber] = useState(0);
+  const [rightActiveProduct, setRightActiveProduct] = useState(
+    allProducts[rightActiveProductNumber]
+  );
+
+  const rightArrayHandler = e => {
+    e.preventDefault();
+    if (rightActiveProductNumber < allProducts.length - 1) {
+      const newProductNumber = rightActiveProductNumber + 1;
+      setRightActiveProductNumber(newProductNumber);
+      setRightActiveProduct(allProducts[newProductNumber]);
+    }
+  };
+
+  const leftArrayHandler = e => {
+    e.preventDefault();
+    if (rightActiveProductNumber > 0) {
+      const newProductNumber = rightActiveProductNumber - 1;
+      setRightActiveProductNumber(newProductNumber);
+      setRightActiveProduct(allProducts[newProductNumber]);
+    }
+  };
 
   const dots = [];
   for (let i = 0; i < promotedCount; i++) {
@@ -41,7 +68,7 @@ const Promoted = () => {
               <div
                 className={styles.photo}
                 style={{
-                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/products//${id}.jpg")`,
+                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/products//${rightActiveProduct.id}.jpg")`,
                 }}
               >
                 <div className={styles.photoInner}>
@@ -56,10 +83,18 @@ const Promoted = () => {
               </div>
 
               <div className={styles.arrays}>
-                <Button variant='outline' className={styles.arrayButton}>
+                <Button
+                  variant='outline'
+                  className={styles.arrayButton}
+                  onClick={leftArrayHandler}
+                >
                   <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
                 </Button>
-                <Button variant='outline' className={styles.arrayButton}>
+                <Button
+                  variant='outline'
+                  className={styles.arrayButton}
+                  onClick={rightArrayHandler}
+                >
                   <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
                 </Button>
               </div>

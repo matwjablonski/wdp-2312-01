@@ -16,7 +16,6 @@ import { addToCompare } from '../../../redux/productsRedux';
 import { getCompareProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 
-
 const ProductBox = ({
   id,
   favorite,
@@ -118,7 +117,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
-  oldPrice: PropTypes.bool,
+  oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
   id: PropTypes.string,

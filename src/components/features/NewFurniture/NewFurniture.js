@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../functionality/Swipeable';
+import StickyBar from '../StickyBar/StickyBar';
+
 
 const NewFurniture = ({ categories, products }) => {
   const [activePage, setActivePage] = useState(0);
@@ -82,6 +84,7 @@ const NewFurniture = ({ categories, products }) => {
             ))}
           </div>
         </div>
+        <StickyBar />
       </div>
     </Swipeable>
   );

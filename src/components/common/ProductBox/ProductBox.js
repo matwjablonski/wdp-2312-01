@@ -26,7 +26,6 @@ const ProductBox = ({
   stars,
   oldPrice,
   isPromoted,
-
 }) => {
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
@@ -108,7 +107,10 @@ const ProductBox = ({
         <div className={styles.outlines}>
           {isPromoted && (
             <Button variant='outline'>
-              <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+              <FontAwesomeIcon
+                icon={faEye}
+                style={{ width: '13px', height: '13px' }}
+              ></FontAwesomeIcon>
             </Button>
           )}
           <Button
@@ -116,7 +118,7 @@ const ProductBox = ({
             variant='outline'
             onClick={handleAddToFavorite}
           >
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faHeart}> Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
@@ -154,7 +156,6 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   oldPrice: PropTypes.bool,
   isPromoted: PropTypes.bool,
-
 };
 
 export default ProductBox;

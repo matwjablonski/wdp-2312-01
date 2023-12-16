@@ -21,6 +21,7 @@
         margin: 0;
         list-style: none;
         background-color: $promoted-hotdeals-background;
+        padding: 0;
 
         li {
           display: inline-block;
@@ -173,4 +174,119 @@
 
 .fadeOut {
   animation: fadeOut 500ms ease-out;
+}
+
+@media (max-width: 1199px) {
+  .root {
+    .sliderWrapper {
+      height: 405px;
+      .arrays {
+        width: 100%;
+        display: flex;
+
+        .arrayButton {
+          height: 35.75px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .root {
+    .sliderWrapper {
+      height: 400px;
+      .arrays {
+        width: 100%;
+        display: flex;
+
+        .arrayButton {
+          height: 32.97px;
+        }
+      }
+      .photo {
+        .photoInner {
+          h2 {
+            font-size: 40px;
+          }
+
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .leftSlider {
+      display: none;
+    }
+    .rightSlider {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    .photo {
+      .photoInner {
+        h2 {
+          font-size: 36px;
+          text-align: center;
+        }
+
+        p {
+          font-size: 18px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .root {
+    .sliderWrapper {
+      .photo {
+        .photoInner {
+          h2 {
+            font-size: 32px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+          .shopButton {
+            height: 45px;
+            width: 110px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .root {
+    .sliderWrapper {
+      .photo {
+        .photoInner {
+          h2 {
+            font-size: 28px;
+            padding: 0 8px;
+          }
+
+          p {
+            font-size: 14px;
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+  }
 }

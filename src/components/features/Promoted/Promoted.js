@@ -112,7 +112,7 @@ const Promoted = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className={`col-4`}>
+          <div className={`col-4 ${styles.leftSlider}`}>
             <div className={styles.hotdealsBar}>
               <span>Hot deals</span>
               <div className={'col-auto ' + styles.dots}>
@@ -128,7 +128,7 @@ const Promoted = () => {
               )}
             </div>
           </div>
-          <div className={`col-8`}>
+          <div className={`col-8 ${styles.rightSlider}`}>
             <div className={styles.sliderWrapper}>
               <div
                 className={`${styles.photo} + ${
@@ -140,7 +140,7 @@ const Promoted = () => {
               >
                 <div className={styles.photoInner}>
                   <h2>
-                    <span>Indoor furniture</span>
+                    Indoor <span>furniture</span>
                   </h2>
                   <p>Save up to 50% of all furniture</p>
                   <Button variant='outline' className={styles.shopButton}>

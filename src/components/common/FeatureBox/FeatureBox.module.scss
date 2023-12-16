@@ -4,6 +4,8 @@
   border: 1px solid $featureBox-border;
   text-align: center;
   margin-top: 40px;
+  height: 75%;
+  margin-bottom: 15px;
 
   .iconWrapper {
     height: 60px;
@@ -75,5 +77,16 @@
     .content {
       color: $featureBox-active-content;
     }
+  }
+}
+
+
+@media (max-width: 500px) {
+  h5 {
+    font-size: 1.15rem;
+  }
+
+  p{
+    font-size: 0.95rem;
   }
 }

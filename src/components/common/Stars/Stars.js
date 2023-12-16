@@ -4,16 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './Stars.module.scss';
-import { useSelector } from 'react-redux';
-import {
-  addPersonalStars,
-  getProductPersonalStars,
-} from '../../../redux/productsRedux';
+import { addPersonalStars } from '../../../redux/productsRedux';
 import { useDispatch } from 'react-redux';
 
 const Stars = ({ stars, id, personalStars }) => {
-  // const personalStars = useSelector(state => getProductPersonalStars(state, id));
-
   const [displayStars, setDisplayStars] = useState(personalStars || stars);
   const [hoveredStars, setHoveredStars] = useState(0);
 
@@ -22,7 +16,6 @@ const Stars = ({ stars, id, personalStars }) => {
   const handleStarClick = value => {
     dispatch(addPersonalStars({ id, personalStars: value }));
     setDisplayStars(value);
-    console.log('User clicked star:', id, value);
   };
 
   const shouldBeFilled = i => {

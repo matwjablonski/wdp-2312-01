@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getAll } from '../../../redux/productsRedux';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const Promoted = () => {
   const promotedProducts = useSelector(getPromotedProducts);
@@ -21,9 +22,6 @@ const Promoted = () => {
   );
 
   const [leftActiveProductNumber, setLeftActiveProductNumber] = useState(0);
-  const [leftActiveProduct, setLeftActiveProduct] = useState(
-    promotedProducts[leftActiveProductNumber]
-  );
 
   const rightArrayHandler = e => {
     e.preventDefault();
@@ -42,29 +40,54 @@ const Promoted = () => {
       setRightActiveProduct(allProducts[newProductNumber]);
     }
   };
+  const intervalRef = useRef();
+  const timeoutRef = useRef();
+  const pauseAutoPlay = () => {
+    clearInterval(intervalRef.current);
+    clearTimeout(timeoutRef.current);
+
+    timeoutRef.current = setTimeout(() => {
+      setLeftActiveProductNumber(
+        prevNumber => (prevNumber + 1) % promotedProducts.length
+      );
+
+      intervalRef.current = setInterval(() => {
+        setLeftActiveProductNumber(
+          prevNumber => (prevNumber + 1) % promotedProducts.length
+        );
+      }, 3000);
+    }, 10000);
+  };
+
+  const handleDotClick = index => {
+    setLeftActiveProductNumber(index);
+    pauseAutoPlay();
+  };
 
   const dots = [];
   for (let i = 0; i < promotedCount; i++) {
     dots.push(
-      <li>
-        <a></a>
+      <li key={i}>
+        <a
+          className={leftActiveProductNumber === i ? styles.activeDot : ''}
+          onClick={() => handleDotClick(i)}
+        ></a>
       </li>
     );
   }
 
   useEffect(() => {
-    // Funkcja aktualizująca aktywny produkt
-    const updateProduct = () => {
-      const nextProductNumber = (leftActiveProductNumber + 1) % promotedProducts.length;
-      setLeftActiveProductNumber(nextProductNumber);
+    intervalRef.current = setInterval(() => {
+      setLeftActiveProductNumber(
+        prevNumber => (prevNumber + 1) % promotedProducts.length
+      );
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalRef.current);
+      clearTimeout(timeoutRef.current);
     };
-
-    // Ustawienie interwału
-    const interval = setInterval(updateProduct, 3000);
-
-    // Czyszczenie interwału przy demontażu komponentu
-    return () => clearInterval(interval);
-  }, [leftActiveProductNumber, promotedProducts.length]);
+  }, [promotedProducts.length]);
 
   return (
     <div className={styles.root}>

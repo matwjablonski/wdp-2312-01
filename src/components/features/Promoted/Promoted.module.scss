@@ -40,6 +40,9 @@
             }
           }
         }
+        .activeDot {
+          background-color: $button-hover-bg;
+        }
       }
     }
   }

@@ -23,21 +23,32 @@ const Promoted = () => {
 
   const [leftActiveProductNumber, setLeftActiveProductNumber] = useState(0);
 
+  const [leftFade, setLeftFade] = useState(true);
+  const [rightFade, setRightFade] = useState(true);
+
   const rightArrayHandler = e => {
     e.preventDefault();
     if (rightActiveProductNumber < allProducts.length - 1) {
+      setRightFade(false);
       const newProductNumber = rightActiveProductNumber + 1;
-      setRightActiveProductNumber(newProductNumber);
-      setRightActiveProduct(allProducts[newProductNumber]);
+      setTimeout(() => {
+        setRightActiveProductNumber(newProductNumber);
+        setRightActiveProduct(allProducts[newProductNumber]);
+        setRightFade(true);
+      }, 500);
     }
   };
 
   const leftArrayHandler = e => {
     e.preventDefault();
     if (rightActiveProductNumber > 0) {
+      setRightFade(false);
       const newProductNumber = rightActiveProductNumber - 1;
-      setRightActiveProductNumber(newProductNumber);
-      setRightActiveProduct(allProducts[newProductNumber]);
+      setTimeout(() => {
+        setRightActiveProductNumber(newProductNumber);
+        setRightActiveProduct(allProducts[newProductNumber]);
+        setRightFade(true);
+      }, 500);
     }
   };
   const intervalRef = useRef();
@@ -47,16 +58,16 @@ const Promoted = () => {
     clearTimeout(timeoutRef.current);
 
     timeoutRef.current = setTimeout(() => {
-      setLeftActiveProductNumber(
-        prevNumber => (prevNumber + 1) % promotedProducts.length
-      );
-
       intervalRef.current = setInterval(() => {
-        setLeftActiveProductNumber(
-          prevNumber => (prevNumber + 1) % promotedProducts.length
-        );
+        setLeftFade(false);
+        setTimeout(() => {
+          setLeftActiveProductNumber(
+            prevNumber => (prevNumber + 1) % promotedProducts.length
+          );
+          setLeftFade(true);
+        }, 500);
       }, 3000);
-    }, 10000);
+    }, 7000);
   };
 
   const handleDotClick = index => {
@@ -78,9 +89,13 @@ const Promoted = () => {
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      setLeftActiveProductNumber(
-        prevNumber => (prevNumber + 1) % promotedProducts.length
-      );
+      setLeftFade(false);
+      setTimeout(() => {
+        setLeftActiveProductNumber(
+          prevNumber => (prevNumber + 1) % promotedProducts.length
+        );
+        setLeftFade(true);
+      }, 500);
     }, 3000);
 
     return () => {
@@ -100,7 +115,7 @@ const Promoted = () => {
                 <ul>{dots}</ul>
               </div>
             </div>
-            <div>
+            <div className={`${leftFade ? styles.fadeIn : styles.fadeOut}`}>
               {promotedProducts.length > 0 && (
                 <ProductBox
                   {...promotedProducts[leftActiveProductNumber]}
@@ -112,7 +127,9 @@ const Promoted = () => {
           <div className={`col-8`}>
             <div className={styles.sliderWrapper}>
               <div
-                className={styles.photo}
+                className={`${styles.photo} + ${
+                  rightFade ? styles.fadeIn : styles.fadeOut
+                }`}
                 style={{
                   backgroundImage: `url("${process.env.PUBLIC_URL}/images/products//${rightActiveProduct.id}.jpg")`,
                 }}

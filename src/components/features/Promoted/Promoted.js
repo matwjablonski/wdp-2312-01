@@ -8,17 +8,21 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getAll } from '../../../redux/productsRedux';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Promoted = () => {
-  const promotedCount = 3; //currently for the visual layout of the page only
-  const promotedProducts = useSelector(getPromotedProducts); //currently for the visual layout of the page only
+  const promotedProducts = useSelector(getPromotedProducts);
+  const promotedCount = promotedProducts.length;
   const allProducts = useSelector(getAll);
-  console.log('allProducts', allProducts);
-  const id = 'aenean-ru-bristique-2'; //currently for the visual layout of the page only
 
   const [rightActiveProductNumber, setRightActiveProductNumber] = useState(0);
   const [rightActiveProduct, setRightActiveProduct] = useState(
     allProducts[rightActiveProductNumber]
+  );
+
+  const [leftActiveProductNumber, setLeftActiveProductNumber] = useState(0);
+  const [leftActiveProduct, setLeftActiveProduct] = useState(
+    promotedProducts[leftActiveProductNumber]
   );
 
   const rightArrayHandler = e => {
@@ -48,6 +52,20 @@ const Promoted = () => {
     );
   }
 
+  useEffect(() => {
+    // Funkcja aktualizująca aktywny produkt
+    const updateProduct = () => {
+      const nextProductNumber = (leftActiveProductNumber + 1) % promotedProducts.length;
+      setLeftActiveProductNumber(nextProductNumber);
+    };
+
+    // Ustawienie interwału
+    const interval = setInterval(updateProduct, 3000);
+
+    // Czyszczenie interwału przy demontażu komponentu
+    return () => clearInterval(interval);
+  }, [leftActiveProductNumber, promotedProducts.length]);
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -60,7 +78,12 @@ const Promoted = () => {
               </div>
             </div>
             <div>
-              <ProductBox {...promotedProducts[0]} isPromoted={true} />
+              {promotedProducts.length > 0 && (
+                <ProductBox
+                  {...promotedProducts[leftActiveProductNumber]}
+                  isPromoted={true}
+                />
+              )}
             </div>
           </div>
           <div className={`col-8`}>

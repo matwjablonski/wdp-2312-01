@@ -18,7 +18,6 @@ const initialState = {
       newFurniture: true,
       favorite: true,
       comparison: false,
-
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -287,6 +286,15 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  brands: [
+    { id: 1, name: 'brand-1' },
+    { id: 2, name: 'brand-2' },
+    { id: 3, name: 'brand-3' },
+    { id: 4, name: 'brand-4' },
+    { id: 5, name: 'brand-5' },
+    { id: 6, name: 'brand-6' },
+  ],
 };
 
 export default initialState;

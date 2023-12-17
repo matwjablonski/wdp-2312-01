@@ -5,8 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
-  margin-bottom: 2px;
-
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
@@ -47,7 +46,7 @@
       }
 
       &:hover {
-        color: $orange; 
+        color: $orange; // Change text color on hover
       }
 
       li {
@@ -68,12 +67,8 @@
 
     @media (max-width: 480px) {
       font-size: 12px;
+      width: 150px;
     } 
-  }
-
-  .flexColumn {
-    display: flex;
-    flex-direction: column;
   }
 
   .searchField {
@@ -86,20 +81,18 @@
       padding-left: 10px;
       font-size: 15px;
       outline: none;
-    
+
       &::placeholder {
         color: $form-text-color;
-          padding-right: 5px; 
-
       }
 
       &:hover::placeholder {
-        color: $orange; 
+        color: $orange; // Change placeholder color on hover
       }
 
       @media (max-width: 480px) {
         font-size: 12px;
-        width: 122px;
+        width: 120px;
       }
     }
 

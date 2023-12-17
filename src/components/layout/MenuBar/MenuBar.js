@@ -2,25 +2,32 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
+import ProductSelect from '../../features/ProductSelect/ProductSelect';
 
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
- 
+
 const MenuBar = ({ children }) => {
   const [showNav, setShowNav] = useState(false);
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className={styles.fluid}>
-          <div className='innerWrapperSearch'>
-            <div className={`${styles.inputsWidth} `}>
-              <button className={styles.navIcon} onClick={() => setShowNav(!showNav)}>
-                <a href='#'>
-                  <FontAwesomeIcon icon={faBars} />
-                </a>
-              </button>
-              <ProductSearch />
+          <div className={`${styles.inputsWidth}`}>
+            <button className={styles.navIcon} onClick={() => setShowNav(!showNav)}>
+              <a href='#'>
+                <FontAwesomeIcon icon={faBars} />
+              </a>
+            </button>
+            <div className={styles.flexColumn}>
+              <div>
+                <ProductSearch />
+              </div>
+              <div>
+                <ProductSelect />
+              </div>
+              
             </div>
           </div>
           <div className='innerWrapperMenu'>

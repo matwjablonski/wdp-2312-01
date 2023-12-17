@@ -3,7 +3,7 @@
 .root {
   box-shadow: 2px 3.464px 6px $menuBar-box-shadow;
   background-color: $menuBar-bg;
-
+  
   :global(.container)> :global(.row) {
     height: 84px;
   }
@@ -51,6 +51,15 @@
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right: 5px;
+  }
+
+  .flexColumn {
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 360px) {
+      flex-direction: column;
+    }
   }
 
   .menu {

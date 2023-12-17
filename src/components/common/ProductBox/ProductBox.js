@@ -63,7 +63,7 @@ const ProductBox = ({
 
         <div className={!isPromoted ? styles.buttons : styles.buttonsPromoted}>
           {!isPromoted && <Button variant='small'>Quick View</Button>}
-          <Button variant='small'>
+          <Button variant='small' className={styles.btnAddToCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>

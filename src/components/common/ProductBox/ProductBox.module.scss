@@ -162,5 +162,26 @@
         padding: 5px;
       }
     }
+
+    .photo {
+      .timeCounter {
+        width: 100%;
+        padding: 5px;
+
+        .circle {
+          .number {
+            font-size: 16px;
+          }
+          .timeUnit {
+            font-size: 8px;
+          }
+        }
+      }
+      .buttonsPromoted {
+        .btnAddToCart {
+          font-size: 10px;
+        }
+      }
+    }
   }
 }

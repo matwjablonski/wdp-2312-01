@@ -151,3 +151,16 @@
     display: flex;
   }
 }
+
+@media (max-width: 991px) {
+  .root {
+    .price {
+      .priceButton {
+        padding: 5px;
+      }
+      .oldPriceButton {
+        padding: 5px;
+      }
+    }
+  }
+}

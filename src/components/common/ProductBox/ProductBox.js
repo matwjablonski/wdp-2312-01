@@ -131,7 +131,12 @@ const ProductBox = ({
 
         <div className={styles.price}>
           {oldPrice && (
-            <Button noHover noBackground variant='small'>
+            <Button
+              noHover
+              noBackground
+              variant='small'
+              className={styles.oldPriceButton}
+            >
               $ {oldPrice}
             </Button>
           )}

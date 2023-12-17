@@ -194,31 +194,33 @@
 
 @media (max-width: 991px) {
   .root {
-    .sliderWrapper {
+    .rightSlider {
       height: 400px;
-      .arrays {
-        width: 100%;
-        display: flex;
+      .sliderWrapper {
+        height: 370px;
+        .arrays {
+          width: 100%;
+          display: flex;
 
-        .arrayButton {
-          height: 32.97px;
-        }
-      }
-      .photo {
-        .photoInner {
-          h2 {
-            font-size: 40px;
+          .arrayButton {
+            height: 30px;
           }
+        }
+        .photo {
+          .photoInner {
+            h2 {
+              font-size: 40px;
+            }
 
-          p {
-            font-size: 20px;
+            p {
+              font-size: 20px;
+            }
           }
         }
       }
     }
   }
 }
-
 @media (max-width: 768px) {
   .root {
     .leftSlider {
@@ -233,16 +235,18 @@
 
 @media (max-width: 576px) {
   .root {
-    .photo {
-      .photoInner {
-        h2 {
-          font-size: 36px;
-          text-align: center;
-        }
+    .rightSlider {
+      .photo {
+        .photoInner {
+          h2 {
+            font-size: 36px;
+            text-align: center;
+          }
 
-        p {
-          font-size: 18px;
-          text-align: center;
+          p {
+            font-size: 18px;
+            text-align: center;
+          }
         }
       }
     }
@@ -251,19 +255,21 @@
 
 @media (max-width: 480px) {
   .root {
-    .sliderWrapper {
-      .photo {
-        .photoInner {
-          h2 {
-            font-size: 32px;
-          }
+    .rightSlider {
+      .sliderWrapper {
+        .photo {
+          .photoInner {
+            h2 {
+              font-size: 32px;
+            }
 
-          p {
-            font-size: 16px;
-          }
-          .shopButton {
-            height: 45px;
-            width: 110px;
+            p {
+              font-size: 16px;
+            }
+            .shopButton {
+              height: 45px;
+              width: 110px;
+            }
           }
         }
       }
@@ -273,17 +279,19 @@
 
 @media (max-width: 390px) {
   .root {
-    .sliderWrapper {
-      .photo {
-        .photoInner {
-          h2 {
-            font-size: 28px;
-            padding: 0 8px;
-          }
+    .rightSlider {
+      .sliderWrapper {
+        .photo {
+          .photoInner {
+            h2 {
+              font-size: 28px;
+              padding: 0 8px;
+            }
 
-          p {
-            font-size: 14px;
-            padding: 0 8px;
+            p {
+              font-size: 14px;
+              padding: 0 8px;
+            }
           }
         }
       }

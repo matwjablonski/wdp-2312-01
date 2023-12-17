@@ -294,6 +294,15 @@ const initialState = {
     { id: 4, name: 'brand-4' },
     { id: 5, name: 'brand-5' },
     { id: 6, name: 'brand-6' },
+    { id: 7, name: 'brand-7' },
+    { id: 8, name: 'brand-8' },
+    { id: 9, name: 'brand-9' },
+    { id: 10, name: 'brand-10' },
+    { id: 11, name: 'brand-11' },
+    { id: 12, name: 'brand-12' },
+    { id: 13, name: 'brand-13' },
+    { id: 14, name: 'brand-14' },
+    { id: 15, name: 'brand-15' },
   ],
 };
 

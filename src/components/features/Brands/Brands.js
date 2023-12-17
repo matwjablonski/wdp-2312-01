@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
-  console.log('allBrands', allBrands);
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -23,7 +23,7 @@ const Brands = () => {
               <div
                 className={styles.photoBrand}
                 style={{
-                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/brands/brand-${brand.id}.jpg")`,
+                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/brands/${brand.name}.jpg")`,
                 }}
               ></div>
             </div>

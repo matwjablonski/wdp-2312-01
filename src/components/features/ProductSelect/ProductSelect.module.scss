@@ -41,12 +41,12 @@
 
       option {
         &:hover {
-          background-color: $orange;
+          background-color: $menuBar-active-bg;
         }
       }
 
       &:hover {
-        color: $orange; // Change text color on hover
+        color: $menuBar-active-bg; 
       }
 
       li {
@@ -56,7 +56,7 @@
         font-size: 14px;
 
         &:hover {
-          background-color: $orange;
+          background-color: $menuBar-active-bg;
         }
       }
       @media (max-width: 480px) {
@@ -87,7 +87,7 @@
       }
 
       &:hover::placeholder {
-        color: $orange; // Change placeholder color on hover
+        color: $menuBar-active-border; 
       }
 
       @media (max-width: 480px) {

@@ -6,8 +6,6 @@ import styles from './CompanyClaim.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-const cartCounter = 0;
-
 const CompanyClaim = () => (
   <div className={styles.root}>
     <div className='container'>

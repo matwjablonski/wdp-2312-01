@@ -6,7 +6,7 @@ import styles from './CompanyClaim.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-const cartCounter = '';
+const cartCounter = 0;
 
 const CompanyClaim = () => (
 

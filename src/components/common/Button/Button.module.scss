@@ -43,13 +43,13 @@
 }
 
 .active {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button;
+  color: $button-text;
 }
 
 .noBackground {
   background: none;
-  color: black;
-  border: solid 1px black;
+  color: $button;
+  border: solid 1px $button;
   text-decoration: line-through;
 }

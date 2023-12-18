@@ -5,7 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
-
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
@@ -59,7 +59,7 @@
           background-color: $menuBar-active-bg;
         }
       }
-      
+
       @media (max-width: 480px) {
         padding: 5px 30px 5px 24px;
       } 
@@ -67,12 +67,8 @@
 
     @media (max-width: 480px) {
       font-size: 12px;
+      width: 150px;
     } 
-  }
-
-  .flexColumn {
-    display: flex;
-    flex-direction: column;
   }
 
   .searchField {
@@ -85,19 +81,18 @@
       padding-left: 10px;
       font-size: 15px;
       outline: none;
-    
+
       &::placeholder {
         color: $form-text-color;
-          padding-right: 5px; 
       }
 
       &:hover::placeholder {
-        color: $menuBar-main-color; 
+        color: $menuBar-active-border; 
       }
 
       @media (max-width: 480px) {
         font-size: 12px;
-        width: 122px;
+        width: 120px;
       }
     }
 

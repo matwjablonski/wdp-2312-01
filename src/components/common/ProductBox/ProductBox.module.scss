@@ -10,6 +10,7 @@
     .photo {
       .buttons {
         visibility: visible;
+        transform: translateY(0);
       }
     }
     .actions {
@@ -48,6 +49,8 @@
       visibility: hidden;
       display: flex;
       justify-content: space-between;
+      transition: transform $animation-duration ease-in-out;
+      transform: translateY(100%);
     }
   }
 
@@ -94,8 +97,8 @@
 
     .outlines {
       .active {
-        background-color: $orange;
-        color: #fff;
+        background-color: $product-box-button-hover;
+        color: $productBox-sale-text;
       }
     }
   }

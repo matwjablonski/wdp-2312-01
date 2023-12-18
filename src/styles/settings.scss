@@ -55,6 +55,7 @@ $button-text: $white;
 $button-hover: $white;
 $button-hover-bg: $orange;
 
+
 //FeatureBox
 $featureBox-border: $veryLightGrey;
 $featureBox-text: $veryDarkGrey;
@@ -100,5 +101,10 @@ $rotate-transform: 0deg;
 $scale-transform: 1.2;
 
 %hover-effect {
-    transition: background-color $background-color-transition, color $text-color-transition, transform $animation-duration, border-bottom $animation-duration, border-color $animation-duration, visibility $animation-duration;
+    transition: background-color $background-color-transition,
+    color $text-color-transition,
+    transform $animation-duration,
+    border-bottom $animation-duration,
+    border-color $animation-duration,
+    visibility $animation-duration;
 }

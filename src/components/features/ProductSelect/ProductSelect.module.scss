@@ -59,11 +59,11 @@
           background-color: $menuBar-active-bg;
         }
       }
+
       @media (max-width: 480px) {
         padding: 5px 30px 5px 24px;
       } 
     }
-
 
     @media (max-width: 480px) {
       font-size: 12px;
@@ -102,6 +102,5 @@
       outline: none;
     }
   }
-
 }
 

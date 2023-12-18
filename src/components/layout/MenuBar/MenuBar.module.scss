@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $white;
+    background-color: $menuBar-border;
     border: none;
     svg {
       color: $menuBar-active-border;
@@ -75,7 +75,7 @@
         list-style: none;
         display: flex;
         align-items: stretch;
-        margin: 0;
+        margin: 0;ssss
 
       }
     }
@@ -88,14 +88,14 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      border-top: 4px solid $white;
+      border-top: 4px solid $menuBar-border;
       font-weight: 500;
       letter-spacing: 1px;
 
       &:hover,
       &.active {
         background-color: $menuBar-active-border;
-        color: $white;
+        color: $menuBar-border;
         border-color: $menuBar-active-border;
       }
 

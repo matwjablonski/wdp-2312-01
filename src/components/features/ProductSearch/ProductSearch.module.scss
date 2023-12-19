@@ -14,10 +14,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-||||||||| 679070c
-=========
     font-size: 14px;
->>>>>>>>> Temporary merge branch 2
 
     .dropdown {
       display: none;
@@ -37,17 +34,12 @@
       &:last-child {
         border-bottom: 0px;
       }
-||||||||| 679070c
-      left: 10px;
-      z-index: 0;
-=========
-      left: 10px;
-      z-index: 0;
+      // left: 10px;
+      // z-index: 0;
 
       @media (max-width: 480px) {
         padding-right: 2px;
       }
->>>>>>>>> Temporary merge branch 2
     }
 
     ul {
@@ -81,8 +73,6 @@
       position: absolute;
       right: 10px;
       z-index: 0;
-||||||||| 679070c
-=========
       outline: none;
 
       option {
@@ -109,7 +99,6 @@
       @media (max-width: 480px) {
         padding: 5px 30px 5px 24px;
       }
->>>>>>>>> Temporary merge branch 2
     }
 
     @media (max-width: 480px) {
@@ -135,6 +124,16 @@
 
       &::placeholder {
         color: $form-text-color;
+          padding-right: 5px;
+      }
+
+      &:hover::placeholder {
+        color: $menuBar-main-color;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+        width: 122px;
       }
     }
 
@@ -144,6 +143,5 @@
       outline: none;
     }
   }
-}
 }
 

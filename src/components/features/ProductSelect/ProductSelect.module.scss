@@ -5,20 +5,20 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
     align-items: center;
     position: relative;
-    font-size: 15px;
-    color: $form-text-color;
-    
+    font-size: 14px;
+
     .icon:first-child {
       color: $productSearch-icon;
       position: absolute;
       left: 10px;
       z-index: 0;
-      
+
       @media (max-width: 480px) {
         padding-right: 2px;
       }
@@ -31,7 +31,7 @@
     }
 
     select {
-      -webkit-appearance: none; // needed for chrome browser
+      -webkit-appearance: none;
       border: 0;
       background-color: transparent;
       padding: 5px 30px 5px 35px;
@@ -46,7 +46,6 @@
       }
 
       &:hover {
-
         color: $menuBar-active-bg; 
       }
 
@@ -60,7 +59,7 @@
           background-color: $menuBar-active-bg;
         }
       }
-      
+
       @media (max-width: 480px) {
         padding: 5px 30px 5px 24px;
       } 
@@ -68,12 +67,8 @@
 
     @media (max-width: 480px) {
       font-size: 12px;
+      width: 150px;
     } 
-  }
-
-  .flexColumn {
-    display: flex;
-    flex-direction: column;
   }
 
   .searchField {
@@ -86,23 +81,13 @@
       padding-left: 10px;
       font-size: 15px;
       outline: none;
-    
+
       &::placeholder {
         color: $form-text-color;
-          padding-right: 5px; 
       }
 
       &:hover::placeholder {
-        color: $menuBar-main-color; 
-      }
-
-      @media (max-width: 480px) {
-        font-size: 12px;
-        width: 122px;
-      }
-
-      &:hover::placeholder {
-        color: $menuBar-main-color; 
+        color: $menuBar-active-border; 
       }
 
       @media (max-width: 480px) {

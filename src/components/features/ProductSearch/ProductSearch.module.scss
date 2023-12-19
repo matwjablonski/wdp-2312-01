@@ -5,6 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
+
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
@@ -18,25 +19,11 @@
     .dropdown {
       display: none;
       background-color: $productSearch-icon;
-    font-size: 15px;
-    color: $form-text-color;
-
-    .icon:first-child {
-      color: $productSearch-icon;
       position: absolute;
-      top: 120%;
+      top: ;
       left: 0;
       border: 1px solid $form-border-color;
       width: 100%;
-
-      @media (max-width: 418px) {
-        top: 100%;
-      left: 10px;
-      z-index: 0;
-
-      @media (max-width: 480px) {
-        padding-right: 2px;
-      }
 
       li {
         display: block;
@@ -82,42 +69,6 @@
       z-index: 0;
     }
 
-    select {
-      -webkit-appearance: none; // needed for chrome browser
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
-      outline: none;
-
-      option {
-        &:hover {
-          background-color: $menuBar-active-bg;
-        }
-      }
-
-      &:hover {
-
-        color: $menuBar-active-bg;
-      }
-
-      li {
-        display: none;
-        cursor: grab;
-        font-weight: 400;
-        font-size: 14px;
-
-        &:hover {
-          background-color: $menuBar-active-bg;
-        }
-      }
-
-      @media (max-width: 480px) {
-        padding: 5px 30px 5px 24px;
-      }
-    }
-
     @media (max-width: 480px) {
       font-size: 12px;
     }
@@ -152,15 +103,6 @@
         font-size: 12px;
         width: 122px;
       }
-
-      &:hover::placeholder {
-        color: $menuBar-main-color;
-      }
-
-      @media (max-width: 480px) {
-        font-size: 12px;
-        width: 120px;
-      }
     }
 
     button {
@@ -170,5 +112,4 @@
     }
   }
 }
-}
-}
+

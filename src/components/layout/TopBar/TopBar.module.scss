@@ -15,6 +15,7 @@
       a {
         color: $header-text;
         font-size: 13px;
+        @extend %hover-effect;
 
         &:hover {
           color: $header-hover;

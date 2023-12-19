@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
-// import ProductSelect from '../../features/ProductSelect/ProductSelect';
+import ProductSelect from '../../features/ProductSelect/ProductSelect';
 
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,9 +24,9 @@ const MenuBar = ({ children }) => {
               <div>
                 <ProductSearch />
               </div>
-              {/* <div>
+              <div>
                 <ProductSelect />
-              </div> */}
+              </div>
             </div>
           </div>
           <div className='innerWrapperMenu'>

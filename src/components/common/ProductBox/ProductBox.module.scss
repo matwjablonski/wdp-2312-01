@@ -4,11 +4,13 @@
   background-color: $productBox-background;
   border: 1px solid $productBox-border;
   margin-bottom: 2rem;
+  @extend %hover-effect;
 
   &:hover {
     .photo {
       .buttons {
         visibility: visible;
+        transform: translateY(0);
       }
     }
     .actions {
@@ -47,6 +49,8 @@
       visibility: hidden;
       display: flex;
       justify-content: space-between;
+      transition: transform $animation-duration ease-in-out;
+      transform: translateY(100%);
     }
   }
 
@@ -93,8 +97,8 @@
 
     .outlines {
       .active {
-        background-color: $orange;
-        color: #fff;
+        background-color: $product-box-button-hover;
+        color: $productBox-sale-text;
       }
     }
   }

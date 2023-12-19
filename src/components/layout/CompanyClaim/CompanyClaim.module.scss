@@ -66,6 +66,7 @@
 
       &:hover {
         .cartIcon {
+          @extend %hover-effect;
           background-color: lighten($companyClaim-cartIcon, 10%);
         }
       }

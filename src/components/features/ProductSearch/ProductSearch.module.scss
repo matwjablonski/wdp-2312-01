@@ -20,7 +20,7 @@
       display: none;
       background-color: $productSearch-icon;
       position: absolute;
-      top: 100%;
+      top: 120%;
       left: 0;
       border: 1px solid $form-border-color;
       width: 100%;
@@ -33,6 +33,10 @@
 
       &:last-child {
         border-bottom: 0px;
+      }
+
+      @media (max-width: 418px) {
+        top: 100%;
       }
     }
 

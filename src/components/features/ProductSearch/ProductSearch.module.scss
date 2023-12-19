@@ -19,11 +19,15 @@
     .dropdown {
       display: none;
       background-color: $productSearch-icon;
-      margin-top: 10px;
       position: absolute;
+      top: 120%;
       left: 0;
       border: 1px solid $form-border-color;
       width: 100%;
+
+      @media (max-width: 418px) {
+        top: 100%;
+      }
 
       li {
         display: block;
@@ -33,12 +37,6 @@
 
       &:last-child {
         border-bottom: 0px;
-      }
-      // left: 10px;
-      // z-index: 0;
-
-      @media (max-width: 480px) {
-        padding-right: 2px;
       }
     }
 
@@ -73,32 +71,6 @@
       position: absolute;
       right: 10px;
       z-index: 0;
-      outline: none;
-
-      option {
-        &:hover {
-          background-color: $menuBar-active-bg;
-        }
-      }
-
-      &:hover {
-        color: $menuBar-active-bg;
-      }
-
-      li {
-        display: none;
-        cursor: grab;
-        font-weight: 400;
-        font-size: 14px;
-
-        &:hover {
-          background-color: $menuBar-active-bg;
-        }
-      }
-
-      @media (max-width: 480px) {
-        padding: 5px 30px 5px 24px;
-      }
     }
 
     @media (max-width: 480px) {
@@ -144,4 +116,3 @@
     }
   }
 }
-

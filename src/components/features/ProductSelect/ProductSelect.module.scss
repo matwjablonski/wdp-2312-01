@@ -5,7 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
-
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
@@ -46,7 +46,7 @@
       }
 
       &:hover {
-        color: $menuBar-active-bg;
+        color: $menuBar-active-bg; 
       }
 
       li {
@@ -62,13 +62,13 @@
 
       @media (max-width: 480px) {
         padding: 5px 30px 5px 24px;
-      }
+      } 
     }
 
     @media (max-width: 480px) {
       font-size: 12px;
       width: 150px;
-    }
+    } 
   }
 
   .searchField {
@@ -87,7 +87,7 @@
       }
 
       &:hover::placeholder {
-        color: $menuBar-active-border;
+        color: $menuBar-active-border; 
       }
 
       @media (max-width: 480px) {

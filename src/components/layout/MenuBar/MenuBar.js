@@ -27,6 +27,7 @@ const MenuBar = ({ children }) => {
               <div>
                 <ProductSelect />
               </div>
+              
             </div>
           </div>
           <div className='innerWrapperMenu'>

@@ -5,73 +5,38 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
-
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
     align-items: center;
     position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
     font-size: 14px;
 
-    .dropdown {
-      display: none;
-      background-color: $productSearch-icon;
-      margin-top: 10px;
+    .icon:first-child {
+      color: $productSearch-icon;
       position: absolute;
-      left: 0;
-      border: 1px solid $form-border-color;
-      width: 100%;
-
-      li {
-        display: block;
-        padding: 5px;
-        border-bottom: 1px solid $form-border-color;
-      }
-
-      &:last-child {
-        border-bottom: 0px;
-        left: 10px;
-        z-index: 0;
+      left: 10px;
+      z-index: 0;
 
       @media (max-width: 480px) {
         padding-right: 2px;
       }
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
+    .icon:last-child {
+      position: absolute;
+      right: 10px;
+      z-index: 0;
     }
 
-    .categoryMenu {
+    select {
       -webkit-appearance: none;
       border: 0;
       background-color: transparent;
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
-      }
-
-      &:hover .dropdown {
-      display: block;
-      }
-
-      .icon:first-child {
-        color: $productSearch-icon;
-        position: absolute;
-        left: 10px;
-        z-index: 0;
-    }
-
-    .icon:last-child {
-      position: absolute;
-      right: 10px;
-      z-index: 0;
       outline: none;
 
       option {
@@ -94,7 +59,7 @@
           background-color: $menuBar-active-bg;
         }
       }
-      
+
       @media (max-width: 480px) {
         padding: 5px 30px 5px 24px;
       } 
@@ -102,12 +67,8 @@
 
     @media (max-width: 480px) {
       font-size: 12px;
+      width: 150px;
     } 
-  }
-
-  .flexColumn {
-    display: flex;
-    flex-direction: column;
   }
 
   .searchField {
@@ -120,19 +81,18 @@
       padding-left: 10px;
       font-size: 15px;
       outline: none;
-    
+
       &::placeholder {
         color: $form-text-color;
-          padding-right: 5px; 
       }
 
       &:hover::placeholder {
-        color: $menuBar-main-color; 
+        color: $menuBar-active-border; 
       }
 
       @media (max-width: 480px) {
         font-size: 12px;
-        width: 122px;
+        width: 120px;
       }
     }
 

@@ -28,6 +28,7 @@
           cursor: pointer;
 
           a {
+            @extend %hover-effect;
             display: block;
             width: 13px;
             height: 13px;
@@ -99,6 +100,7 @@
         }
 
         .shopButton {
+          @extend %hover-effect;
           position: absolute;
           right: 50%;
           bottom: 0%;
@@ -113,7 +115,6 @@
           border-radius: 3px;
           text-transform: uppercase;
           font-weight: 600;
-          transition: 0.3s;
 
           &:hover {
             background: $button-hover-bg;
@@ -129,6 +130,7 @@
       display: flex;
 
       .arrayButton {
+        @extend %hover-effect;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -138,7 +140,6 @@
         color: $button-text;
         font-size: 16px;
         border: 1px solid $promoted-arrays-background;
-        transition: 0.3s;
 
         &:hover {
           background-color: $button-hover-bg;

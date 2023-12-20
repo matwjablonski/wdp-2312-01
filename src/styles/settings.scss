@@ -94,6 +94,23 @@ $form-border-color: $veryDarkGrey;
 $form-text-color: $veryDarkGrey;
 $productSearch-icon: $orange;
 
+//time variables for each property - can be modify
+$animation-duration: 250ms;
+$background-color-transition: $animation-duration;
+$text-color-transition: $animation-duration;
+$transform-transition: $animation-duration;
+
+//transform variables - dafault values
+$rotate-transform: 0deg;
+$scale-transform: 1.2;
+
+%hover-effect {
+  transition: background-color $background-color-transition,
+    color $text-color-transition, transform $animation-duration,
+    border-bottom $animation-duration, border-color $animation-duration,
+    visibility $animation-duration;
+}
+
 //Promoted
 $promoted-time-counter-text-color: $white;
 $promoted-time-counter-background: $darkGray;

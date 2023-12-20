@@ -4,11 +4,13 @@
   background-color: $productBox-background;
   border: 1px solid $productBox-border;
   margin-bottom: 2rem;
+  @extend %hover-effect;
 
   &:hover {
     .photo {
       .buttons {
         visibility: visible;
+        transform: translateY(0);
       }
     }
     .actions {
@@ -31,15 +33,17 @@
     }
     overflow: hidden;
     align-items: flex-end;
+    transition: 1s;
 
     &:hover {
       .buttonsPromoted {
-        visibility: visible;
+        @extend %hover-effect;
+        transform: translate(-50%, -50%);
+        top: 50%;
       }
       .timeCounter {
-        .circle {
-          display: flex;
-        }
+        @extend %hover-effect;
+        transform: translateY(0);
       }
     }
 
@@ -55,16 +59,16 @@
     }
 
     .buttons {
-      visibility: hidden;
       display: flex;
       justify-content: space-between;
+      transition: transform $animation-duration ease-in-out;
+      transform: translateY(100%);
     }
     .buttonsPromoted {
-      visibility: hidden;
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      top: -100%;
+      transform: translate(-50%, 200px);
     }
 
     .timeCounter {
@@ -75,9 +79,10 @@
       justify-content: space-around;
       width: 100%;
       padding: 5px;
+      transform: translateY(200px);
 
       .circle {
-        display: none;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -142,8 +147,8 @@
 
     .outlines {
       .active {
-        background-color: $product-box-button-active-background;
-        color: $product-box-button-active-color;
+        background-color: $product-box-button-hover;
+        color: $productBox-sale-text;
       }
     }
   }

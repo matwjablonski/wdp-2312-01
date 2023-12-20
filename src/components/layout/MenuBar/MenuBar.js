@@ -23,7 +23,7 @@ const MenuBar = ({ children }) => {
             <div className={styles.flexColumn}>
               <div>
                 <ProductSearch />
-              </div>          
+              </div>
             </div>
           </div>
           <div className='innerWrapperMenu'>

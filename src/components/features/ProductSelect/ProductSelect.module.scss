@@ -5,66 +5,23 @@
   display: inline-flex;
   height: 45px;
   color: $form-text-color;
-
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
     align-items: center;
     position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
     font-size: 14px;
 
-    .dropdown {
-      display: none;
-      background-color: $productSearch-icon;
+    .icon:first-child {
+      color: $productSearch-icon;
       position: absolute;
-      top: 120%;
-      left: 0;
-      border: 1px solid $form-border-color;
-      width: 100%;
+      left: 10px;
+      z-index: 0;
 
-      li {
-        display: block;
-        padding: 5px;
-        border-bottom: 1px solid $form-border-color;
+      @media (max-width: 480px) {
+        padding-right: 2px;
       }
-
-      &:last-child {
-        border-bottom: 0px;
-      }
-
-      @media (max-width: 418px) {
-        top: 100%;
-      }
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-    }
-
-    .categoryMenu {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
-      }
-
-      &:hover .dropdown {
-      display: block;
-      }
-
-      .icon:first-child {
-        color: $productSearch-icon;
-        position: absolute;
-        left: 10px;
-        z-index: 0;
     }
 
     .icon:last-child {
@@ -73,14 +30,45 @@
       z-index: 0;
     }
 
+    select {
+      -webkit-appearance: none;
+      border: 0;
+      background-color: transparent;
+      padding: 5px 30px 5px 35px;
+      position: relative;
+      z-index: 1;
+      outline: none;
+
+      option {
+        &:hover {
+          background-color: $menuBar-active-bg;
+        }
+      }
+
+      &:hover {
+        color: $menuBar-active-bg; 
+      }
+
+      li {
+        display: none;
+        cursor: grab;
+        font-weight: 400;
+        font-size: 14px;
+
+        &:hover {
+          background-color: $menuBar-active-bg;
+        }
+      }
+
+      @media (max-width: 480px) {
+        padding: 5px 30px 5px 24px;
+      } 
+    }
+
     @media (max-width: 480px) {
       font-size: 12px;
-    }
-  }
-
-  .flexColumn {
-    display: flex;
-    flex-direction: column;
+      width: 150px;
+    } 
   }
 
   .searchField {
@@ -96,16 +84,15 @@
 
       &::placeholder {
         color: $form-text-color;
-          padding-right: 5px;
       }
 
       &:hover::placeholder {
-        color: $menuBar-main-color;
+        color: $menuBar-active-border; 
       }
 
       @media (max-width: 480px) {
         font-size: 12px;
-        width: 122px;
+        width: 120px;
       }
     }
 

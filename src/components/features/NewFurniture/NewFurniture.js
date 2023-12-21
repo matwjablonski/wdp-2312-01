@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import StickyBar from '../StickyBar/StickyBar';
 
 class NewFurniture extends React.Component {
   state = {
@@ -69,11 +70,12 @@ class NewFurniture extends React.Component {
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div key={item.id} className='col-sm-6 col-md-4 col-lg-3'>
-                <ProductBox {...item} />
+                <ProductBox {...item} isPromoted={false} />
               </div>
             ))}
           </div>
         </div>
+        <StickyBar />
       </div>
     );
   }

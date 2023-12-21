@@ -10,7 +10,8 @@
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
-
+  @extend %hover-effect;
+  
   &:not(.noHover):hover {
     color: $button-hover !important;
     background-color: $button-hover-bg;
@@ -33,6 +34,7 @@
   color: $button;
   font-size: 13px;
   line-height: 22px;
+  @extend %hover-effect;
 
   &:not(.noHover):hover {
     background-color: $button;
@@ -41,14 +43,13 @@
 }
 
 .active {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button;
+  color: $button-text;
 }
-
 
 .noBackground {
   background: none;
-  color: black;
-  border: solid 1px black;
+  color: $button;
+  border: solid 1px $button;
   text-decoration: line-through;
 }

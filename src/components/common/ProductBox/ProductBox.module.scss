@@ -33,6 +33,19 @@
     }
     overflow: hidden;
     align-items: flex-end;
+    transition: 1s;
+
+    &:hover {
+      .buttonsPromoted {
+        @extend %hover-effect;
+        transform: translate(-50%, -50%);
+        top: 50%;
+      }
+      .timeCounter {
+        @extend %hover-effect;
+        transform: translateY(0);
+      }
+    }
 
     .sale {
       position: absolute;
@@ -46,11 +59,48 @@
     }
 
     .buttons {
-      visibility: hidden;
       display: flex;
       justify-content: space-between;
       transition: transform $animation-duration ease-in-out;
       transform: translateY(100%);
+    }
+    .buttonsPromoted {
+      position: absolute;
+      left: 50%;
+      top: -100%;
+      transform: translate(-50%, 200px);
+    }
+
+    .timeCounter {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding: 5px;
+      transform: translateY(200px);
+
+      .circle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 22%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background: $promoted-time-counter-background;
+        color: $promoted-time-counter-text-color;
+        margin-bottom: 2%;
+
+        .number {
+          font-size: 24px;
+        }
+        .timeUnit {
+          text-transform: uppercase;
+          font-size: 12px;
+        }
+      }
     }
   }
 

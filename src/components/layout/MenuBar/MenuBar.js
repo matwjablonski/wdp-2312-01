@@ -10,21 +10,22 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const MenuBar = ({ children }) => {
   const [showNav, setShowNav] = useState(false);
+
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className={styles.fluid}>
           <div className={`${styles.inputsWidth}`}>
+            <div className={styles.flexColumn}>
+              <div>
+                <ProductSearch />
+              </div>
+            </div>
             <button className={styles.navIcon} onClick={() => setShowNav(!showNav)}>
               <a href='#'>
                 <FontAwesomeIcon icon={faBars} />
               </a>
             </button>
-            <div className={styles.flexColumn}>
-              <div>
-                <ProductSearch />
-              </div>          
-            </div>
           </div>
           <div className='innerWrapperMenu'>
             <div className={'' + styles.menu}>

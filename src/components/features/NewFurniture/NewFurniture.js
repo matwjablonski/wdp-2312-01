@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import Swipeable from '../../swipeable/Swipeable';
+import Swipeable from '../../Swipeable/Swipeable';
 import StickyBar from '../StickyBar/StickyBar';
 
 const NewFurniture = ({ categories, products }) => {

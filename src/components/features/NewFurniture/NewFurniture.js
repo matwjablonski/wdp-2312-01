@@ -1,29 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../../Swipeable/Swipeable';
 import StickyBar from '../StickyBar/StickyBar';
 
-class NewFurniture extends React.Component {
-  state = {
-    activePage: 0,
-    activeCategory: 'bed',
+const NewFurniture = ({ categories, products }) => {
+  const [activePage, setActivePage] = useState(0);
+  const [activeCategory, setActiveCategory] = useState('bed');
+
+  const handlePageChange = newPage => {
+    setActivePage(newPage);
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
-  }
-
-  handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
-  }
+  const handleCategoryChange = newCategory => {
+    setActiveCategory(newCategory);
+  };
 
   render() {
     const { categories, products, screen } = this.props;
     const { activeCategory, activePage } = this.state;
+  const handleSwipeLeft = () => {
+    if (activePage > 0) {
+      setActivePage(activePage - 1);
+    }
+  };
 
-    const categoryProducts = products.filter(item => item.category === activeCategory);
+  const handleSwipeRight = () => {
     const pagesCount = Math.ceil(categoryProducts.length / 8);
     let classRWD = screen.viewport === 'desktop' ? 'col-lg-3' : (screen.viewport === 'tablet' ? 'col-md-4' : 'col-sm-6');
 
@@ -39,9 +42,30 @@ class NewFurniture extends React.Component {
           </a>
         </li>
       );
+    if (activePage < pagesCount - 1) {
+      setActivePage(activePage + 1);
     }
+  };
 
-    return (
+  const categoryProducts = products.filter(item => item.category === activeCategory);
+  const pagesCount = Math.ceil(categoryProducts.length / 8);
+
+  const dots = [];
+  for (let i = 0; i < pagesCount; i++) {
+    dots.push(
+      <li key={i}>
+        <a
+          onClick={() => handlePageChange(i)}
+          className={i === activePage ? styles.active : ''}
+        >
+          Page {i + 1}
+        </a>
+      </li>
+    );
+  }
+
+  return (
+    <Swipeable leftAction={handleSwipeLeft} rightAction={handleSwipeRight}>
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
@@ -54,8 +78,8 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
+                        className={item.id === activeCategory ? styles.active : ''}
+                        onClick={() => handleCategoryChange(item.id)}
                       >
                         {item.name}
                       </a>
@@ -78,9 +102,9 @@ class NewFurniture extends React.Component {
         </div>
         <StickyBar />
       </div>
-    );
-  }
-}
+    </Swipeable>
+  );
+};
 
 NewFurniture.propTypes = {
   screen: PropTypes.array,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
@@ -21,6 +21,7 @@ const ProductBox = ({
   promo,
   stars,
   oldPrice,
+  isPromoted,
   personalStars,
 }) => {
   const dispatch = useDispatch();
@@ -55,13 +56,34 @@ const ProductBox = ({
         }}
         className={styles.photo}
       >
-        {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+        {!isPromoted && promo && <div className={styles.sale}>{promo}</div>}
+
+        <div className={!isPromoted ? styles.buttons : styles.buttonsPromoted}>
+          {!isPromoted && <Button variant='small'>Quick View</Button>}
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
+        {isPromoted && (
+          <div className={styles.timeCounter}>
+            <div className={styles.circle}>
+              <span className={styles.number}>25</span>
+              <span className={styles.timeUnit}>days</span>
+            </div>
+            <div className={styles.circle}>
+              <span className={styles.number}>10</span>
+              <span className={styles.timeUnit}>hours</span>
+            </div>
+            <div className={styles.circle}>
+              <span className={styles.number}>45</span>
+              <span className={styles.timeUnit}>min</span>
+            </div>
+            <div className={styles.circle}>
+              <span className={styles.number}>30</span>
+              <span className={styles.timeUnit}>secs</span>
+            </div>
+          </div>
+        )}
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
@@ -70,6 +92,11 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
+          {isPromoted && (
+            <Button variant='outline'>
+              <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+            </Button>
+          )}
           <Button
             className={favorite ? styles.active : undefined}
             variant='outline'
@@ -85,6 +112,7 @@ const ProductBox = ({
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
+
         <div className={styles.price}>
           {oldPrice && (
             <Button noHover noBackground variant='small'>
@@ -110,6 +138,7 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   comparison: PropTypes.bool,
   favorite: PropTypes.bool,
+  isPromoted: PropTypes.bool,
   personalStars: PropTypes.number,
 };
 

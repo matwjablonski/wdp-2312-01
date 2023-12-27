@@ -41,22 +41,27 @@
           display: inline-block;
           margin: 0 0.5rem;
           font-weight: 600;
-
+          
           a {
             color: $newFurniture-menu-text;
             position: relative;
             text-decoration: none;
             font-size: 18px;
             display: block;
+           
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid transparent;
+              @extend %hover-effect;
+            }
 
             &.active,
             &:hover {
               &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
                 border-bottom: 4px solid $newFurniture-decorLine-active;
               }
             }
@@ -80,7 +85,7 @@
         li {
           display: inline-block;
           margin-left: 0.5rem;
-
+          
           a {
             display: block;
             width: 13px;
@@ -88,14 +93,17 @@
             border-radius: 6px;
             background-color: $newFurniture-link-background;
             font-size: 0;
+            @extend %hover-effect;
 
             &.active,
             &:hover {
               background-color: $newFurniture-hover-bg;
             }
           }
+          
         }
       }
     }
   }
 }
+

@@ -20,13 +20,10 @@ const NewFurniture = ({ categories, products }) => {
   render() {
     const { categories, products, screen } = this.props;
     const { activeCategory, activePage } = this.state;
-  const handleSwipeLeft = () => {
-    if (activePage > 0) {
+    const handleSwipeRight = () => {
+      if (activePage > 0) {
       setActivePage(activePage - 1);
     }
-  };
-
-  const handleSwipeRight = () => {
     const pagesCount = Math.ceil(categoryProducts.length / 8);
     let classRWD = screen.viewport === 'desktop' ? 'col-lg-3' : (screen.viewport === 'tablet' ? 'col-md-4' : 'col-sm-6');
 

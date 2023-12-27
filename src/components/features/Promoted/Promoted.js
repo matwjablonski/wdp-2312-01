@@ -10,7 +10,7 @@ import { getAll } from '../../../redux/productsRedux';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
-import Swipeable from '../../functionality/Swipeable';
+import Swipeable from '../../Swipeable/Swipeable';
 
 const Promoted = () => {
   const promotedProducts = useSelector(getPromotedProducts);

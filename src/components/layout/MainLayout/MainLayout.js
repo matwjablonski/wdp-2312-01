@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const MainLayout = ({ children }) => {
-  const [viewport, setViewport] = useState('')
+  const [viewport, setViewport] = useState('');
   const [elements, setElements] = useState('');
 
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const MainLayout = ({ children }) => {
       setViewport('mobile');
       setElements(2);
     }
-  }
+  };
 
   useEffect(() => {
     rwd();
@@ -43,7 +43,7 @@ const MainLayout = ({ children }) => {
       {children}
       <Footer />
     </div>
-  )
+  );
 };
 
 MainLayout.propTypes = {

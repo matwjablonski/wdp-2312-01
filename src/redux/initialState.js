@@ -18,6 +18,7 @@ const initialState = {
       favorite: true,
       comparison: false,
       promoted: false,
+      inGallery: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -31,6 +32,7 @@ const initialState = {
       favorite: true,
       comparison: false,
       promoted: true,
+      inGallery: false,
     },
     {
       id: 'aenean-ru-bristique-3',

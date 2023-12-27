@@ -1,0 +1,168 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .panelBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    & > * {
+      border-bottom: 4px solid $newFurniture-panelBar-border;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $newFurniture-title;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $newFurniture-decorLine;
+      }
+    }
+}
+.menu {
+position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+//   word-wrap: break-word;
+  background-color: #ffffff;
+//   background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  text-align: center;
+
+  .menuHeader {
+    padding: 0;
+    justify-content: center;
+    display: flex;
+  }
+
+  .navi {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-right: -0.625rem;
+    margin-left: -0.625rem;
+
+    .navItem {
+        flex-grow: 1;
+        text-align: center;
+        margin: 0;
+      }
+      
+      .navLink {
+        text-transform: uppercase;
+        display: block;
+        padding: 10px 25px;
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        @extend %hover-effect;
+
+        &:hover {
+            border-top: 3px solid $orange;
+            color: $orange;
+            background-color: transparent;
+        }
+      }
+  }
+}
+
+
+
+
+
+
+.sliderWrapper {
+    height: 450px;
+    width: 100%;
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+      }
+
+      .photoInner {
+        position: absolute;
+        width: 100%;
+        top: 30%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $promoted-slider-text-color;
+        padding-left: 30px;
+        
+
+        h2 {
+          font-size: 46px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: grey;
+          letter-spacing: 2px;
+        }
+
+        span {
+            padding-right: 10px;
+            font-size: 18px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: black;
+          letter-spacing: 2px;
+        }
+
+        p {
+          font-size: 46px;
+          color: $orange;
+          font-weight: 600;
+          letter-spacing: 2px;
+        }
+
+        .shopButton {
+            @extend %hover-effect;
+            position: absolute;
+            top: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            width: 135px;
+            background: grey;
+            border: none;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: white;
+  
+            &:hover {
+              background: $button-hover-bg;
+              text-decoration: none;
+              color: $button-hover; 
+            }
+          }
+        }
+    }
+    }
+}

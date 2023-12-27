@@ -26,7 +26,7 @@ const ProductBox = ({
   stars,
   oldPrice,
   isPromoted,
-
+  inGallery,
 }) => {
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
@@ -111,6 +111,11 @@ const ProductBox = ({
               <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
             </Button>
           )}
+          {inGallery && (
+            <Button variant='outline'>
+              <FontAwesomeIcon icon={faShoppingBasket}>Add to Cart</FontAwesomeIcon>
+            </Button>
+          )}
           <Button
             className={favorite ? styles.active : undefined}
             variant='outline'
@@ -152,9 +157,8 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   comparison: PropTypes.bool,
   favorite: PropTypes.bool,
-  oldPrice: PropTypes.bool,
   isPromoted: PropTypes.bool,
-
+  inGallery: PropTypes.bool,
 };
 
 export default ProductBox;

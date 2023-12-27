@@ -10,10 +10,10 @@ export const setScr = payload => ({ payload, type: SET_SCR });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
-    switch (action.type) {
-        case SET_SCR:
-            return action.payload;
-        default:
-            return statePart;
+  switch (action.type) {
+    case SET_SCR:
+      return action.payload;
+    default:
+      return statePart;
     }
 }

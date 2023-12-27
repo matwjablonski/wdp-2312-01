@@ -5,7 +5,7 @@ export const getScr = ({ screen }) => screen;
 const createActionName = actionName => `app/screen/${actionName}`;
 const SET_SCR = createActionName('SET_SCR');
 
-/* action creators */
+/* action creator */
 export const setScr = payload => ({ payload, type: SET_SCR });
 
 /* reducer */

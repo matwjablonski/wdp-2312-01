@@ -16,7 +16,7 @@
     .actions {
       .price {
         .priceButton {
-          background-color: $productBox-button-hover;
+          background-color: $product-box-button-hover;
         }
       }
     }
@@ -118,7 +118,7 @@
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid $productBox-line;
+    border-bottom: 1px solid $product-box-line;
     position: relative;
 
     &::before {
@@ -127,7 +127,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $productBox-decorLine;
+      border-bottom: 4px solid $product-box-decorLine;
       transform: translateX(-50%);
     }
   }

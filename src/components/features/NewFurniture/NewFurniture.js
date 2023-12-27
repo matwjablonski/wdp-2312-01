@@ -83,6 +83,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  screen: PropTypes.array,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({

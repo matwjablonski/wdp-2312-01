@@ -8,36 +8,36 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const MainLayout = ({ children }) => {
-const [ viewport, setViewport ] = useState('')
-const [ elements, setElements ] = useState('');
+  const [viewport, setViewport] = useState('')
+  const [elements, setElements] = useState('');
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-const rwd = ()=> {
-  if (visualViewport.width > 992) {
-    setViewport('desktop');
-    setElements(8);
+  const rwd = () => {
+    if (visualViewport.width > 992) {
+      setViewport('desktop');
+      setElements(8);
+    }
+    if (visualViewport.width > 768 && window.innerWidth < 992) {
+      setViewport('tablet');
+      setElements(3);
+    }
+    if (visualViewport.width < 576) {
+      setViewport('mobile');
+      setElements(2);
+    }
   }
-  if (visualViewport.width > 768 && window.innerWidth < 992) {
-    setViewport('tablet');
-    setElements(3);
-  }
-  if (visualViewport.width < 576) {
-    setViewport('mobile');
-    setElements(2);
-  }
-}
 
-useEffect(() => {
-  rwd(); 
-  dispatch(setScr({ viewport, elements}));
-});
+  useEffect(() => {
+    rwd();
+    dispatch(setScr({ viewport, elements }));
+  });
 
-visualViewport.onresize = () => {
-  rwd();
-};
+  visualViewport.onresize = () => {
+    rwd();
+  };
 
-return (
+  return (
     <div>
       <Header />
       {children}

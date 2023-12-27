@@ -304,6 +304,11 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  screen: {
+    viewportSize: '',
+    elementsNumber: '',
+  },
 };
 
 export default initialState;

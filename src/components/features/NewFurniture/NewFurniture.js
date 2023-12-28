@@ -36,7 +36,7 @@ const NewFurniture = ({ categories, products }) => {
       <li>
         <a
           onClick={() => handlePageChange(i)}
-          className={i === activePage && styles.active}
+          className={i === activePage ? styles.active : ''}
         >
           page {i}
         </a>
@@ -48,7 +48,6 @@ const NewFurniture = ({ categories, products }) => {
     <div className={styles.root}>
       <div className='container'>
         <div className={styles.panelBar}>
-          {/* <div className='row no-gutters align-items-end'> */}
           <div className={`row no-gutters align-items-end`}>
             <div className={'col-auto ' + styles.heading}>
               <h3>New furniture</h3>

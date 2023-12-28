@@ -1,83 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
-class NewFurniture extends React.Component {
-  state = {
-    activePage: 0,
-    activeCategory: 'bed',
+const NewFurniture = ({ categories, products }) => {
+
+  const [activePage, setActivePage] = useState(0);
+  const [activeCategory, setActiveCategory] = useState('bed');
+
+  const [fade, setFade] = useState(true);
+
+  const handlePageChange = newPage => {
+    setFade(false);
+    setTimeout(() => {
+      setActivePage(newPage);
+      setFade(true);
+    }, 500);
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
-  }
+  const handleCategoryChange = newCategory => {
+    setFade(false);
+    setTimeout(() => {
+      setActiveCategory(newCategory);
+      setFade(true);
+    }, 500);
+  };
 
-  handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
-  }
+  const categoryProducts = products.filter(item => item.category === activeCategory);
+  const pagesCount = Math.ceil(categoryProducts.length / 8);
 
-  render() {
-    const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
-
-    const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
-
-    const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
-      dots.push(
-        <li>
-          <a
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
-          >
-            page {i}
-          </a>
-        </li>
-      );
-    }
-
-    return (
-      <div className={styles.root}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
-              </div>
-            </div>
-          </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+  const dots = [];
+  for (let i = 0; i < pagesCount; i++) {
+    dots.push(
+      <li>
+        <a
+          onClick={() => handlePageChange(i)}
+          className={i === activePage && styles.active}
+        >
+          page {i}
+        </a>
+      </li>
     );
   }
-}
+
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <div className={styles.panelBar}>
+          {/* <div className='row no-gutters align-items-end'> */}
+          <div className={`row no-gutters align-items-end`}>
+            <div className={'col-auto ' + styles.heading}>
+              <h3>New furniture</h3>
+            </div>
+            <div className={'col ' + styles.menu}>
+              <ul>
+                {categories.map(item => (
+                  <li key={item.id}>
+                    <a
+                      className={item.id === activeCategory && styles.active}
+                      onClick={() => handleCategoryChange(item.id)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={'col-auto ' + styles.dots}>
+              <ul>{dots}</ul>
+            </div>
+          </div>
+        </div>
+        <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
+          {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+            <div key={item.id} className='col-3'>
+              <ProductBox {...item} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 NewFurniture.propTypes = {
   children: PropTypes.node,

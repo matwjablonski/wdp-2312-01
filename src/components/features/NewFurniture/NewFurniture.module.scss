@@ -99,3 +99,29 @@
     }
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 750ms ease-in;
+}
+
+.fadeOut {
+  animation: fadeOut 750ms ease-out;
+}

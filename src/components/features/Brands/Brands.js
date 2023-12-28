@@ -7,6 +7,7 @@ import { getAllBrands } from '../../../redux/brandsRedux';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Swipeable from '../../Swipeable/Swipeable';
 
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
@@ -51,33 +52,50 @@ const Brands = () => {
     setVisibleStart(newStart);
   };
 
+  const leftSwipe = () => {
+    const newStart = Math.max(visibleStart - itemsPerPage, 0);
+    setVisibleStart(newStart);
+  };
+
+  const rightSwipe = e => {
+    const maxStartIndex = allBrands.length - itemsPerPage;
+    const newStart = Math.min(visibleStart + itemsPerPage, maxStartIndex);
+    setVisibleStart(newStart);
+  };
+
   return (
-    <div className={styles.root}>
-      <div className='container'>
-        <div className={styles.brandsWrapper}>
-          <Button variant='outline' className={styles.brandButton} onClick={scrollLeft}>
-            <FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon>
-          </Button>
-          {allBrands.slice(visibleStart, visibleStart + itemsPerPage).map(brand => (
-            <div key={brand.id} className={styles.brand}>
-              <div
-                className={styles.photoBrand}
-                style={{
-                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/brands/${brand.name}.jpg")`,
-                }}
-              ></div>
-            </div>
-          ))}
-          <Button
-            variant='outline'
-            className={styles.brandButton}
-            onClick={scrollRight}
-          >
-            <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
-          </Button>
+    <Swipeable leftAction={leftSwipe} rightAction={rightSwipe}>
+      <div className={styles.root}>
+        <div className='container'>
+          <div className={styles.brandsWrapper}>
+            <Button
+              variant='outline'
+              className={styles.brandButton}
+              onClick={scrollLeft}
+            >
+              <FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon>
+            </Button>
+            {allBrands.slice(visibleStart, visibleStart + itemsPerPage).map(brand => (
+              <div key={brand.id} className={styles.brand}>
+                <div
+                  className={styles.photoBrand}
+                  style={{
+                    backgroundImage: `url("${process.env.PUBLIC_URL}/images/brands/${brand.name}.jpg")`,
+                  }}
+                ></div>
+              </div>
+            ))}
+            <Button
+              variant='outline'
+              className={styles.brandButton}
+              onClick={scrollRight}
+            >
+              <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </Swipeable>
   );
 };
 

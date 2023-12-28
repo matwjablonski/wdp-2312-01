@@ -76,7 +76,7 @@ const NewFurniture = ({ categories, products, screen }) => {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * screen.elements, (activePage + 1) * 8).map(item => (
+            {categoryProducts.slice(activePage * screen.elements, (activePage + 1) * screen.elements).map(item => (
               <div key={item.id} className={classRWD}>
                 <ProductBox {...item} isPromoted={false} />
               </div>

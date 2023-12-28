@@ -40,4 +40,10 @@
       margin-right: 5px;
     }
   }
+
+  @media (max-width: 410px) {
+    .topBarIconName {
+      display: none;
+    }
+  }
 }

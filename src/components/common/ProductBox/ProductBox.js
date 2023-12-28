@@ -111,11 +111,11 @@ const ProductBox = ({
               <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
             </Button>
           )}
-          {inGallery && (
+          {/* {inGallery && (
             <Button variant='outline'>
               <FontAwesomeIcon icon={faShoppingBasket}>Add to Cart</FontAwesomeIcon>
             </Button>
-          )}
+          )} */}
           <Button
             className={favorite ? styles.active : undefined}
             variant='outline'

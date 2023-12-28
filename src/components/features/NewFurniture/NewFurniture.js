@@ -26,6 +26,7 @@ const NewFurniture = ({ categories, products }) => {
       setActiveCategory(newCategory);
       setFade(true);
     }, 500);
+    setActivePage(0);
   };
 
   const handleSwipeLeft = () => {

@@ -8,10 +8,8 @@ import { getAll } from '../../../redux/productsRedux';
 const Gallery = () => {
   const allProducts = useSelector(getAll);
 
-  // Załóżmy, że aktualnie wyświetlany produkt ma ID 'aenean-ru-bristique-2'
   const currentProductId = 'aenean-ru-bristique-2';
 
-  // Funkcja, która zwraca ścieżkę do obrazka na podstawie ID produktu
   const getImagePathById = productId => {
     return `${process.env.PUBLIC_URL}/images/products/${productId}.jpg`;
   };

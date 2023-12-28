@@ -49,14 +49,19 @@
             font-size: 18px;
             display: block;
 
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid transparent;
+              @extend %hover-effect;
+            }
+
             &.active,
             &:hover {
               &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
                 border-bottom: 4px solid $newFurniture-decorLine-active;
               }
             }
@@ -88,12 +93,14 @@
             border-radius: 6px;
             background-color: $newFurniture-link-background;
             font-size: 0;
+            @extend %hover-effect;
 
             &.active,
             &:hover {
               background-color: $newFurniture-hover-bg;
             }
           }
+
         }
       }
     }

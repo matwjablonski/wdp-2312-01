@@ -53,6 +53,7 @@
     margin-top: -0.5rem;
     letter-spacing: 1px;
     font-weight: 300;
+    @extend %hover-effect;
 
     h5 {
       font-weight: 600;
@@ -67,6 +68,7 @@
   &.active {
     .iconWrapper {
       color: $featureBox-active-text;
+      @extend %hover-effect;
 
       &::after {
         background-color: $featureBox-active-content;

@@ -15,6 +15,7 @@
       a {
         color: $header-text;
         font-size: 13px;
+        @extend %hover-effect;
 
         &:hover {
           color: $header-hover;
@@ -37,6 +38,12 @@
 
     .icon {
       margin-right: 5px;
+    }
+  }
+
+  @media (max-width: 410px) {
+    .topBarIconName {
+      display: none;
     }
   }
 }

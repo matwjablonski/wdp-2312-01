@@ -13,11 +13,12 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $header-text;
         font-size: 13px;
+        @extend %hover-effect;
 
         &:hover {
-          color: $primary;
+          color: $header-hover;
           text-decoration: none;
         }
       }
@@ -37,6 +38,12 @@
 
     .icon {
       margin-right: 5px;
+    }
+  }
+
+  @media (max-width: 410px) {
+    .topBarIconName {
+      display: none;
     }
   }
 }

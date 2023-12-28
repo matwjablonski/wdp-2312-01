@@ -6,14 +6,14 @@
     position: relative;
 
     :global(.row) > * {
-      border-bottom: 4px solid #e2e2e2;
+      border-bottom: 4px solid $newFurniture-panelBar-border;
     }
 
     .heading {
       position: relative;
 
       h3 {
-        color: $primary;
+        color: $newFurniture-title;
         text-transform: uppercase;
         font-size: 20px;
         line-height: 38px;
@@ -27,7 +27,7 @@
         bottom: -4px;
         left: 0;
         width: 45px;
-        border-bottom: 4px solid $primary;
+        border-bottom: 4px solid $newFurniture-decorLine;
       }
     }
 
@@ -41,23 +41,28 @@
           display: inline-block;
           margin: 0 0.5rem;
           font-weight: 600;
-
+          
           a {
-            color: rgb(42, 42, 42);
+            color: $newFurniture-menu-text;
             position: relative;
             text-decoration: none;
             font-size: 18px;
             display: block;
+           
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid transparent;
+              @extend %hover-effect;
+            }
 
             &.active,
             &:hover {
               &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $primary;
+                border-bottom: 4px solid $newFurniture-decorLine-active;
               }
             }
           }
@@ -74,24 +79,25 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: #ffffff;
+        background-color: $newFurniture-list-background;
         transform: translateY(15px);
 
         li {
           display: inline-block;
           margin-left: 0.5rem;
-
+          
           a {
             display: block;
             width: 13px;
             height: 13px;
             border-radius: 6px;
-            background-color: #e1e1e1;
+            background-color: $newFurniture-link-background;
             font-size: 0;
+            @extend %hover-effect;
 
             &.active,
             &:hover {
-              background-color: $primary;
+              background-color: $newFurniture-hover-bg;
             }
           }
           

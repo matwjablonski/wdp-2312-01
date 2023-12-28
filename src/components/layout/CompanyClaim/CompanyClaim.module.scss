@@ -1,26 +1,67 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: $header-bg;
+  background-color: $companyClaim-header-bg;
 
   :global(.container) > :global(.row) {
     height: 145px;
   }
 
+  .align-items-center {
+    display: flex;
+    flex: 0 0 33.3333%;
+  }
+
+  @media (max-width: 413px) {
+    .align-items-center {
+      position: relative;
+      height: 50%;
+      width:100%;
+      box-sizing: border-box;
+    }
+    .phoneNumber {
+      position: absolute;
+      left: 50%;
+      top: 110%;
+      position: sticky;
+      height: 40%;
+      padding: 3%;
+      margin-bottom: 1%;
+    }
+    .logo {
+      position: absolute;
+      width: 50%;
+    }
+    .cart {
+      top: -5%;
+      right: 0;
+    }
+  }
+
   .phoneNumber {
+    padding-top: 2%;
     p {
       margin: 0;
       font-size: 17px;
-      line-height: 42px;
-      color: rgb(216, 216, 216);
+      line-height: 35px;
+      color: $companyClaim-phone-text;
       font-weight: 500;
+
+      @media (max-width: 413px) {
+        padding-top: 2%;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: right;
+        line-break: normal;
+      }
 
       .icon {
         font-size: 32px;
-        color: $primary;
+        color: $companyClaim-cartIcon;
         vertical-align: middle;
-        margin-top: -3px;
-        margin-right: 0.8rem;
+        margin-top: -2px;
+        margin-right: 0.5rem;
+        margin-left: 0.8rem;
       }
     }
   }
@@ -29,10 +70,11 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $companyClaim-cartBox;
+      right: 10%;
 
       .cartIcon {
-        background-color: $primary;
+        background-color: $companyClaim-cartIcon;
         width: 55px;
         height: 50px;
         border-radius: 3px;
@@ -47,24 +89,27 @@
       }
 
       .cartCounter {
-        width: 28px;
+        min-width: 28px;
+        width: fit-content;
+        padding: 3px;
         height: 27px;
         border-radius: 14px;
-        background-color: $header-bg;
+        background-color: $companyClaim-header-bg;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        color: rgb(224, 227, 237);
+        color: $companyClaim-cartCounter-text;
         position: absolute;
         top: 50%;
-        right: 0;
+        right: -10%;
         transform: translate(50%, -50%);
       }
 
       &:hover {
         .cartIcon {
-          background-color: lighten($primary, 10%);
+          @extend %hover-effect;
+          background-color: lighten($companyClaim-cartIcon, 10%);
         }
       }
     }

@@ -18,8 +18,6 @@ const Footer = ({ children }) => (
       <div className='container'>
         <div className='row'>
           <div className='col-lg-3 col-12 col-sm-6'>
-            {' '}
-            {/* Two columns on small screens */}
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
               <ul>
@@ -39,8 +37,6 @@ const Footer = ({ children }) => (
             </div>
           </div>
           <div className='col-lg-3 col-12 col-sm-6'>
-            {' '}
-            {/* Two columns on small screens */}
             <div className={styles.menuWrapper}>
               <h6>My account</h6>
               <ul>
@@ -81,7 +77,6 @@ const Footer = ({ children }) => (
             </div>
           </div>
           <div className='col-lg-3 col-12 col-sm-6'>
-            {' '}
             {/* Two columns on small screens */}
             <div className={styles.menuWrapper}>
               <h6>Orders</h6>

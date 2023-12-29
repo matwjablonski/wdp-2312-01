@@ -740,6 +740,7 @@ const initialState = {
   screen: {
     viewportSize: '',
     elementsNumber: '',
+  },
   promo: {
     titleLeft: 'Guest room',
     subtitleLeft: 'Sofa',
@@ -757,6 +758,6 @@ const initialState = {
     chair:
       'https://images.pexels.com/photos/961188/pexels-photo-961188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   },
-},
+};
 
 export default initialState;

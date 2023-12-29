@@ -9,17 +9,29 @@ const NewFurniture = ({ categories, products, screen }) => {
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
 
+  const [fade, setFade] = useState(true);
+
   const handlePageChange = newPage => {
-    setActivePage(newPage);
+    setFade(false);
+    setTimeout(() => {
+      setActivePage(newPage);
+      setFade(true);
+    }, 500);
   };
 
   const handleCategoryChange = newCategory => {
-    setActiveCategory(newCategory);
+    setFade(false);
+    setTimeout(() => {
+      setActiveCategory(newCategory);
+      setFade(true);
+    }, 500);
+    setActivePage(0);
   };
 
   const handleSwipeLeft = () => {
     if (activePage > 0) {
       setActivePage(activePage - 1);
+      handlePageChange(activePage - 1);
     }
   };
 
@@ -27,6 +39,7 @@ const NewFurniture = ({ categories, products, screen }) => {
     const pagesCount = Math.ceil(categoryProducts.length / 8);
     if (activePage < pagesCount - 1) {
       setActivePage(activePage + 1);
+      handlePageChange(activePage + 1);
     }
   };
 
@@ -75,7 +88,7 @@ const NewFurniture = ({ categories, products, screen }) => {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
             {categoryProducts.slice(activePage * screen.elements, (activePage + 1) * screen.elements).map(item => (
               <div key={item.id} className={classRWD}>
                 <ProductBox {...item} isPromoted={false} />

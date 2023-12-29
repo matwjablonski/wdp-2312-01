@@ -737,7 +737,7 @@ const initialState = {
   cart: {
     products: [],
   },
-  screen: {
+ screen: {
     viewportSize: '',
     elementsNumber: '',
   },

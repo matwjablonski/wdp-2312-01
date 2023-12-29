@@ -740,6 +740,7 @@ const initialState = {
   screen: {
     viewportSize: '',
     elementsNumber: '',
+  },
   promo: {
     titleLeft: 'Guest room',
     subtitleLeft: 'Sofa',

@@ -5,6 +5,7 @@ import { TAGS } from '../../../redux/initialState';
 import styles from './GalleryBox.module.scss';
 import GalleryNav from '../GalleryBox/GalleryNav/GalleryNav';
 import ActionButtons from './ActionButtons/ActionButtons';
+import Image from './Image/Image';
 
 const GalleryBox = () => {
   const [activeTag, setActiveTag] = useState(TAGS.FEATURED);
@@ -20,6 +21,7 @@ const GalleryBox = () => {
     <div className={styles.root}>
       <GalleryNav activeTag={activeTag} setActiveTag={setActiveTag} />
       <ActionButtons />
+      <Image id={activeElement.id} />
     </div>
   );
 };

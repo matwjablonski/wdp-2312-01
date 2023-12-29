@@ -31,7 +31,7 @@ const NewFurniture = ({ categories, products, screen }) => {
   };
 
   const categoryProducts = products.filter(item => item.category === activeCategory);
-  const pagesCount = Math.ceil(categoryProducts.length / (screen.elements || 8);
+  const pagesCount = Math.ceil(categoryProducts.length / (screen.elements || 8));
   let classRWD = screen.viewport === 'desktop' ? 'col-lg-3' : (screen.viewport === 'tablet' ? 'col-md-4' : 'col-sm-6');
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {

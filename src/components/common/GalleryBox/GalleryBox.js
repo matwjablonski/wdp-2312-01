@@ -6,6 +6,7 @@ import styles from './GalleryBox.module.scss';
 import GalleryNav from '../GalleryBox/GalleryNav/GalleryNav';
 import ActionButtons from './ActionButtons/ActionButtons';
 import Image from './Image/Image';
+import Prices from './Prices/Prices';
 
 const GalleryBox = () => {
   const [activeTag, setActiveTag] = useState(TAGS.FEATURED);
@@ -22,6 +23,7 @@ const GalleryBox = () => {
       <GalleryNav activeTag={activeTag} setActiveTag={setActiveTag} />
       <ActionButtons />
       <Image id={activeElement.id} />
+      <Prices price={activeElement.price} oldPrice={activeElement.oldPrice} />
     </div>
   );
 };

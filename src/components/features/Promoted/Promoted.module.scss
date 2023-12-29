@@ -11,7 +11,7 @@
     color: $promoted-hotdeals-text-color;
 
     span {
-      padding: 0 0 0 1rem;
+      padding: 0 0 0 16px;
       text-transform: uppercase;
       font-size: 20px;
     }
@@ -21,6 +21,7 @@
         margin: 0;
         list-style: none;
         background-color: $promoted-hotdeals-background;
+        padding: 0;
 
         li {
           display: inline-block;
@@ -174,4 +175,135 @@
 
 .fadeOut {
   animation: fadeOut 500ms ease-out;
+}
+
+@media (max-width: 1199px) {
+  .root {
+    .sliderWrapper {
+      height: 405px;
+      .arrays {
+        width: 100%;
+        display: flex;
+
+        .arrayButton {
+          height: 35.75px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991.5px) {
+  .root {
+    .rightSlider {
+      height: 400px;
+      .sliderWrapper {
+        height: 370px;
+        .arrays {
+          width: 100%;
+          display: flex;
+
+          .arrayButton {
+            height: 30px;
+          }
+        }
+        .photo {
+          .photoInner {
+            h2 {
+              font-size: 40px;
+            }
+
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    .leftSlider {
+      .hotdealsBar {
+        span {
+          padding: 0 0 0 10px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .root {
+    .leftSlider {
+      display: none;
+    }
+    .rightSlider {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    .rightSlider {
+      .photo {
+        .photoInner {
+          h2 {
+            font-size: 36px;
+            text-align: center;
+          }
+
+          p {
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .root {
+    .rightSlider {
+      .sliderWrapper {
+        .photo {
+          .photoInner {
+            h2 {
+              font-size: 32px;
+            }
+
+            p {
+              font-size: 16px;
+            }
+            .shopButton {
+              height: 45px;
+              width: 110px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .root {
+    .rightSlider {
+      .sliderWrapper {
+        .photo {
+          .photoInner {
+            h2 {
+              font-size: 28px;
+              padding: 0 8px;
+            }
+
+            p {
+              font-size: 14px;
+              padding: 0 8px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

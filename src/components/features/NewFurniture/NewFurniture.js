@@ -6,7 +6,6 @@ import Swipeable from '../../Swipeable/Swipeable';
 import StickyBar from '../StickyBar/StickyBar';
 
 const NewFurniture = ({ categories, products }) => {
-
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
 

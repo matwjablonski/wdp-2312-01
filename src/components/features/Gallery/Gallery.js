@@ -4,7 +4,7 @@ import Button from '../../common/Button/Button';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
-import GalleryNav from '../../common/GalleryBox/GalleryNav/GalleryNav';
+import GalleryBox from '../../common/GalleryBox/GalleryBox';
 
 const Gallery = () => {
   const allProducts = useSelector(getAll);
@@ -27,32 +27,7 @@ const Gallery = () => {
                 <h3>Furniture Gallery</h3>
               </div>
             </div>
-            <GalleryNav />
-            {/* <div className={styles.menuHeader}>
-                <ul className={styles.navi}>
-                  <li className={styles.navItem}>
-                    <a className={styles.navLink} href='#'>
-                      featured
-                    </a>
-                  </li>
-                  <li className={styles.navItem}>
-                    <a className={styles.navLink} href='#'>
-                      top sellers
-                    </a>
-                  </li>
-                  <li className={styles.navItem}>
-                    <a className={styles.navLink} href='#'>
-                      sale off
-                    </a>
-                  </li>
-                  <li className={styles.navItem}>
-                    <a className={styles.navLink} href='#'>
-                      top rated
-                    </a>
-                  </li>
-                </ul>
-              </div> */}
-            <ProductBox inGallery={true} />
+            <GalleryBox />
           </div>
           <div className='col-6'>
             <div className={styles.sliderWrapper}>

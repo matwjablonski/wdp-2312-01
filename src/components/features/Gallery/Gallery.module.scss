@@ -31,57 +31,55 @@
       }
     }
 }
-.menu {
-position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-//   word-wrap: break-word;
-  background-color: #ffffff;
-//   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  text-align: center;
+// .menu {
+// position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   min-width: 0;
+//   background-color: #ffffff;
+//   border: 1px solid rgba(0, 0, 0, 0.125);
+//   border-radius: 0.25rem;
+//   text-align: center;
 
-  .menuHeader {
-    padding: 0;
-    justify-content: center;
-    display: flex;
-  }
+//   .menuHeader {
+//     padding: 0;
+//     justify-content: center;
+//     display: flex;
+//   }
 
-  .navi {
-    margin-top: 0;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
+//   .navi {
+//     margin-top: 0;
+//     display: flex;
+//     flex-wrap: wrap;
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
+//     margin-right: -0.625rem;
+//     margin-left: -0.625rem;
 
-    .navItem {
-        flex-grow: 1;
-        text-align: center;
-        margin: 0;
-      }
+//     .navItem {
+//         flex-grow: 1;
+//         text-align: center;
+//         margin: 0;
+//       }
       
-      .navLink {
-        text-transform: uppercase;
-        display: block;
-        padding: 10px 25px;
-        text-decoration: none;
-        color: #000;
-        font-weight: 500;
-        @extend %hover-effect;
+//       .navLink {
+//         text-transform: uppercase;
+//         display: block;
+//         padding: 10px 25px;
+//         text-decoration: none;
+//         color: #000;
+//         font-weight: 500;
+//         @extend %hover-effect;
 
-        &:hover {
-            border-top: 3px solid $orange;
-            color: $orange;
-            background-color: transparent;
-        }
-      }
-  }
-}
+//         &:hover {
+//             border-top: 3px solid $orange;
+//             color: $orange;
+//             background-color: transparent;
+//         }
+//       }
+//   }
+// }
 
 
 

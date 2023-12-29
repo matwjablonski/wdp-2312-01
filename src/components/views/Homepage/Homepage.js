@@ -8,6 +8,7 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Promoted from '../../features/Promoted/Promoted';
 import Promo from '../../layout/Promo/PromoContainer';
 import Brands from '../../features/Brands/Brands';
+import Feedback from '../../features/Feedback/Feeedback';
 
 
 const Homepage = () => (
@@ -17,6 +18,7 @@ const Homepage = () => (
     <NewFurniture />
     <Promo />
     <Brands />
+    <Feedback />
   </div>
 );
 

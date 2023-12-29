@@ -765,6 +765,26 @@ const initialState = {
     { id: 6, name: 'brand-6' },
   ],
 
+  feedbacks : [
+    { id: 'feedback 1',
+      name: 'feedback-1',
+      text: 'I\'m enthusiastic about this store. Highly recommend to everyone',
+      clientName: 'Arthur Morgan',
+      clientPosition: 'Courier',
+    },
+    { id: 'feedback 2',
+      name: 'feedback-2',
+      text: 'I furnished my entire office here. My eployees are pleased with quality of these furnitures. I definitly come back here in the future for another purchases.',
+      clientName: 'Dutch Van Der Linde',
+      clientPosition: 'Company Owner',
+    },
+    { id: 'feedback 3',
+      name: 'feedback-3',
+      text: 'I bought here great furnitures for my kichten. Reliable and easy to keep in cleaness.',
+      clientName: 'Abigail Marston',
+      clientPosition: 'Internet marketing specialist',
+    },
+  ],
 };
 
 export default initialState;

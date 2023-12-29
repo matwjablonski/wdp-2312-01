@@ -1,0 +1,42 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  margin: 60px 0;
+
+  .brandsWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 23px 0;
+    border: 1px solid $brands-border;
+    border-left: none;
+    border-right: none;
+
+    .brand {
+      height: 90px;
+      width: 140px;
+    }
+
+    .photoBrand {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+      }
+    }
+
+    .brandButton {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background-color: $button;
+      color: $button-text;
+
+      &:hover {
+        color: $button-hover-bg;
+      }
+    }
+  }
+}

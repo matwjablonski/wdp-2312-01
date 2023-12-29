@@ -737,6 +737,7 @@ const initialState = {
   cart: {
     products: [],
   },
+
   promo: {
     titleLeft: 'Guest room',
     subtitleLeft: 'Sofa',
@@ -754,6 +755,16 @@ const initialState = {
     chair:
       'https://images.pexels.com/photos/961188/pexels-photo-961188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   },
+
+  brands: [
+    { id: 1, name: 'brand-1' },
+    { id: 2, name: 'brand-2' },
+    { id: 3, name: 'brand-3' },
+    { id: 4, name: 'brand-4' },
+    { id: 5, name: 'brand-5' },
+    { id: 6, name: 'brand-6' },
+  ],
+
 };
 
 export default initialState;

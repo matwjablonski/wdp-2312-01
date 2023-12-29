@@ -15,28 +15,27 @@ const Promo = ({ promo }) => {
               <span className={styles.titleLeftBottom}>{promo.discountLeft}</span>
             </div>
           </div>
-          <div>
-            <div className={`${styles.right}`}>
-              <div className={styles.topPictureWrapper}>
-                <img src={promo.chair} />
-                <div className={styles.containerTopImgContent}>
-                  <h2>
-                    <span className={styles.boldText}>{promo.titleTopRight_1} </span>
-                    {promo.titleTopRight_2}
-                  </h2>
-                  <div>{promo.subtitleTopRight}</div>
-                  <div className={styles.primary}>{promo.priceTopRight}</div>
-                </div>
+
+          <div className={`${styles.right}`}>
+            <div className={styles.topPictureWrapper}>
+              <img src={promo.chair} />
+              <div className={styles.containerTopImgContent}>
+                <h2>
+                  <span className={styles.boldText}>{promo.titleTopRight_1} </span>
+                  {promo.titleTopRight_2}
+                </h2>
+                <div>{promo.subtitleTopRight}</div>
+                <div className={styles.primary}>{promo.priceTopRight}</div>
               </div>
-              <div className={styles.bottomPictureWrapper}>
-                <img src={promo.bed} />
-                <div className={styles.containerBottomImgContent}>
-                  <div className={styles.primary}>
-                    <span>{promo.titleBottomRight_1} </span>
-                    {promo.titleBottomRight_2}
-                  </div>
-                  <div>{promo.subtitleBottomRight}</div>
+            </div>
+            <div className={styles.bottomPictureWrapper}>
+              <img src={promo.bed} />
+              <div className={styles.containerBottomImgContent}>
+                <div className={styles.primary}>
+                  <span>{promo.titleBottomRight_1} </span>
+                  {promo.titleBottomRight_2}
                 </div>
+                <div>{promo.subtitleBottomRight}</div>
               </div>
             </div>
           </div>

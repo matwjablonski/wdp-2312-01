@@ -1,46 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../../Swipeable/Swipeable';
 import StickyBar from '../StickyBar/StickyBar';
 
-class NewFurniture extends React.Component {
-  state = {
-    activePage: 0,
-    activeCategory: 'bed',
+const NewFurniture = ({ categories, products }) => {
+
+  const [activePage, setActivePage] = useState(0);
+  const [activeCategory, setActiveCategory] = useState('bed');
+
+  const [fade, setFade] = useState(true);
+
+  const handlePageChange = newPage => {
+    setFade(false);
+    setTimeout(() => {
+      setActivePage(newPage);
+      setFade(true);
+    }, 500);
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
-  }
+  const handleCategoryChange = newCategory => {
+    setFade(false);
+    setTimeout(() => {
+      setActiveCategory(newCategory);
+      setFade(true);
+    }, 500);
+    setActivePage(0);
+  };
 
-  handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
-  }
-
-  render() {
-    const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
-
-    const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
-
-    const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
-      dots.push(
-        <li>
-          <a
-            onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
-          >
-            page {i}
-          </a>
-        </li>
-      );
+  const handleSwipeLeft = () => {
+    if (activePage > 0) {
+      setActivePage(activePage - 1);
+      handlePageChange(activePage - 1);
     }
+  };
 
-    return (
+  const handleSwipeRight = () => {
+    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    if (activePage < pagesCount - 1) {
+      setActivePage(activePage + 1);
+      handlePageChange(activePage + 1);
+    }
+  };
+
+  const categoryProducts = products.filter(item => item.category === activeCategory);
+  const pagesCount = Math.ceil(categoryProducts.length / 8);
+
+  const dots = [];
+  for (let i = 0; i < pagesCount; i++) {
+    dots.push(
+      <li key={i}>
+        <a
+          onClick={() => handlePageChange(i)}
+          className={i === activePage ? styles.active : ''}
+        >
+          Page {i + 1}
+        </a>
+      </li>
+    );
+  }
+
+  return (
+    <Swipeable leftAction={handleSwipeLeft} rightAction={handleSwipeRight}>
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
@@ -53,8 +75,8 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
+                        className={item.id === activeCategory ? styles.active : ''}
+                        onClick={() => handleCategoryChange(item.id)}
                       >
                         {item.name}
                       </a>
@@ -67,9 +89,9 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
+          <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
+              <div key={item.id} className='col-sm-6 col-md-4 col-lg-3'>
                 <ProductBox {...item} isPromoted={false} />
               </div>
             ))}
@@ -77,12 +99,11 @@ class NewFurniture extends React.Component {
         </div>
         <StickyBar />
       </div>
-    );
-  }
-}
+    </Swipeable>
+  );
+};
 
 NewFurniture.propTypes = {
-  children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

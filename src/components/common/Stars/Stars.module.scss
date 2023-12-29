@@ -1,0 +1,16 @@
+@import "../../../styles/settings.scss";
+
+.stars {
+  .star {
+    text-decoration: none;
+    color: $productBox-stars;
+
+    &:hover {
+      color: $product-box-button-hover;
+    }
+
+    &.gold {
+      color: $product-box-button-hover;
+    }
+  }
+}

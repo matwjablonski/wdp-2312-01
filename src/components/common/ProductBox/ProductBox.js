@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 import { addToCompare } from '../../../redux/productsRedux';
 import { getCompareProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
+import Stars from '../Stars/Stars';
 
 const ProductBox = ({
   id,
@@ -26,6 +22,7 @@ const ProductBox = ({
   stars,
   oldPrice,
   isPromoted,
+  personalStars,
 }) => {
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
@@ -63,7 +60,7 @@ const ProductBox = ({
 
         <div className={!isPromoted ? styles.buttons : styles.buttonsPromoted}>
           {!isPromoted && <Button variant='small'>Quick View</Button>}
-          <Button variant='small'>
+          <Button variant='small' className={styles.btnAddToCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -90,24 +87,17 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <Stars stars={stars} personalStars={personalStars} id={id} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
           {isPromoted && (
             <Button variant='outline'>
-              <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+              <FontAwesomeIcon
+                icon={faEye}
+                style={{ width: '13px', height: '13px' }}
+              ></FontAwesomeIcon>
             </Button>
           )}
           <Button
@@ -115,7 +105,7 @@ const ProductBox = ({
             variant='outline'
             onClick={handleAddToFavorite}
           >
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faHeart}> Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
@@ -128,7 +118,12 @@ const ProductBox = ({
 
         <div className={styles.price}>
           {oldPrice && (
-            <Button noHover noBackground variant='small'>
+            <Button
+              noHover
+              noBackground
+              variant='small'
+              className={styles.oldPriceButton}
+            >
               $ {oldPrice}
             </Button>
           )}
@@ -151,8 +146,8 @@ ProductBox.propTypes = {
   id: PropTypes.string,
   comparison: PropTypes.bool,
   favorite: PropTypes.bool,
-  oldPrice: PropTypes.bool,
   isPromoted: PropTypes.bool,
+  personalStars: PropTypes.number,
 };
 
 export default ProductBox;

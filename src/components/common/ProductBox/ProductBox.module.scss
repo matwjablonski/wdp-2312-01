@@ -114,14 +114,7 @@
       line-height: 24px;
       letter-spacing: 1px;
     }
-
-    .stars {
-      a {
-        text-decoration: none;
-        color: $productBox-stars;
-      }
-    }
-  }
+   }
 
   .line {
     margin: 0 10px;
@@ -154,5 +147,39 @@
   }
   .price {
     display: flex;
+  }
+}
+
+@media (max-width: 992px) {
+  .root {
+    .price {
+      .priceButton {
+        padding: 5px;
+      }
+      .oldPriceButton {
+        padding: 5px;
+      }
+    }
+
+    .photo {
+      .timeCounter {
+        width: 100%;
+        padding: 5px;
+
+        .circle {
+          .number {
+            font-size: 16px;
+          }
+          .timeUnit {
+            font-size: 8px;
+          }
+        }
+      }
+      .buttonsPromoted {
+        .btnAddToCart {
+          font-size: 10px;
+        }
+      }
+    }
   }
 }

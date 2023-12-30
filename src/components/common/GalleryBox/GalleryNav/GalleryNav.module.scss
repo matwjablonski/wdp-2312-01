@@ -5,9 +5,10 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 100%;
+    border-top: 1px solid $galleryNav-border;
+    border-right: 1px solid $galleryNav-border;
+    border-left: 1px solid $galleryNav-border;
     border-radius: 0.25rem;
     text-align: center;
 
@@ -20,23 +21,30 @@
         margin-bottom: 0;
         list-style: none;
 
+        li {
+            width:25%
+        }
+
         .navLink {
             text-transform: uppercase;
             display: block;
-            padding: 10px 25px;
+            padding: 10px 0;
             text-decoration: none;
-            color: #000;
+            color: $galleryNav-text;
             font-weight: 500;
+            background-color: $galleryNav-background;
+            border-bottom: 1px solid $galleryNav-border;
+
             @extend %hover-effect;
 
             &:hover {
-                border-top: 3px solid $orange;
+                border-top: 3px solid $gallery-hover;
                 color: $orange;
                 background-color: transparent;
-        }
+                border-bottom: none;
+            }
+
         }
     }
 
 }
-
-//dodac style dla active!!!!!!

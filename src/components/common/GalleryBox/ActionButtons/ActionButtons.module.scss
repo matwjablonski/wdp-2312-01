@@ -3,7 +3,7 @@
 .buttons {
     top: 30%;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     margin-top: 10px;
     & > * {
       display: block;
@@ -12,11 +12,11 @@
       background-color: transparent;
 
       &:not(.noHover):hover {
-        border-color: $orange;
-        color: $orange;
+        border-color: $gallery-hover;
+        color: $gallery-hover;
         background-color: transparent;
       }
-      &:hover + .tooltiptext {
+      &:hover + .tooltipText {
         visibility: visible;
       }
     }
@@ -27,78 +27,83 @@
     display: inline-block;
   }
 
-  .tooltiptext {
+  .tooltipText {
     visibility: hidden;
     white-space: nowrap;
     width: fit-content;
     padding: 5px;
-    background-color: black;
-    color: white;
+    background-color: $gallery-tooltip-background;
+    color: $gallery-tooltip-text;
     text-align: center;
     position: absolute;
-    z-index: 1;
+    font-size: 12px;
 
       &:first-of-type {
-        top: 0;
-        left: 105%;
+        top: 2px;
+        left: 103%;
         &::before {
           position: absolute;
           content: "";
-          top: 13px;
-          width: 10px;
-          height: 10px;
+          top: 36%;
+          width: 8px;
+          height: 8px;
           right: 96%;
-          background-color: transparent;
-          z-index: 2;
+          background-color: $gallery-tooltip-background;
+          z-index: 1;
           transform: rotate(45deg);
         }
       }
 
       &:nth-of-type(2) {
-        top: 44px;
-        left: 105%;
+        top: 48px;
+        left: 103%;
         &::before {
           position: absolute;
           content: "";
-          top: 12px;
-          width: 10px;
-          height: 10px;
+          top: 36%;
+          width: 8px;
+          height: 8px;
           right: 96%;
-          background-color: transparent;
-          z-index: 2;
+          background-color: $gallery-tooltip-background;
+          z-index: 1;
           transform: rotate(45deg);
         }
       }
 
       &:nth-of-type(3) {
-        top: 88px;
-        left: 105%;
+        top: 90px;
+        left: 103%;
         &::before {
           position: absolute;
           content: "";
-          top: 12px;
-          width: 10px;
-          height: 10px;
-          right: 94%;
-          background-color: transparent;
-          z-index: -2;
+          top: 36%;
+          width: 8px;
+          height: 8px;
+          right: 96%;
+          background-color: $gallery-tooltip-background;
+          z-index: 1;
           transform: rotate(45deg);
         }
       }
 
       &:nth-of-type(4) {
         top: 132px;
-        left: 105%;
+        left: 103%;
         &::before {
           position: absolute;
           content: "";
-          top: 12px;
-          width: 10px;
-          height: 10px;
-          right: 95%;
-          background-color: transparent;
-          z-index: -2;
+          top: 36%;
+          width: 8px;
+          height: 8px;
+          right: 96%;
+          background-color: $gallery-tooltip-background;
+          z-index: 1;
           transform: rotate(45deg);
         }
       }
   }
+
+    .active {
+      background-color: rgba($product-box-button-hover, 0.8);
+      color: $productBox-sale-text;
+    }

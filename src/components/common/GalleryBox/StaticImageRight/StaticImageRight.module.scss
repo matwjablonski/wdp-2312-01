@@ -1,0 +1,77 @@
+@import '../../../../styles/settings.scss';
+
+.sliderWrapper {
+    height: 553px;
+    width: 100%;
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+      }
+
+      .photoInner {
+        position: absolute;
+        width: 100%;
+        top: 30%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 30px;
+        
+
+        h2 {
+          font-size: 46px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $gallery-imageRight-heading;
+          letter-spacing: 2px;
+        }
+
+        span {
+          padding-right: 10px;
+          font-size: 18px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $gallery-span-color;
+          letter-spacing: 2px;
+        }
+
+        p {
+          font-size: 46px;
+          color: $gallery-hover;
+          font-weight: 600;
+          letter-spacing: 2px;
+        }
+
+        .shopButton {
+            @extend %hover-effect;
+            position: absolute;
+            top: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55px;
+            width: 135px;
+            background: $gallery-imageRight-button-background;
+            border: none;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $gallery-button-text;
+  
+            &:hover {
+              background: $gallery-hover;
+              text-decoration: none;
+            }
+          }
+        }
+    }
+    }

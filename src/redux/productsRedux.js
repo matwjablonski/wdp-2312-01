@@ -12,7 +12,7 @@ export const getPromotedProducts = ({ products }) =>
   products.filter(product => product.promoted === true);
 
 export const getProductByTags = ({ products }, tagId) =>
-  products.filter(product => product?.tags.includes(tagId));
+  products.filter(product => product?.tags?.includes(tagId));
 
 // actions
 const createActionName = actionName => `app/product/${actionName}`;

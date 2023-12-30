@@ -155,7 +155,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: true,
-      tags: [],
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -168,7 +168,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
-      tags: [],
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -194,7 +194,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
-      tags: [],
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -207,7 +207,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
-      tags: [],
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -220,7 +220,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
-      tags: [],
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -351,6 +351,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-2',
@@ -363,6 +364,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-3',
@@ -375,6 +377,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-4',
@@ -387,6 +390,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-5',
@@ -399,6 +403,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-6',
@@ -411,6 +416,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-7',
@@ -423,6 +429,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-8',
@@ -435,6 +442,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-9',

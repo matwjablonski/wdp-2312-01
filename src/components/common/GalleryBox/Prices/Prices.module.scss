@@ -1,10 +1,9 @@
 @import "../../../../styles/settings.scss";
 
-
 .pricesCircle {
     position: absolute;
-    top: 60%;
-    right: 10%;
+    top: 37%;
+    right: 11%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,11 +11,18 @@
     width: 22%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background: rgba($promoted-time-counter-background, 0.5);
-    color: $promoted-time-counter-text-color;
-    margin-bottom: 2%;
+    background: rgba($gallery-priceCircle-background, 0.5);
+    color: $gallery-priceCircle-text;
+    z-index: 2;
 
-    .oldPrice{
+    h4 {
+        font-size: 1.3rem;
+        padding-bottom: 6px;
+        margin-bottom: 0;
+    }
+
+    .oldPrice {
         text-decoration: line-through;
+        margin-bottom: 0px;
     }
 }

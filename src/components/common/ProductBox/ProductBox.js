@@ -60,7 +60,7 @@ const ProductBox = ({
 
         <div className={!isPromoted ? styles.buttons : styles.buttonsPromoted}>
           {!isPromoted && <Button variant='small'>Quick View</Button>}
-          <Button variant='small'>
+          <Button variant='small' className={styles.btnAddToCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
@@ -94,7 +94,10 @@ const ProductBox = ({
         <div className={styles.outlines}>
           {isPromoted && (
             <Button variant='outline'>
-              <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+              <FontAwesomeIcon
+                icon={faEye}
+                style={{ width: '13px', height: '13px' }}
+              ></FontAwesomeIcon>
             </Button>
           )}
           <Button
@@ -102,7 +105,7 @@ const ProductBox = ({
             variant='outline'
             onClick={handleAddToFavorite}
           >
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faHeart}> Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
@@ -115,7 +118,12 @@ const ProductBox = ({
 
         <div className={styles.price}>
           {oldPrice && (
-            <Button noHover noBackground variant='small'>
+            <Button
+              noHover
+              noBackground
+              variant='small'
+              className={styles.oldPriceButton}
+            >
               $ {oldPrice}
             </Button>
           )}

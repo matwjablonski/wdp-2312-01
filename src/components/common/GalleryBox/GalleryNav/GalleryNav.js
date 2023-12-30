@@ -15,9 +15,11 @@ const GalleryNav = ({ activeTag, setActiveTag }) => {
     <div className={styles.navi}>
       <ul className={styles.list}>
         {tags.map(tag => (
-          <li key={tag.id} className={activeTag === tag.name ? styles.active : ''}>
+          <li key={tag.id}>
             <a
-              className={styles.navLink}
+              className={`${styles.navLink} ${
+                activeTag === tag.name ? styles.active : ''
+              }`}
               href='#/'
               data-name={tag.name}
               onClick={() => handleClick(tag.name)}
@@ -34,8 +36,6 @@ const GalleryNav = ({ activeTag, setActiveTag }) => {
 GalleryNav.propTypes = {
   activeTag: PropTypes.string,
   setActiveTag: PropTypes.func,
-  fade: PropTypes.bool,
-  setFade: PropTypes.func,
 };
 
 export default GalleryNav;

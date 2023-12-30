@@ -774,7 +774,7 @@ const initialState = {
     },
     { id: 'feedback 2',
       name: 'feedback-2',
-      text: 'I furnished my entire office here. My eployees are pleased with quality of these furnitures. I definitly come back here in the future for another purchases.',
+      text: 'I furnished my entire office here. My employees are pleased with quality of these furnitures. I\'ll definitely come back here in the future for another purchases.',
       clientName: 'Dutch Van Der Linde',
       clientPosition: 'Company Owner',
     },

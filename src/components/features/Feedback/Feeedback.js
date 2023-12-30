@@ -62,7 +62,7 @@ const Feedback = () => {
                 ></div>
                 <div className={styles.clientInfo}>
                   <p className={styles.clientName}>{feedback.clientName}</p>
-                  <p>{feedback.clientPosition}</p>
+                  <p className={styles.clientPosition}>{feedback.clientPosition}</p>
                 </div>
               </div>
             </div>

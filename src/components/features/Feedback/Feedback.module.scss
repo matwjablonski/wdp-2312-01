@@ -6,14 +6,14 @@
     position: relative;
 
     :global {
-      border-bottom: 4px solid $newFurniture-panelBar-border;
+      border-bottom: 4px solid $feedback-panelBar-border;
     }
 
     .heading {
       position: relative;
 
       h3 {
-        color: $newFurniture-title;
+        color: $feedback-title;
         text-transform: uppercase;
         font-size: 20px;
         line-height: 38px;
@@ -27,7 +27,7 @@
         bottom: -4px;
         left: 0;
         width: 45px;
-        border-bottom: 4px solid $newFurniture-decorLine;
+        border-bottom: 4px solid $feedback-decorLine;
       }
     }
 
@@ -40,7 +40,7 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: $newFurniture-list-background;
+        background-color: $feedback-list-background;
         transform: translateY(15px);
 
         li {
@@ -52,13 +52,13 @@
             width: 13px;
             height: 13px;
             border-radius: 6px;
-            background-color: $newFurniture-link-background;
+            background-color: $feedback-link-background;
             font-size: 0;
             @extend %hover-effect;
 
             &.active,
             &:hover {
-              background-color: $newFurniture-hover-bg;
+              background-color: $feedback-hover-bg;
             }
           }
         }
@@ -89,6 +89,7 @@
       text-align: center;
       margin-top: 20px;
       margin-bottom: 20px;
+      color: $feedback-text;
 
       @media (max-width: 466px) {
         padding-top: 30px;
@@ -105,6 +106,7 @@
         height: 50px;
         width: 50px;
         margin-right: 10px;
+        border-radius: 5px;
         background: {
         position: center;
         repeat: no-repeat;
@@ -114,11 +116,13 @@
 
       .clientName {
         font-weight: bold;
+        color: $feedback-client-name;
         margin: 0;
       }
 
       .clientPosition {
         margin: 0;
+        color: $feedback-client-position;
       }
 
       @media (max-width: 466px) {

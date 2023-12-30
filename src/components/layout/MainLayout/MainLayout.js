@@ -5,35 +5,39 @@ import Footer from '../Footer/Footer';
 import { setScr } from '../../../redux/scrszRedux';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+import { MagicNumbers } from '../../../utils/constants';
 
 const MainLayout = ({ children }) => {
   const [viewport, setViewport] = useState('');
-  const [elements, setElements] = useState('');
+  const [elements, setNumbersOfElements] = useState('');
 
   const dispatch = useDispatch();
 
-  const rwd = () => {
-    if (visualViewport.width > 992) {
+  const setResponsiveView = () => {
+    if (visualViewport.width > MagicNumbers.large) {
       setViewport('desktop');
-      setElements(8);
+      setNumbersOfElements(8);
     }
-    if (visualViewport.width > 768 && window.innerWidth < 992) {
+    if (
+      visualViewport.width > MagicNumbers.medium &&
+      window.innerWidth < MagicNumbers.large
+    ) {
       setViewport('tablet');
-      setElements(3);
+      setNumbersOfElements(3);
     }
-    if (visualViewport.width < 576) {
+    if (visualViewport.width < MagicNumbers.small) {
       setViewport('mobile');
-      setElements(2);
+      setNumbersOfElements(2);
     }
   };
 
   useEffect(() => {
-    rwd();
+    setResponsiveView();
     dispatch(setScr({ viewport, elements }));
-  });
+  }, [dispatch, viewport, elements]);
 
   visualViewport.onresize = () => {
-    rwd();
+    setResponsiveView();
   };
 
   return (

@@ -14,6 +14,8 @@ const GalleryBox = () => {
   const [activeTag, setActiveTag] = useState(TAGS.FEATURED);
 
   const [fade, setFade] = useState(true);
+  const [fadeImage, setFadeImage] = useState(true);
+
   const activeItems = useSelector(state => getProductByTags(state, activeTag));
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,26 +30,38 @@ const GalleryBox = () => {
     }, 800);
   };
 
+  const handleActivePhoto = index => {
+    setFadeImage(false);
+    setTimeout(() => {
+      setActiveIndex(index);
+      setFadeImage(true);
+    }, 800);
+  };
+
   return (
     <div className={styles.root}>
       <GalleryNav activeTag={activeTag} setActiveTag={handleTagClick} />
       <div
-        className={`${styles.sliderContainer} ${fade ? styles.fadeIn : styles.fadeOut}`}
+        className={`${styles.sliderContainer} ${
+          fade ? styles.fadeIn : styles.fadeOut
+        } `}
       >
-        <ActionButtons
-          id={activeElement.id}
-          favorite={activeElement.favorite}
-          comparison={activeElement.comparison}
-        />
-        <Image id={activeElement.id} />
-        <Prices price={activeElement.price} oldPrice={activeElement.oldPrice} />
-        <RatingBox
-          id={activeElement.id}
-          name={activeElement.name}
-          stars={activeElement.stars}
-          personalStars={activeElement.personalStars}
-        />
-        <SliderBottom activeItems={activeItems} setActiveIndex={setActiveIndex} />
+        <div className={`${fadeImage ? styles.fadeIn : styles.fadeOut}`}>
+          <ActionButtons
+            id={activeElement.id}
+            favorite={activeElement.favorite}
+            comparison={activeElement.comparison}
+          />
+          <Image id={activeElement.id} />
+          <Prices price={activeElement.price} oldPrice={activeElement.oldPrice} />
+          <RatingBox
+            id={activeElement.id}
+            name={activeElement.name}
+            stars={activeElement.stars}
+            personalStars={activeElement.personalStars}
+          />
+        </div>
+        <SliderBottom activeItems={activeItems} setActiveIndex={handleActivePhoto} />
       </div>
     </div>
   );

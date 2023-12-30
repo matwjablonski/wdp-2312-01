@@ -45,7 +45,18 @@ const NewFurniture = ({ categories, products, screen }) => {
 
   const categoryProducts = products.filter(item => item.category === activeCategory);
   const pagesCount = Math.ceil(categoryProducts.length / (screen.elements || 8));
-  let classRWD = screen.viewport === 'desktop' ? 'col-lg-3' : (screen.viewport === 'tablet' ? 'col-md-4' : 'col-sm-6');
+  function getClassByViewport(viewport) {
+    if (viewport === 'desktop') {
+      return 'col-lg-3';
+    } else if (viewport === 'tablet') {
+      return 'col-md-4';
+    } else {
+      return 'col-sm-6';
+    }
+  }
+
+  let classRWD = getClassByViewport(screen.viewport);
+
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {
     dots.push(
@@ -59,6 +70,11 @@ const NewFurniture = ({ categories, products, screen }) => {
       </li>
     );
   }
+
+  const slicedProductsArray = categoryProducts.slice(
+    activePage * (screen.elements || 8),
+    (activePage + 1) * (screen.elements || 8)
+  );
 
   return (
     <Swipeable leftAction={handleSwipeLeft} rightAction={handleSwipeRight}>
@@ -89,7 +105,7 @@ const NewFurniture = ({ categories, products, screen }) => {
             </div>
           </div>
           <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
-            {categoryProducts.slice(activePage * screen.elements, (activePage + 1) * screen.elements).map(item => (
+            {slicedProductsArray.map(item => (
               <div key={item.id} className={classRWD}>
                 <ProductBox {...item} isPromoted={false} />
               </div>

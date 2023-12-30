@@ -88,7 +88,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: true,
-      tags: ['Featured', 'Top Seller'],
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -101,7 +101,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
-      tags: ['Featured'],
+      tags: [],
     },
     {
       id: 'aenean-ru-bristique-7',

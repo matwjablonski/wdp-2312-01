@@ -72,3 +72,12 @@
     background: #2a2a2a;
   }
 
+  .gallerySlider .slick-slider.slick-initialized .slick-prev:before {
+    content: '<';
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .gallerySlider .slick-slider.slick-initialized .slick-next:before {
+    content: '>';
+    font-family: 'Poppins', sans-serif;
+  }

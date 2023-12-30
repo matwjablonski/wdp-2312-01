@@ -7,17 +7,18 @@ import { getAllBrands } from '../../../redux/brandsRedux';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { MagicNumbers } from '../../../utils/constants';
 
 const Brands = () => {
   const allBrands = useSelector(getAllBrands);
   const [visibleStart, setVisibleStart] = useState(0);
 
   const getItemsPerPage = () => {
-    if (window.innerWidth < 415) {
+    if (window.innerWidth < MagicNumbers.extraSmall) {
       return 1;
-    } else if (window.innerWidth < 768) {
+    } else if (window.innerWidth < MagicNumbers.medium) {
       return 2;
-    } else if (window.innerWidth < 992) {
+    } else if (window.innerWidth < MagicNumbers.large) {
       return 4;
     } else {
       return 6;

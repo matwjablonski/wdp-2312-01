@@ -739,7 +739,7 @@ const initialState = {
   },
   screen: {
     viewportSize: '',
-    elementsNumber: '',
+    elementsNumber: 8,
   },
   promo: {
     titleLeft: 'Guest room',
@@ -767,7 +767,6 @@ const initialState = {
     { id: 5, name: 'brand-5' },
     { id: 6, name: 'brand-6' },
   ],
-
 };
 
 export default initialState;

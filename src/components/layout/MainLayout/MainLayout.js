@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { setScr } from '../../../redux/scrszRedux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { MagicNumbers } from '../../../utils/constants';
 
 const MainLayout = ({ children }) => {
-  const [viewport, setViewport] = useState('');
-  const [elements, setNumbersOfElements] = useState('');
+  const { viewportSize, elementsNumber } = useSelector(state => state.screen);
+  const [viewport, setViewport] = useState(viewportSize);
+  const [elements, setNumbersOfElements] = useState(elementsNumber);
+
+  console.log('viewport', viewport);
+  console.log('elements', elements);
 
   const dispatch = useDispatch();
 

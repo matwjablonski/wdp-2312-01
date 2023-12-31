@@ -12,9 +12,6 @@ const MainLayout = ({ children }) => {
   const [viewport, setViewport] = useState(viewportSize);
   const [elements, setNumbersOfElements] = useState(elementsNumber);
 
-  console.log('viewport', viewport);
-  console.log('elements', elements);
-
   const dispatch = useDispatch();
 
   const setResponsiveView = () => {

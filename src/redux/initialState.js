@@ -737,7 +737,10 @@ const initialState = {
   cart: {
     products: [],
   },
-
+  screen: {
+    viewportSize: '',
+    elementsNumber: 8,
+  },
   promo: {
     titleLeft: 'Guest room',
     subtitleLeft: 'Sofa',

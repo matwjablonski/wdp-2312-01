@@ -270,11 +270,13 @@
     .containerTopImgContent {
       h2 {
         font-size: 15px;
+        line-height: 20px;
       }
       div {
         font-size: 14px;
       }
       .primary {
+        line-height: 12px;
         font-size: 16px;
       }
     }
@@ -290,8 +292,10 @@
 
   @media (max-width: 399px) {
     .containerTopImgContent {
+      padding: 18px 26px 18px 27px; 
       h2 {
-        font-size: 9px;
+        font-size: 12px;
+        margin: 0;
       }
       div {
         font-size: 10px;
@@ -301,11 +305,11 @@
       }
     }
     .containerBottomImgContent {
-      font-size: 10px;
+      font-size: 9px;
       padding: 10px 10px 10px 8px; 
 
       .primary {
-        font-size: 14px;
+        font-size: 11px;
       }
     }
   }

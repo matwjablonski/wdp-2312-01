@@ -9,12 +9,12 @@
       display: block;
       margin-bottom: 10px;
       margin-left: 10px;
-      background-color: transparent;
+      background-color: rgba($gallery-tooltip-text, 0.6);
 
       &:not(.noHover):hover {
         border-color: $gallery-hover;
         color: $gallery-hover;
-        background-color: transparent;
+        background-color: rgba($gallery-tooltip-text, 0.6);
       }
       &:hover + .tooltipText {
         visibility: visible;

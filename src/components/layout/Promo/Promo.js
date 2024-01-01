@@ -8,7 +8,7 @@ const Promo = ({ promo }) => {
       <section className={'container'}>
         <div className='row'>
           <div className={`${styles.left}`}>
-            <img src={promo.sofa} />
+            <img src={promo.sofa} alt='sofa' />
             <div className={styles.sectionLeft}>
               <p className={styles.titleLeftTop}>{promo.titleLeft}</p>
               <p className={styles.titleLeftMiddle}>{promo.subtitleLeft}</p>
@@ -18,7 +18,7 @@ const Promo = ({ promo }) => {
 
           <div className={`${styles.right}`}>
             <div className={styles.topPictureWrapper}>
-              <img src={promo.chair} />
+              <img src={promo.chair} alt='chair' />
               <div className={styles.containerTopImgContent}>
                 <h2>
                   <span className={styles.boldText}>{promo.titleTopRight_1} </span>
@@ -29,7 +29,7 @@ const Promo = ({ promo }) => {
               </div>
             </div>
             <div className={styles.bottomPictureWrapper}>
-              <img src={promo.bed} />
+              <img src={promo.bed} alt='bed' />
               <div className={styles.containerBottomImgContent}>
                 <div className={styles.primary}>
                   <span>{promo.titleBottomRight_1} </span>

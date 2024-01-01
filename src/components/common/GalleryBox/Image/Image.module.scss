@@ -6,4 +6,10 @@
     position: relative;
     border-right: 1px solid $galleryNav-border;
     border-left: 1px solid $galleryNav-border;
-} 
+}
+
+@media (max-width: 500px) {
+    .image {
+        height: 350px;
+    }
+}

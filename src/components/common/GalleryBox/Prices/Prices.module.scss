@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 22%;
+    width: 120px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background: rgba($gallery-priceCircle-background, 0.5);
@@ -25,4 +25,19 @@
         text-decoration: line-through;
         margin-bottom: 0px;
     }
+}
+
+@media (max-width: 768px) {
+    .pricesCircle {
+        width: 100px;
+        top: 40%;
+    }
+}
+
+@media (max-width: 415px) {
+    .pricesCircle {
+        width: 90px;
+        top: 46%;
+    }
+
 }

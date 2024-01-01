@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Modal.module.scss';
 
@@ -12,17 +12,26 @@ const Modal = ({ onClose }) => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  const validateForm = () => {
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('user-info');
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setLoggedIn(foundUser);
+    }
+  }, []);
+
+  const handleLogin = e => {
+    e.preventDefault();
     setEmailError('');
     setPasswordError('');
 
-    if (email && password.length >= 8) {
-      onClose();
-      return;
-    }
     if (email === '' && password === '') {
       setPasswordError('please enter your password');
       setEmailError('please enter your email');
+      return;
+    }
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError('Please enter a valid email');
       return;
     }
     if (email === '') {
@@ -37,35 +46,17 @@ const Modal = ({ onClose }) => {
       setPasswordError('password must be at least 8 characters');
       return;
     }
-  };
-
-  const handleLogin = e => {
-    e.preventDefault();
-
-
-    validateForm(() => {
-      localStorage.setItem(
-        'user-info',
-        JSON.stringify(userData)
-      );
-      setLoggedIn(true);
-      setEmail('');
-      setPassword('');
-      onClose();
-
-    });
 
     const userData = {
       email,
       password,
     };
-
-
-  };
-
-  const handleLogOut = () => {
-    localStorage.removeItem('user-info');
-    setLoggedIn(false);
+    setLoggedIn(true);
+    localStorage.setItem(
+      'user-info',
+      JSON.stringify(userData)
+    );
+    setLoggedIn(true);
     onClose();
   };
 
@@ -83,9 +74,9 @@ const Modal = ({ onClose }) => {
           e.stopPropagation();
         }}
       >
+        <button className={styles.closeBtn} onClick={onClose}> X </button>
         {!loggedIn ? (
           <>
-            <button className={styles.closeBtn} onClick={onClose}> X </button>
             <div className={styles.modalText}>
               <h1>Please enter your email and password:</h1>
             </div>
@@ -94,7 +85,6 @@ const Modal = ({ onClose }) => {
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                required
                 placeholder="Enter your email here"
               />
               <label className={styles.errorLabel}>{emailError}</label>
@@ -102,8 +92,6 @@ const Modal = ({ onClose }) => {
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                required
-                minLength={8}
                 placeholder="Enter your password here"
               />
               <label className={styles.errorLabel}>{passwordError}</label>
@@ -111,17 +99,12 @@ const Modal = ({ onClose }) => {
             <div className={styles.modalButtons}>
               <button className={styles.modalActionBtn} onClick={handleClose}>Cancel</button>
               <button className={styles.modalActionBtn} onClick={handleLogin}>Login</button>
-              <button className={styles.modalActionBtn} onClick={handleLogOut}>Logout</button>
             </div>
           </>
         ) : (
           <>
-            <button className={styles.closeBtn} onClick={onClose}> X </button>
             <div className={styles.modalTextLogOut}>
-              <h3>You are logged in. If you want to logout click the button:</h3>
-            </div>
-            <div className={styles.modalButtons}>
-              <button className={styles.modalActionBtn} onClick={handleLogOut}>Logout</button>
+              <h3>You are logged in.</h3>
             </div>
           </>
         )}

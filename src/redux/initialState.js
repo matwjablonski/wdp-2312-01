@@ -734,9 +734,7 @@ const initialState = {
       comparison: false,
     },
   ],
-  cart: {
-    products: [],
-  },
+
   screen: {
     elements: 8,
     viewport: '',

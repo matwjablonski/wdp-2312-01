@@ -22,7 +22,7 @@
         list-style: none;
 
         li {
-            width:25%
+            width:25%;
         }
 
         .navLink {
@@ -34,17 +34,15 @@
             font-weight: 500;
             background-color: $galleryNav-background;
             border-bottom: 1px solid $galleryNav-border;
-
             @extend %hover-effect;
 
-            &:hover {
+            &:hover,
+            &.active {
                 border-top: 3px solid $gallery-hover;
                 color: $orange;
                 background-color: transparent;
                 border-bottom: none;
             }
-
         }
     }
-
 }

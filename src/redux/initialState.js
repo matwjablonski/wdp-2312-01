@@ -781,7 +781,7 @@ const initialState = {
     {
       id: 'feedback 1',
       name: 'feedback-1',
-      text: 'I am enthusiastic about this store. Highly recommend to everyone',
+      text: "I'm enthusiastic about this store. Highly recommend to everyone",
       clientName: 'Arthur Morgan',
       clientPosition: 'Courier',
     },
@@ -789,7 +789,7 @@ const initialState = {
       id: 'feedback 2',
       name: 'feedback-2',
       text:
-        'I furnished my entire office here. My employees are pleased with quality of these furnitures. I will definitely come back here in the future for another purchases.',
+        "I furnished my entire office here. My employees are pleased with quality of these furnitures. I'll definitely come back here in the future for another purchases.",
       clientName: 'Dutch Van Der Linde',
       clientPosition: 'Company Owner',
     },

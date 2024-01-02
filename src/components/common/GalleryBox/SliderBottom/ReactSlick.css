@@ -33,57 +33,57 @@
   padding: 0 3px;
 }
 
-.gallerySlider .slick-slider.slick-initialized .slick-arrow.slick-prev {
-  font-size: 10;
-  line-height: 0;
-  z-index: 1;
-  margin-right: 9px;
-  position: absolute;
-  top: 40px;
-  left: 5px;
-  display: block;
-  width: 25px;
-  height: 75px;
-  padding: 0;
-  transform: 0;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: #2a2a2a;
-  justify-content: center;
-}
+  .gallerySlider .slick-slider.slick-initialized .slick-arrow.slick-prev {
+    font-size: 10;
+    line-height: 0;
+    z-index: 1;
+    margin-right: 9px;
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    display: block;
+    width: 25px;
+    height: 75px;
+    padding: 0;
+    transform: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #2a2a2a;
+    justify-content: center;
+  }
 
-.gallerySlider .slick-slider.slick-initialized .slick-next {
-  font-size: 10;
-  line-height: 0;
-  z-index: 1;
-  position: absolute;
-  top: 40px;
-  right: 5px;
-  display: block;
-  width: 25px;
-  height: 75px;
-  padding: 0;
-  transform: 0;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: #2a2a2a;
-}
+  .gallerySlider .slick-slider.slick-initialized .slick-next {
+    font-size: 10;
+    line-height: 0;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    display: block;
+    width: 25px;
+    height: 75px;
+    padding: 0;
+    transform: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #2a2a2a;
+  }
 
-.gallerySlider .slick-slider.slick-initialized .slick-prev:before {
-  content: '<';
-  font-family: 'Poppins', sans-serif;
-}
+  .gallerySlider .slick-slider.slick-initialized .slick-prev:before {
+    content: '<';
+    font-family: 'Poppins', sans-serif;
+  }
 
-.gallerySlider .slick-slider.slick-initialized .slick-prev:hover:before {
-  color:#d58e32;
-}
+  .gallerySlider .slick-slider.slick-initialized .slick-prev:hover:before {
+    color:#d58e32;
+  }
 
-.gallerySlider .slick-slider.slick-initialized .slick-next:before {
-  content: '>';
-  font-family: 'Poppins', sans-serif;
-}
-.gallerySlider .slick-slider.slick-initialized .slick-next:hover:before {
-  color:#d58e32;
-}
+  .gallerySlider .slick-slider.slick-initialized .slick-next:before {
+    content: '>';
+    font-family: 'Poppins', sans-serif;
+  }
+  .gallerySlider .slick-slider.slick-initialized .slick-next:hover:before {
+    color:#d58e32;
+  }

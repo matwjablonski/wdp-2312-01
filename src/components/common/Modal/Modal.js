@@ -60,6 +60,12 @@ const Modal = ({ onClose }) => {
     onClose();
   };
 
+  const handleLogOut = () => {
+    localStorage.removeItem('user-info');
+    setLoggedIn(false);
+    onClose();
+  };
+
   const handleClose = () => {
     setEmail('');
     setPassword('');
@@ -104,7 +110,10 @@ const Modal = ({ onClose }) => {
         ) : (
           <>
             <div className={styles.modalTextLogOut}>
-              <h3>You are logged in.</h3>
+              <h3>You are logged in. If you want to logout click the button:</h3>
+            </div>
+            <div className={styles.modalButtons}>
+              <button className={styles.modalActionBtn} onClick={handleLogOut}>Logout</button>
             </div>
           </>
         )}

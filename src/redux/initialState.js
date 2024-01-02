@@ -738,8 +738,8 @@ const initialState = {
     products: [],
   },
   screen: {
-    viewportSize: '',
-    elementsNumber: 8,
+    elements: 8,
+    viewport: '',
   },
   promo: {
     titleLeft: 'Guest room',

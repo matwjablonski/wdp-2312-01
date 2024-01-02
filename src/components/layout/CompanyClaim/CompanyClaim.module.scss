@@ -16,7 +16,7 @@
     .align-items-center {
       position: relative;
       height: 50%;
-      width:100%;
+      width: 100%;
       box-sizing: border-box;
     }
     .phoneNumber {
@@ -112,6 +112,108 @@
           background-color: lighten($companyClaim-cartIcon, 10%);
         }
       }
+    }
+    .cartList {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: $cart-background;
+      border: 1px solid $cart-border;
+      box-shadow: 0 2px 8px $cart-shadow;
+      z-index: 100;
+      width: 500px;
+      padding: 15px;
+      max-height: 500px;
+      overflow-y: auto;
+      border-radius: 4px;
+    }
+
+    .cartItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .cartItem:last-child {
+      margin-bottom: 0;
+    }
+
+    .productName {
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    .productPrice {
+      font-weight: 400;
+      color: $text-color;
+    }
+
+    .quantityControls {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantityControls button {
+      border: none;
+      background-color: $cart-button-color;
+      color: $text-color;
+      padding: 5px 8px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .quantityControls button {
+      @extend %hover-effect;
+      &:hover {
+        background-color: $button-hover-bg;
+        color: $button-text;
+      }
+    }
+    .quantityControls input {
+      width: 50px;
+      text-align: center;
+      border: 1px solid $cart-border;
+      padding: 5px;
+    }
+
+    .removeIcon {
+      @extend %hover-effect;
+      cursor: pointer;
+      &:hover {
+        color: $button-hover-bg;
+      }
+    }
+
+    .cartSummary {
+      padding-top: 15px;
+      border-top: 1px solid $cart-border;
+    }
+
+    .cartSummary div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .cartSummary .total {
+      font-weight: 700;
+    }
+
+    .subtotalPrice,
+    .deliveryPrice,
+    .totalPrice {
+      font-weight: 400;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
     }
   }
 }

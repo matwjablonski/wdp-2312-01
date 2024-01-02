@@ -11,6 +11,7 @@ import { addToCompare } from '../../../redux/productsRedux';
 import { getCompareProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 import Stars from '../Stars/Stars';
+import { addProduct } from '../../../redux/cartRedux';
 
 const ProductBox = ({
   id,
@@ -48,6 +49,11 @@ const ProductBox = ({
     }
   };
 
+  const handleAddToCart = e => {
+    e.preventDefault();
+    dispatch(addProduct({ id, name, price, quantity: 1 }));
+  };
+
   return (
     <div className={styles.root}>
       <div
@@ -60,7 +66,11 @@ const ProductBox = ({
 
         <div className={!isPromoted ? styles.buttons : styles.buttonsPromoted}>
           {!isPromoted && <Button variant='small'>Quick View</Button>}
-          <Button variant='small' className={styles.btnAddToCart}>
+          <Button
+            variant='small'
+            className={styles.btnAddToCart}
+            onClick={handleAddToCart}
+          >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>

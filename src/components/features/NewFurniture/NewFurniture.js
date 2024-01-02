@@ -8,6 +8,7 @@ import StickyBar from '../StickyBar/StickyBar';
 const NewFurniture = ({ categories, products, screen }) => {
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
+  const newScreen = screen || { elements: 8, viewport: 'desktop' };
 
   const [fade, setFade] = useState(true);
 
@@ -44,7 +45,7 @@ const NewFurniture = ({ categories, products, screen }) => {
   };
 
   const categoryProducts = products.filter(item => item.category === activeCategory);
-  const pagesCount = Math.ceil(categoryProducts.length / (screen.elements || 8));
+  const pagesCount = Math.ceil(categoryProducts.length / newScreen.elements);
   function getClassByViewport(viewport) {
     if (viewport === 'desktop') {
       return 'col-lg-3';
@@ -55,7 +56,7 @@ const NewFurniture = ({ categories, products, screen }) => {
     }
   }
 
-  let classRWD = getClassByViewport(screen.viewport);
+  let classRWD = getClassByViewport(newScreen.viewport);
 
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {
@@ -72,8 +73,8 @@ const NewFurniture = ({ categories, products, screen }) => {
   }
 
   const slicedProductsArray = categoryProducts.slice(
-    activePage * (screen.elements || 8),
-    (activePage + 1) * (screen.elements || 8)
+    activePage * (newScreen.elements || 8),
+    (activePage + 1) * (newScreen.elements || 8)
   );
 
   return (
@@ -119,7 +120,10 @@ const NewFurniture = ({ categories, products, screen }) => {
 };
 
 NewFurniture.propTypes = {
-  screen: PropTypes.array,
+  screen: PropTypes.shape({
+    elements: PropTypes.number,
+    viewport: PropTypes.string,
+  }),
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Modal.module.scss';
 
 const Modal = ({ onClose }) => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -51,7 +52,10 @@ const Modal = ({ onClose }) => {
       password,
     };
 
-    localStorage.setItem('user-info', JSON.stringify(userData));
+    localStorage.setItem(
+      'user-info',
+      JSON.stringify(userData)
+    );
     setLoggedIn(true);
     onClose();
   };
@@ -70,10 +74,7 @@ const Modal = ({ onClose }) => {
           e.stopPropagation();
         }}
       >
-        <button className={styles.closeBtn} onClick={onClose}>
-          {' '}
-          X{' '}
-        </button>
+        <button className={styles.closeBtn} onClick={onClose}> X </button>
         {!loggedIn ? (
           <>
             <div className={styles.modalText}>
@@ -81,27 +82,23 @@ const Modal = ({ onClose }) => {
             </div>
             <form className={styles.loginForm} onSubmit={handleLogin}>
               <input
-                type='email'
+                type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder='Enter your email here'
+                placeholder="Enter your email here"
               />
               <label className={styles.errorLabel}>{emailError}</label>
               <input
-                type='password'
+                type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                placeholder='Enter your password here'
+                placeholder="Enter your password here"
               />
               <label className={styles.errorLabel}>{passwordError}</label>
             </form>
             <div className={styles.modalButtons}>
-              <button className={styles.modalActionBtn} onClick={handleClose}>
-                Cancel
-              </button>
-              <button className={styles.modalActionBtn} onClick={handleLogin}>
-                Login
-              </button>
+              <button className={styles.modalActionBtn} onClick={handleClose}>Cancel</button>
+              <button className={styles.modalActionBtn} onClick={handleLogin}>Login</button>
             </div>
           </>
         ) : (

@@ -10,7 +10,6 @@ import Promo from '../../layout/Promo/PromoContainer';
 import Brands from '../../features/Brands/Brands';
 import Feedback from '../../features/Feedback/Feeedback';
 
-
 const Homepage = () => (
   <div className={styles.root}>
     <Promoted />

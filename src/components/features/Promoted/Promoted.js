@@ -10,6 +10,7 @@ import { getAll } from '../../../redux/productsRedux';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import Swipeable from '../../Swipeable/Swipeable';
 
 const Promoted = () => {
   const promotedProducts = useSelector(getPromotedProducts);
@@ -51,6 +52,31 @@ const Promoted = () => {
       }, 500);
     }
   };
+
+  const rightSwipe = e => {
+    if (rightActiveProductNumber < allProducts.length - 1) {
+      setRightFade(false);
+      const newProductNumber = rightActiveProductNumber + 1;
+      setTimeout(() => {
+        setRightActiveProductNumber(newProductNumber);
+        setRightActiveProduct(allProducts[newProductNumber]);
+        setRightFade(true);
+      }, 500);
+    }
+  };
+
+  const leftSwipe = e => {
+    if (rightActiveProductNumber > 0) {
+      setRightFade(false);
+      const newProductNumber = rightActiveProductNumber - 1;
+      setTimeout(() => {
+        setRightActiveProductNumber(newProductNumber);
+        setRightActiveProduct(allProducts[newProductNumber]);
+        setRightFade(true);
+      }, 500);
+    }
+  };
+
   const intervalRef = useRef();
   const timeoutRef = useRef();
   const pauseAutoPlay = () => {
@@ -109,67 +135,69 @@ const Promoted = () => {
   }, [promotedProducts.length]);
 
   return (
-    <div className={styles.root}>
-      <div className='container'>
-        <div className='row'>
-          <div className={`col-4`}>
-            <div className={styles.hotdealsBar}>
-              <span>Hot deals</span>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
-              </div>
-            </div>
-            <div className={`${leftFade ? styles.fadeIn : styles.fadeOut}`}>
-              {promotedProducts.length > 0 && (
-                <ProductBox
-                  {...promotedProducts[leftActiveProductNumber]}
-                  isPromoted={true}
-                />
-              )}
-            </div>
-          </div>
-          <div className={`col-8`}>
-            <div className={styles.sliderWrapper}>
-              <div
-                className={`${styles.photo} + ${
-                  rightFade ? styles.fadeIn : styles.fadeOut
-                }`}
-                style={{
-                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/products//${rightActiveProduct.id}.jpg")`,
-                }}
-              >
-                <div className={styles.photoInner}>
-                  <h2>
-                    <span>Indoor furniture</span>
-                  </h2>
-                  <p>Save up to 50% of all furniture</p>
-                  <Button variant='outline' className={styles.shopButton}>
-                    Shop now
-                  </Button>
+    <Swipeable leftAction={leftSwipe} rightAction={rightSwipe}>
+      <div className={styles.root}>
+        <div className='container'>
+          <div className='row'>
+            <div className={`col-4 ${styles.leftSlider}`}>
+              <div className={styles.hotdealsBar}>
+                <span>Hot deals</span>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
                 </div>
               </div>
+              <div className={`${leftFade ? styles.fadeIn : styles.fadeOut}`}>
+                {promotedProducts.length > 0 && (
+                  <ProductBox
+                    {...promotedProducts[leftActiveProductNumber]}
+                    isPromoted={true}
+                  />
+                )}
+              </div>
+            </div>
+            <div className={`col-8 ${styles.rightSlider}`}>
+              <div className={styles.sliderWrapper}>
+                <div
+                  className={`${styles.photo} + ${
+                    rightFade ? styles.fadeIn : styles.fadeOut
+                  }`}
+                  style={{
+                    backgroundImage: `url("${process.env.PUBLIC_URL}/images/products//${rightActiveProduct.id}.jpg")`,
+                  }}
+                >
+                  <div className={styles.photoInner}>
+                    <h2>
+                      Indoor <span>furniture</span>
+                    </h2>
+                    <p>Save up to 50% of all furniture</p>
+                    <Button variant='outline' className={styles.shopButton}>
+                      Shop now
+                    </Button>
+                  </div>
+                </div>
 
-              <div className={styles.arrays}>
-                <Button
-                  variant='outline'
-                  className={styles.arrayButton}
-                  onClick={leftArrayHandler}
-                >
-                  <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
-                </Button>
-                <Button
-                  variant='outline'
-                  className={styles.arrayButton}
-                  onClick={rightArrayHandler}
-                >
-                  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-                </Button>
+                <div className={styles.arrays}>
+                  <Button
+                    variant='outline'
+                    className={styles.arrayButton}
+                    onClick={leftArrayHandler}
+                  >
+                    <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+                  </Button>
+                  <Button
+                    variant='outline'
+                    className={styles.arrayButton}
+                    onClick={rightArrayHandler}
+                  >
+                    <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Swipeable>
   );
 };
 

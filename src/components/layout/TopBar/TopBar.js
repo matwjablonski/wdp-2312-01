@@ -9,6 +9,7 @@ import styles from './TopBar.module.scss';
 const TopBar = () => {
 
   const [openModal, setOpenModal] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <div className={styles.root}>
@@ -35,27 +36,44 @@ const TopBar = () => {
           </div>
           <div className={`col text-right ${styles.topMenu}`}>
             <ul>
-              <li>
-                <a href='#'
-                  onClick={() => {
-                    setOpenModal(true);
-                  }}
-                >
-                  <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
-                  <span className={styles.topBarIconName}>Login</span>
-                </a>
-              </li>
-              {( openModal && <Modal
+              {!loggedIn ?
+                (<>
+                  <li>
+                    <a href='#'
+                      onClick={() => {
+                        setOpenModal(true);
+                      }}
+                    >
+                      <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                      <span className={styles.topBarIconName}>Login</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                      <span className={styles.topBarIconName}>Register</span>
+                    </a>
+                  </li></>
+                )
+                : (
+                  <li>
+                    <a href='#'
+                      onClick={() => {
+                        setOpenModal(true);
+                      }}
+                    >
+                      <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                      <span className={styles.topBarIconName}>Logout</span>
+                    </a>
+                  </li>)}
+              {(openModal && <Modal
                 // open={openModal}
                 onClose={() => {
                   setOpenModal(false);
-                }} />)}
-              <li>
-                <a href='#'>
-                  <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
-                  <span className={styles.topBarIconName}>Register</span>
-                </a>
-              </li>
+                }}
+                loggedIn={loggedIn}
+                setLoggedIn={setLoggedIn}
+              />)}
               <li>
                 <a href='#'>
                   <FontAwesomeIcon className={styles.icon} icon={faBars} />

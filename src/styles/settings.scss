@@ -18,6 +18,8 @@ $black-shadow: rgba(1, 2, 2, 0.2);
 $orange: #d58e32;
 $darkGray: #3e3e3e;
 $gray-transparent: rgba(37, 36, 36, 0.4);
+$lightGreyNext: rgb(131, 128, 128);
+
 
 //color variables - for components
 
@@ -127,6 +129,39 @@ $promoted-arrays-background: $veryDarkGrey;
 
 //Brands
 $brands-border: $lighterGrey;
+
+//Gallery
+$gallery-hover: $orange;
+$gallery-panelBar-border: $lightGrey;
+$gallery-title: $orange;
+$gallery-decorLine: $orange;
+
+//actionButtons
+$gallery-tooltip-text: $white;
+$gallery-tooltip-background: $veryDarkGrey;
+
+//galleryNav
+$galleryNav-border: $lightGrey;
+$galleryNav-background: $white;
+$galleryNav-text: $veryDarkGrey;
+
+//prices
+$gallery-priceCircle-background: $darkGray;
+$gallery-priceCircle-text: $white;
+
+//ratingBox
+$gallery-rating-boxshadow: $veryDarkGrey;
+$gallery-rating-boxdecor: $veryDarkGrey;
+$gallery-rating-boxBackground: $white;
+
+//sliderBottom
+$gallery-slider-overlay-color: $lightGreyNext;
+
+//staticImageRight
+$gallery-imageRight-heading: $lightGreyNext;
+$gallery-imageRight-button-background: $lightGreyNext;
+$gallery-button-text: $white;
+$gallery-span-color: $veryDarkGrey;
 
 //Feedback
 $feedback-panelBar-border: $lightGrey;

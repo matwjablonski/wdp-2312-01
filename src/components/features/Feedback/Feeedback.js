@@ -46,11 +46,7 @@ const Feedback = () => {
             </div>
           </div>
         </div>
-        <div
-          className={`${styles.feedbackWrapper} + ${
-            fade ? styles.fadeIn : styles.fadeOut
-          }`}
-        >
+        <div className={`${styles.feedbackWrapper} + ${fade ? styles.fadeIn : styles.fadeOut}`}>
           <div className={styles.feedbackIcon}>
             <FontAwesomeIcon icon={faQuoteRight} />
           </div>

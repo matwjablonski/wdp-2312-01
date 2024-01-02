@@ -51,7 +51,7 @@ const Modal = ({ onClose }) => {
       email,
       password,
     };
-    setLoggedIn(true);
+
     localStorage.setItem(
       'user-info',
       JSON.stringify(userData)

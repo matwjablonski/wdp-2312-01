@@ -19,7 +19,7 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-    
+
     &::before {
         content: "";
         position: absolute;
@@ -39,5 +39,33 @@
         height: 50px;
         background-color: $gallery-rating-boxdecor;
         transform: rotate(45deg);
+    }
+}
+
+@media (max-width: 576px) {
+    .box {
+        width: 220px;
+        height: 70px;
+
+        h5 {
+        font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 415px) {
+    .box {
+        width: 200px;
+        top: 63%;
+
+        h5 {
+        font-size: 0.8rem;
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    .box {
+        width: 180px;
     }
 }

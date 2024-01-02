@@ -7,8 +7,8 @@ import Slider from 'react-slick';
 import './ReactSlick.css';
 import clsx from 'clsx';
 
-const SliderBottom = ({ activeItems }) => {
-  const [activeIndex] = useState(0);
+const SliderBottom = ({ activeItems, setActiveIndex }) => {
+  const [activeIndex, setActiveIndexLocal] = useState(0);
 
   const settings = {
     dots: false,
@@ -16,6 +16,21 @@ const SliderBottom = ({ activeItems }) => {
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 6,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+    ],
+  };
+
+  const handleActivePhoto = index => {
+    setActiveIndex(index);
+    setActiveIndexLocal(index);
   };
 
   return (
@@ -35,6 +50,7 @@ const SliderBottom = ({ activeItems }) => {
                 src={`${process.env.PUBLIC_URL}/images/products/${item.id}.jpg`}
                 alt='furniture'
                 data-image={item.image}
+                onClick={() => handleActivePhoto(index)}
               />
             </div>
           ))}

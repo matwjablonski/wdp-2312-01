@@ -8,7 +8,7 @@ const Gallery = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-6'>
+          <div className='col-12 col-md-6'>
             <div className={styles.panelBar}>
               <div className={styles.heading}>
                 <h3>Furniture Gallery</h3>
@@ -16,7 +16,7 @@ const Gallery = () => {
             </div>
             <GalleryBox />
           </div>
-          <div className='col-6'>
+          <div className='d-none d-md-block col-md-6'>
             <StaticImageRight />
           </div>
         </div>

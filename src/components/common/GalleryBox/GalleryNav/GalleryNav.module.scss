@@ -22,7 +22,7 @@
         list-style: none;
 
         li {
-            width:25%
+            width:25%;
         }
 
         .navLink {
@@ -34,17 +34,33 @@
             font-weight: 500;
             background-color: $galleryNav-background;
             border-bottom: 1px solid $galleryNav-border;
-
             @extend %hover-effect;
 
-            &:hover {
+            &:hover,
+            &.active {
                 border-top: 3px solid $gallery-hover;
                 color: $orange;
                 background-color: transparent;
                 border-bottom: none;
             }
-
         }
     }
+}
 
+@media (max-width: 992px) {
+    .navLink {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 350px) {
+    .navLink {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 300px) {
+    .navLink {
+        font-size: 10px;
+    }
 }

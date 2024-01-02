@@ -7,12 +7,23 @@ import styles from './GalleryNav.module.scss';
 const GalleryNav = ({ activeTag, setActiveTag }) => {
   const tags = useSelector(getAllTags);
 
+  const handleClick = name => {
+    setActiveTag(name);
+  };
+
   return (
     <div className={styles.navi}>
       <ul className={styles.list}>
         {tags.map(tag => (
-          <li key={tag.id} className={activeTag === tag.name ? styles.active : ''}>
-            <a className={styles.navLink} href='#' data-name={tag.name}>
+          <li key={tag.id}>
+            <a
+              className={`${styles.navLink} ${
+                activeTag === tag.name ? styles.active : ''
+              }`}
+              href='#/'
+              data-name={tag.name}
+              onClick={() => handleClick(tag.name)}
+            >
               {tag.name}
             </a>
           </li>

@@ -776,7 +776,6 @@ const initialState = {
     { id: 14, name: 'brand-14' },
     { id: 15, name: 'brand-15' },
   ],
-<<<<<<< HEAD
 
   feedbacks : [
     { id: 'feedback 1',
@@ -798,10 +797,6 @@ const initialState = {
       clientPosition: 'Internet marketing specialist',
     },
   ],
-||||||| 95cf042
-
-=======
->>>>>>> 6c6bfc472371b996ece3cc378526274d6967d459
 };
 
 export default initialState;

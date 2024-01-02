@@ -51,7 +51,7 @@ const ProductBox = ({
 
   const handleAddToCart = e => {
     e.preventDefault();
-    dispatch(addProduct({ id, name, price, quantity: 1 })); // Dodaj produkt z ilością 1
+    dispatch(addProduct({ id, name, price, quantity: 1 }));
   };
 
   return (

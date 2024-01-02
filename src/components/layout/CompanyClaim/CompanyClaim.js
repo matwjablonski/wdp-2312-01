@@ -125,7 +125,6 @@ const CompanyClaim = () => {
   );
 };
 
-//Comment
 // CompanyClaim.propTypes = {};
 
 export default CompanyClaim;

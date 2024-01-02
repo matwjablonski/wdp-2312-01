@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Modal.module.scss';
 
-const Modal = ({ onClose }) => {
+const Modal = ({ onClose, loggedIn, setLoggedIn }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const [loggedIn, setLoggedIn] = useState(false);
 
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -18,7 +16,7 @@ const Modal = ({ onClose }) => {
       const foundUser = JSON.parse(loggedInUser);
       setLoggedIn(foundUser);
     }
-  }, []);
+  }, [setLoggedIn]);
 
   const handleLogin = e => {
     e.preventDefault();
@@ -124,6 +122,11 @@ const Modal = ({ onClose }) => {
 
 Modal.propTypes = {
   onClose: PropTypes.func,
+};
+
+Modal.propTypes = {
+  loggedIn: PropTypes.bool,
+  setLoggedIn: PropTypes.func,
 };
 
 export default Modal;

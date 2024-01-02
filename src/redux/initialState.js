@@ -1,3 +1,9 @@
+export const TAGS = {
+  SALE_OFF: 'Sale Off',
+  TOP_RATED: 'Top Rated',
+  FEATURED: 'Featured',
+  TOP_SELLER: 'Top Seller',
+};
 const initialState = {
   categories: [
     { id: 'bed', name: 'Bed' },
@@ -5,6 +11,13 @@ const initialState = {
     { id: 'sofa', name: 'Sofa' },
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
+  ],
+
+  tags: [
+    { id: 'featured', name: 'Featured' },
+    { id: 'topSeller', name: 'Top Seller' },
+    { id: 'saleOff', name: 'Sale Off' },
+    { id: 'topRated', name: 'Top Rated' },
   ],
   products: [
     {
@@ -19,6 +32,7 @@ const initialState = {
       favorite: true,
       comparison: false,
       promoted: false,
+      inGallery: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -32,6 +46,8 @@ const initialState = {
       favorite: true,
       comparison: false,
       promoted: true,
+      inGallery: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -56,6 +72,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -69,6 +86,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: true,
+      tags: ['Top Seller', 'Sale Off'],
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -81,6 +99,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -93,6 +112,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -106,6 +126,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: true,
+      tags: ['Featured', 'Top Rated'],
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -118,6 +139,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller', 'Top Rated'],
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -131,6 +153,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: true,
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -143,6 +166,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -155,6 +179,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller', 'Featured'],
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -167,6 +192,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -179,6 +205,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Featured', 'Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -191,6 +218,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Featured'],
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -203,6 +231,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -215,6 +244,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -227,6 +257,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-19',
@@ -239,6 +270,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -251,6 +283,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Sale Off', 'Top Rated'],
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -263,6 +296,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -275,6 +309,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -288,6 +323,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: true,
+      tags: ['Top Seller'],
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -300,6 +336,7 @@ const initialState = {
       favorite: false,
       comparison: false,
       promoted: false,
+      tags: ['Top Seller', 'Sale Off'],
     },
     {
       id: 'chair-1',
@@ -312,6 +349,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-2',
@@ -324,6 +362,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-3',
@@ -336,6 +375,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off', 'Top Seller'],
     },
     {
       id: 'chair-4',
@@ -348,6 +388,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'chair-5',
@@ -360,6 +401,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-6',
@@ -372,6 +414,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: [],
     },
     {
       id: 'chair-7',
@@ -384,6 +427,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'chair-8',
@@ -396,6 +440,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'chair-9',
@@ -408,6 +453,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Featured'],
     },
     {
       id: 'sofa-1',
@@ -420,6 +466,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'sofa-2',
@@ -432,6 +479,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off', 'Top Rated'],
     },
     {
       id: 'sofa-3',
@@ -444,6 +492,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'sofa-4',
@@ -456,6 +505,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Sale Off'],
     },
     {
       id: 'sofa-5',
@@ -468,6 +518,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'sofa-6',
@@ -492,6 +543,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Featured'],
     },
     {
       id: 'sofa-8',
@@ -504,6 +556,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'sofa-9',
@@ -516,6 +569,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Featured'],
     },
     {
       id: 'table-1',
@@ -540,6 +594,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'table-3',
@@ -552,6 +607,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'table-4',
@@ -576,6 +632,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Top Rated'],
     },
     {
       id: 'table-6',
@@ -612,6 +669,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       comparison: false,
+      tags: ['Featured'],
     },
     {
       id: 'table-9',

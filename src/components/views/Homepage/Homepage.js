@@ -9,13 +9,15 @@ import Promoted from '../../features/Promoted/Promoted';
 import Promo from '../../layout/Promo/PromoContainer';
 import Brands from '../../features/Brands/Brands';
 import Feedback from '../../features/Feedback/Feeedback';
+import Gallery from '../../features/Gallery/Gallery';
 
 const Homepage = () => (
   <div className={styles.root}>
     <Promoted />
     <FeatureBoxes />
-    <NewFurniture />
     <Promo />
+    <NewFurniture />
+    <Gallery />
     <Brands />
     <Feedback />
   </div>

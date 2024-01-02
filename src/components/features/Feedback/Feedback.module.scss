@@ -1,0 +1,163 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .panelBar {
+    margin-bottom: 20px;
+    position: relative;
+
+    :global {
+      border-bottom: 4px solid $feedback-panelBar-border;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $feedback-title;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $feedback-decorLine;
+      }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $feedback-list-background;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $feedback-link-background;
+            font-size: 0;
+            @extend %hover-effect;
+
+            &.active,
+            &:hover {
+              background-color: $feedback-hover-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .feedbackWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    position: relative;
+
+    .feedbackIcon {
+      display: flex;
+      font-size: 30px;
+      position: absolute;
+      top: 0;
+    }
+
+    .feedbackText {
+      font-style: italic;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: $feedback-text;
+
+      @media (max-width: 466px) {
+        padding-top: 30px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .clientWrapper {
+      display: flex;
+      justify-content: center;
+
+      .clientPhoto {
+        overflow: hidden;
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+        border-radius: 5px;
+        background: {
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+        }
+      }
+
+      .clientName {
+        font-weight: bold;
+        color: $feedback-client-name;
+        margin: 0;
+      }
+
+      .clientPosition {
+        margin: 0;
+        color: $feedback-client-position;
+      }
+
+      @media (max-width: 466px) {
+        padding-bottom: 20px;
+      }
+    }
+
+       @media (max-width: 466px) {
+        font-size: 14px;
+      }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 500ms ease-in;
+}
+
+.fadeOut {
+  animation: fadeOut 500ms ease-out;
+}

@@ -5,7 +5,7 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../Swipeable/Swipeable';
 import StickyBar from '../StickyBar/StickyBar';
 
-const NewFurniture = ({ categories, products }) => {
+const NewFurniture = ({ categories, products, screen }) => {
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
 
@@ -44,7 +44,18 @@ const NewFurniture = ({ categories, products }) => {
   };
 
   const categoryProducts = products.filter(item => item.category === activeCategory);
-  const pagesCount = Math.ceil(categoryProducts.length / 8);
+  const pagesCount = Math.ceil(categoryProducts.length / (screen.elements || 8));
+  function getClassByViewport(viewport) {
+    if (viewport === 'desktop') {
+      return 'col-lg-3';
+    } else if (viewport === 'tablet') {
+      return 'col-md-4';
+    } else {
+      return 'col-sm-6';
+    }
+  }
+
+  let classRWD = getClassByViewport(screen.viewport);
 
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {
@@ -59,6 +70,11 @@ const NewFurniture = ({ categories, products }) => {
       </li>
     );
   }
+
+  const slicedProductsArray = categoryProducts.slice(
+    activePage * (screen.elements || 8),
+    (activePage + 1) * (screen.elements || 8)
+  );
 
   return (
     <Swipeable leftAction={handleSwipeLeft} rightAction={handleSwipeRight}>
@@ -89,8 +105,8 @@ const NewFurniture = ({ categories, products }) => {
             </div>
           </div>
           <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-sm-6 col-md-4 col-lg-3'>
+            {slicedProductsArray.map(item => (
+              <div key={item.id} className={classRWD}>
                 <ProductBox {...item} isPromoted={false} />
               </div>
             ))}
@@ -103,6 +119,7 @@ const NewFurniture = ({ categories, products }) => {
 };
 
 NewFurniture.propTypes = {
+  screen: PropTypes.array,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

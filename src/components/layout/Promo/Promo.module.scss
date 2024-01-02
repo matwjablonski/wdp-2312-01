@@ -3,7 +3,7 @@
 
 .left {
   position: relative;
-  color: white; 
+  color: white;
   width: 480px;
   height: 400px;
   text-transform: uppercase;
@@ -11,10 +11,10 @@
 
   img {
     width: 100%;
-    height: 100%; 
+    height: 100%;
     object-fit: cover;
   }
-  
+
 }
 
 .sectionLeft {
@@ -65,27 +65,30 @@
 .right {
   width: 550px;
   height: 400px;
-  padding-left: 22px; 
+  padding-left: 22px;
 
   .topPictureWrapper {
     width: 550px;
     height: 200px;
     position: relative;
     text-transform: uppercase;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
   }
-  .bottomPictureWrapper { 
-    width: 550px; 
+
+  .bottomPictureWrapper {
+    width: 550px;
     height: 200px;
     padding-top: 20px;
-    position: relative; 
+    position: relative;
     text-transform: uppercase;
     z-index: 1;
+
     img {
       // width: 100%;
       height: 100%;
@@ -96,6 +99,7 @@
   span {
     font-weight: bold;
   }
+
   text-transform: capitalize;
 }
 
@@ -106,15 +110,18 @@
   transform: translate(-50%, -50%);
   margin: 0 auto;
   line-height: 14px;
+
   .primary {
     color: $promo-main;
     line-height: 27px;
     font-weight: bold;
     font-size: 24px;
   }
+
   h2 {
     line-height: 20px;
   }
+
   div {
     padding-bottom: 2px;
   }
@@ -125,13 +132,213 @@
   position: absolute;
   top: 95px;
   right: 27px;
+
   .primary {
     color: $promo-main;
     line-height: 24px;
     font-size: 24px;
   }
+
   .primary span {
     font-weight: bold;
   }
 }
 
+.additionalWrapper {
+  display: inline;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .bottomPictureWrapper {
+    img {
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .right {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .left {
+    width: 100%;
+
+  }
+
+  .topPictureWrapper {
+    width: 100% !important;
+  }
+
+  .bottomPictureWrapper {
+    width: 100% !important;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .containerBottomImgContent {
+    position: absolute;
+    top: 55%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 18px 10px 10px 10px;
+  }
+
+
+  .containerBottomImgContent {
+    font-size: 22px;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255 255 255 / 50%);
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    .primary {
+      font-size: 30px;
+    }
+  }
+
+  .containerTopImgContent {
+    padding: 18px 36px 10px 36px;
+  }
+
+  .containerTopImgContent {
+    font-size: 22px;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255 255 255 / 50%);
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    .primary {
+      font-size: 30px;
+    }
+  }
+
+
+
+  @media (max-width: 768px) {
+
+    .containerTopImgContent {
+      h2 {
+        font-size: 20px;
+      }
+
+      div {
+        font-size: 14px;
+      }
+
+      .primary {
+        font-size: 20px;
+      }
+    }
+
+    .containerBottomImgContent {
+      font-size: 17px;
+      padding: 10px 10px 10px 8px;
+
+      .primary {
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media (max-width: 538px) {
+    .containerTopImgContent {
+      h2 {
+        font-size: 17px;
+      }
+
+      div {
+        font-size: 14px;
+      }
+
+      .primary {
+        font-size: 16px;
+      }
+    }
+
+    .containerBottomImgContent {
+      font-size: 12px;
+      padding: 10px 10px 10px 8px;
+
+      .primary {
+        font-size: 17px;
+      }
+    }
+  }
+
+  @media (max-width: 432px) {
+    .containerTopImgContent {
+      h2 {
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      div {
+        font-size: 14px;
+      }
+
+      .primary {
+        line-height: 12px;
+        font-size: 16px;
+      }
+    }
+
+    .containerBottomImgContent {
+      font-size: 10px;
+      padding: 10px 10px 10px 8px;
+
+      .primary {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 399px) {
+    .containerTopImgContent {
+      padding: 18px 26px 18px 27px;
+
+      h2 {
+        font-size: 12px;
+        margin: 0;
+      }
+
+      div {
+        font-size: 10px;
+      }
+
+      .primary {
+        font-size: 12px;
+      }
+    }
+
+    .containerBottomImgContent {
+      font-size: 9px;
+      padding: 10px 10px 10px 8px;
+
+      .primary {
+        font-size: 11px;
+      }
+    }
+  }
+}

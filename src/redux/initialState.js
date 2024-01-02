@@ -737,7 +737,10 @@ const initialState = {
   cart: {
     products: [],
   },
-
+  screen: {
+    viewportSize: '',
+    elementsNumber: 8,
+  },
   promo: {
     titleLeft: 'Guest room',
     subtitleLeft: 'Sofa',
@@ -773,7 +776,6 @@ const initialState = {
     { id: 14, name: 'brand-14' },
     { id: 15, name: 'brand-15' },
   ],
-
 };
 
 export default initialState;

@@ -72,6 +72,20 @@
               text-decoration: none;
             }
           }
+
+          @media (max-width: 992px) {
+            h2 {
+              font-size: 40px;
+            }
+    
+            span {
+              font-size: 16px;
+            }
+    
+            p {
+              font-size: 40px;
+            }
+          }
         }
     }
-    }
+}

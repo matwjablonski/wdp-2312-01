@@ -7,6 +7,7 @@ import Modal from '../../common/Modal/Modal';
 import styles from './TopBar.module.scss';
 
 const TopBar = () => {
+
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -35,8 +36,7 @@ const TopBar = () => {
           <div className={`col text-right ${styles.topMenu}`}>
             <ul>
               <li>
-                <a
-                  href='#'
+                <a href='#'
                   onClick={() => {
                     setOpenModal(true);
                   }}
@@ -45,14 +45,11 @@ const TopBar = () => {
                   <span className={styles.topBarIconName}>Login</span>
                 </a>
               </li>
-              {openModal && (
-                <Modal
-                  // open={openModal}
-                  onClose={() => {
-                    setOpenModal(false);
-                  }}
-                />
-              )}
+              {( openModal && <Modal
+                // open={openModal}
+                onClose={() => {
+                  setOpenModal(false);
+                }} />)}
               <li>
                 <a href='#'>
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
